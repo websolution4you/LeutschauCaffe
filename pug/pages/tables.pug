@@ -1,0 +1,65 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-table-custom
+
+block variables
+	- pageName = 'Tables'
+
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-light
+
+	+breadcrumbs({
+		class: 'no-bg breadcrumbs-classic',
+		subpage: true
+	})
+
+	//- Hover Row Table
+	section.section-lg.section-lg--inset-top-60.bg-default
+		.container
+			h3.text-center Hover Row Table
+
+			.row.justify-content-sm-center
+				.col-md-10.col-xl-8
+					+table-custom([
+						['#', 'First Name', 'Last Name', 'Username'],
+						['1', 'Benjamin', 'Turner', '@benjaminturner'],
+						['2', 'Lauren', 'Wood', '@laurenwood'],
+						['3', 'Bryan', 'Vargas', '@bryanvargas'],
+						['4', 'Arthur', 'Henderson', '@arthurhenderson']],
+					"table-fixed table-hover-rows", true)
+
+		//- Color Header
+		.container
+			h3.text-center Color Header
+
+			.row.justify-content-sm-center
+				.col-md-10.col-xl-8
+					+table-custom([
+						['#', 'First Name', 'Last Name', 'Username'],
+						['1', 'Benjamin', 'Turner', '@benjaminturner'],
+						['2', 'Lauren', 'Wood', '@laurenwood'],
+						['3', 'Bryan', 'Vargas', '@bryanvargas'],
+						['4', 'Arthur', 'Henderson', '@arthurhenderson']],
+					"table-primary table-fixed", true)
+
+		//- Bordered Table
+		.container
+			h3.text-center Bordered Table
+
+			.row.justify-content-sm-center
+				.col-md-10.col-xl-8
+					+table-custom([
+						['#', 'First Name', 'Last Name', 'Username'],
+						['1', 'Benjamin', 'Turner', '@benjaminturner'],
+						['2', 'Lauren', 'Wood', '@laurenwood'],
+						['3', 'Bryan', 'Vargas', '@bryanvargas'],
+						['4', 'Arthur', 'Henderson', '@arthurhenderson']]
+					, "table-fixed bordered-table", true)
+
+
+	//- Page Footer
+	include ../sections/_footer-minimal-dark

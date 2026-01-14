@@ -1,0 +1,324 @@
+/** @section Quotes */
+
+// Quote primary
+.quote-primary {
+}
+
+.quote-primary-mark {
+	position: relative;
+	top: 6px;
+	display: block;
+	width: 37px;
+	height: 27px;
+	fill: $primary;
+	flex-shrink: 0;
+}
+
+.quote-primary-body {
+	position: relative;
+	padding: 25px 0;
+	border-top: 1px solid $gray-200;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 13px;
+		border-style: solid;
+		border-color: $gray-200;
+	}
+
+	&::before {
+		left: 0;
+		width: 78px;
+		border-width: 1px 1px 0 0;
+	}
+
+	&::after {
+		right: 0;
+		width: calc(100% - 78px - 12px);
+		border-width: 1px 0 0 1px;
+		transform-origin: 0 0;
+		transform: skew(-45deg);
+	}
+}
+
+.quote-primary-text {
+	padding-top: 20px;
+}
+
+.quote-primary-cite {
+	font-weight: 700;
+}
+
+.quote-primary-footer {
+	padding-left: 5px;
+}
+
+* + .quote-primary {
+	margin-top: 30px;
+}
+
+* + .quote-primary-footer {
+	margin-top: 8px;
+}
+
+@include media-breakpoint-up(sm) {
+	.quote-primary-body {
+		display: flex;
+		padding: 32px 20px 40px 30px;
+	}
+
+	.quote-primary-text {
+		padding-top: 0;
+		padding-left: 20px;
+	}
+
+	.quote-primary-footer {
+		padding-left: 30px;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.quote-primary-body {
+		padding-right: 40px;
+	}
+}
+
+
+.quote {
+	h4 {
+		font-weight: 400;
+		color: #747474;
+	}
+
+	&-autor {
+		font-size: 14px;
+
+		a {
+			@include link($gray-lighter,$primary);
+		}
+	}
+
+	.icon + h4 {
+		margin-top: 13px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		&-mod {
+			padding-left: 63px;
+
+			.icon { margin-left: -12px; }
+
+			h4 + p { margin-top: 16px; }
+			.icon + h4 { margin-top: 6px; }
+		}
+	}
+
+	&-white {
+		h4, a { color: $white; }
+
+		a {
+			&:hover,
+			&:focus {
+				color: $white;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&-dark {
+		.icon {
+			color: rgba($gray-light, .4);
+		}
+
+		.icon + p { margin-top: 0; }
+
+		a {
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+		}
+	}
+}
+
+// Quote Box Comment
+.quote-box-comment {
+	&-author-title {
+		font-weight: 400;
+
+		&+ p {
+			margin-top: 5px;
+		}
+	}
+
+	&-body {
+		position: relative;
+		padding: 20px 15px 25px;
+		background: $white;
+		border: 1px solid #d4d4d4;
+		transition: .3s all ease;
+
+		&:hover {
+			box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.15);
+		}
+
+		p {
+			margin-top: 0;
+			padding-left: 8px;
+			color: $gray-dark;
+		}
+
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 28px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			transform: rotate(-180deg);
+		}
+
+		&:before {
+			border-width: 8px 8px 0 8px;
+			border-color: #fff transparent transparent transparent;
+		}
+
+		&:after {
+			z-index: -1;
+			margin-left: -2px;
+			border-width: 10px 10px 0 10px;
+			border-color: #d4d4d4 transparent transparent transparent;
+		}
+
+		.icon {
+			opacity: .4;
+		}
+
+		.icon-md {
+			font-size: 36px;
+		}
+	}
+}
+
+// Quote Classic
+.quote-classic {
+	flex-direction: column;
+	.icon {
+		opacity: .4;
+	}
+	a{
+		display: inline-block;
+		@include link($primary,$black)
+	}
+	p + *{
+		margin-top: 15px;
+	}
+}
+
+/* Quote side */
+.quote-side {
+	padding-bottom: 1px;
+	@include group( 30px, 10px );
+
+	q, cite {
+		display: block;
+	}
+
+	q {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.quote-side-icon {
+	font-size: 26px;
+}
+
+.quote-side-cite {
+	font-weight: 500;
+	color: $primary;
+}
+
+* + .quote-side { margin-top: 20px }
+* + .quote-side-cite { margin-top: 4px }
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.quote-side {
+		display: flex;
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	* + .quote-side { margin-top: 30px }
+	* + .quote-side-cite { margin-top: 7px }
+}
+
+/* Quote custom */
+.quote-custom {
+	display: flex;
+	padding-bottom: 1px;
+	@include group( 30px, 20px );
+
+	cite {
+		display: block;
+	}
+
+	q {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.quote-custom-item {
+	flex-shrink: 0;
+	max-width: 15%;
+}
+
+.quote-custom-img {
+	border-radius: 50%;
+}
+
+.quote-custom-icon {
+	display: inline-block;
+	margin-right: 10px;
+	transform: translateY(-.28em);
+}
+
+.quote-custom-cite {
+	font-weight: 500;
+	color: $primary;
+}
+
+* + .quote-custom { margin-top: 35px }
+* + .quote-custom-cite { margin-top: 4px }
+
+// Media
+@include media-breakpoint-up( xs ) {
+	.quote-custom {
+		@include groupX( 15px );
+	}
+
+	.quote-custom-item {
+		max-width: 40%;
+	}
+}
+
+@include media-breakpoint-up( xl ) {
+	.quote-custom {
+		@include groupX( 50px );
+	}
+
+	* + .quote-custom { margin-top: 50px }
+	* + .quote-custom-cite { margin-top: 7px }
+}

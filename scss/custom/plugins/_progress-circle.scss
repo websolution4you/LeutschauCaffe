@@ -1,0 +1,50 @@
+/** @section Progress Circle */
+
+
+.progress-circle {
+	display: block;
+	text-align: center;
+	line-height: 1.2;
+}
+
+.progress-circle-block {
+	position: relative;
+}
+
+.progress-circle-bg {
+	fill: transparent;
+	stroke: #f2f2f2;
+	stroke-width: 10px;
+}
+
+.progress-circle-fg {
+	fill: transparent;
+	stroke: $primary;
+	stroke-width: 10px;
+}
+
+.progress-circle-counter {
+	position: absolute;
+	top: 50%;
+	left: 51%;
+	font-size: 34px;
+	line-height: 36px;
+	transform: translate(-50%, -50%);
+	color: $gray-dark;
+	font-weight: 700;
+
+	&::after {
+		content: "%";
+	}
+}
+
+.progress-circle-title {
+	margin-top: 18px;
+	@include media-breakpoint-up(xl) {
+		margin-top: 25px;
+	}
+}
+
+* + .progress-bar-circle-title {
+	margin-top: 12px;
+}

@@ -1,0 +1,119 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Site Map'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-05-960x1080.jpg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							.site-map
+								h6
+									a(href="index.html") Home
+								ul.list.list-marked.list-marked-inset-left.list-marked-gray-lighter
+									li
+										a(href="index-variant-1.html") Home Variant 1
+									li
+										a(href="index-variant-2.html") Home Variant 2
+									li
+										a(href="index-variant-3.html") Home Variant 3
+									li
+										a(href="index-variant-4.html") Home Variant 4
+
+								h6 About
+								ul.list.list-marked.list-marked-inset-left.list-marked-gray-lighter
+									li
+										a(href="team.html") Team
+									li
+										a(href="press.html") Press
+									li
+										a(href="faq.html") FAQ Page
+									li
+										a(href="careers.html") Careers
+									li
+										a(href="testimonials.html") Testimonials
+									li
+										a(href="team-member-profile.html") Team Member Profile
+
+								h6
+									a(href="menu.html") Menu
+
+								h6 Shop
+								ul.list.list-marked.list-marked-inset-left.list-marked-gray-lighter
+									li
+										a(href="catalog.html") Catalog
+									li
+										a(href="single-product.html") Single Products
+									li
+										a(href="shopping-cart.html") Shopping Cart
+									li
+										a(href="checkout.html") Checkout
+
+								h6 News
+								ul.list.list-marked.list-marked-inset-left.list-marked-gray-lighter
+									li
+										a(href="blog.html") Blog Classic
+									li
+										a(href="blog-post.html") Blog Post
+
+								h6 Pages
+								ul.list.list-marked.list-marked-inset-left.list-marked-gray-lighter
+									li
+										a(href="services.html") Services
+									li
+										a(href="single-service.html") Single Service
+									li
+										a(href="pricing.html") Pricing
+									li
+										a(href="under-construction.html") Under Construction
+									li
+										a(href="login-page.html") Login Page
+									li
+										a(href="registration-page.html") Registration Page
+									li
+										a(href="coming-soon.html") Coming Soon
+									li
+										a(href="404.html") 404 Page
+									li
+										a(href="503.html") 503 Page
+									li
+										a(href="search-results.html") Search Results
+									li
+										a(href="privacy-policy.html") Privacy Policy
+									li
+										a(href="gallery-grid.html") Grid Gallery
+									li
+										a(href="gallery-masonry.html") Gallery Masonry
+									li
+										a(href="site-map.html") Site Map
+									li
+										a(href="tabs-and-accordions.html") Tabs & Accordions
+									li
+										a(href="progress-bars.html") Progress Bars
+									li
+										a(href="forms.html") Forms
+									li
+										a(href="tables.html") Tables
+									li
+										a(href="grid.html") Grid
+									li
+										a(href="buttons.html") Buttons
+
+								h6
+									a(href="contacts.html") Contacts
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

@@ -1,0 +1,143 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Blog Post'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-10-960x1080.jpg'
+						})
+					.col-sm-10.col-md-8.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							.post-classic
+								h5 How to Make a Perfect Cup of Coffee: an Ultimate Guide for Everyone
+								ul.list-inline.list-inline-vertical-line
+									li Nov 16, 2023 at 2:23pm
+									li
+										span by #[a(href="team-member-profile.html") Harry Lucas]
+									li 225 Views
+									li
+										a(href="#") 2 Comments
+								img(src="images/post-01-640x430.jpg", width="640", height="430", alt="")
+								p I often go to sleep thinking about the cup of coffee I’m going to have the next morning. I adore it! These basic rules will help you learn how to make coffee to prevent unwanted bitterness and virtually guarantee a satisfying cup of coffee every time.
+								p Without question, coffee is best when used within days of being roasted. Buying from a local roaster (or roasting your own) is the surest way to get the absolute freshest beans. Be wary of buying bulk coffee from supermarket display bins. Coffee beans packaged by quality-conscious roasters and sold in sturdy, vacuum-sealed bags are often a better bet.
+								img(src="images/post-05-640x430.jpg", width="640", height="430", alt="")
+								p Always store opened coffee beans in an airtight container. Glass canning jars or ceramic storage crocks with rubber-gasket seals are good choices. Never refrigerate (roasted beans are porous and readily take up moisture and food odors).
+								.quote.quote-mod.quote-mod-offset-top-35
+									.quote-body
+										span.icon.icon-lg.icon-rotate-180.mdi.mdi-format-quote.icon-primary
+
+										h4 By all means look for 100% pure Arabica beans. The cheap alternatives may contain Robusta beans, noted for their higher caffeine content but harsh flavors.
+
+										p.quote-autor
+											a(href="team-member-profile.html") Harry Lucas
+
+								p In this article I tried to cover some of the basic rules for coffee drinkers who want to make their own coffee without failing. I will share with you some more tips, tricks, and rules of making coffee in my next posts. Don’t forget to comment and subscribe to our newsletter to get new articles instantly. Don’t forget that you can always drink the best coffee at Beans!
+
+							ul.list-inline.list-inline-12
+								li Share this post
+								li
+									ul.list-inline.list-inline-12.list-inline-gray-lighter
+										li
+											a.icon.icon-sm-mod-20.fa.fa-facebook-f(href='#')
+										li
+											a.icon.icon-sm-mod-20.fa.fa-twitter(href='#')
+										li
+											a.icon.icon-sm-mod-20.fa.fa-instagram(href='#')
+										li
+											a.icon.icon-sm-mod-20.fa.fa-google(href='#')
+
+							.post-comment-wrap
+								h6 Posted by
+								.hr-custom
+								.post-comment.unit.unit-sm.flex-md-row
+									.unit-left
+										img(src="images/user-10-160x160.jpg", width="160", height="160", alt="")
+									.unit-body
+										h6
+											a(href="team-member-profile.html") Harry Lucas
+										p I am a professional blogger interested in everything taking place in cyberspace. I am running this website and try my best to make it a better place to visit. I post only the articles that are related to the topic and thoroughly analyze all visitors’ comments to cater to their needs better.
+
+							.post-comment-wrap
+								h6 Comments
+								.hr-custom
+
+								.post-comment.unit.unit-sm.flex-md-row.unit-spacing-sm
+									.unit-left
+										img.rounded-circle(src="images/user-11-80x80.jpg", width="80", height="80", alt="")
+									.unit-body
+										ul.list-inline.list-inline-12
+											li
+												h6
+													a(href="team-member-profile.html") Douglas Hudson
+											li Nov 23, 2023 at 11:26am
+
+										p Thank you for such an informative article! I have never tried to make my own coffee but I always wanted to do it the right way. I think I will visit your coffee shop to find out how true coffee should taste like.
+										a.post-comment-reply(href="#")
+											span.unit.align-items-center.flex-row.unit-spacing-xxs
+												span.unit-left
+													span.icon.icon-xs.fa.fa-mail-reply
+												span.unit-body
+													span Reply
+
+								.post-comment.post-comment-inset-left.unit.unit-sm.flex-md-row.unit-spacing-sm
+									.unit-left
+										img.rounded-circle(src="images/user-10-80x80.jpg", width="80", height="80", alt="")
+									.unit-body
+										ul.list-inline.list-inline-12
+											li
+												h6
+													a(href="team-member-profile.html") Harry Lucas
+											li Nov 23, 2023 at 11:26am
+
+										p Thank you for such a positive comment! I  will share some more coffee secrets in my next posts, so stay tuned.
+										a.post-comment-reply(href="#")
+											span.unit.align-items-center.flex-row.unit-spacing-xxs
+												span.unit-left
+													span.icon.icon-xs.fa.fa-mail-reply
+												span.unit-body
+													span Reply
+
+							.post-comment-wrap
+								h6 Send a Comment
+								.hr-custom
+								//- RD Mailform
+								form.rd-mailform.text-start.comment-form(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+									.row.justify-content-sm-center.row-md-30
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="blog-post-name") First name
+												input#blog-post-name.form-input(type="text" name="name" data-constraints='@Required')
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="blog-post-last-name") Last name
+												input#blog-post-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="blog-post-email") E-mail
+												input#blog-post-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="blog-post-phone") Phone
+												input#blog-post-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+										.col-md-12
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="blog-post-message") Message
+												textarea#blog-post-message.form-input(name="message" data-constraints="@Required")
+
+									.button-wrap
+										button(type="submit").button.button-primary Send
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

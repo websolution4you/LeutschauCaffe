@@ -1,0 +1,73 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Shopping Cart'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-01-960x1080.jpg'
+						})
+					.col-md-10.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner
+							.row.align-items-sm-center.justify-content-sm-center.section-lg
+								.col-sm-12.section-mailform-wrap-25.shopping-cart
+									h3 2 Items
+									.divider.divider-lg.divider-left-0.divider-primary
+
+									.table-custom-wrap
+										table.table-custom.table-fixed.table-hover-rows.table-shopping-cart
+											tbody
+												tr
+													th #
+													th Product
+													th Quantity
+													th Price
+													th
+												tr
+													td 1
+													td
+														a(href="single-product.html") Lavazza Crema #[br.d-none.d-xxl-inline-block] e Gusto
+													td
+														input(type="number" data-zeros="true" value="5" min="1" max="20")
+													td $28.00
+													td
+														a.icon.icon-sm.mdi.mdi-close(href="#")
+												tr
+													td 2
+													td
+														a(href="single-product.html") Maxwell House Original #[br.d-none.d-xxl-inline-block] Roast Ground Coffee
+													td
+														input(type="number" data-zeros="true" value="5" min="1" max="20")
+													td $56.00
+													td
+														a.icon.icon-sm.mdi.mdi-close(href="#")
+
+									.row.justify-content-sm-center.align-items-md-end.justify-content-md-between.row-40
+										.col-md-6.col-xl-12.col-xxl-6.shopping-cart-left
+											//- RD Mailform
+											form.rd-mailform.rd-mailform-inline.rd-mailform-inline-xs.text-start.unit-10
+												.rd-mailform-inline-form-wrap
+													label.form-label(for="inline-email") Coupon Code
+													input#inline-email.form-input(type="text" name="coupon")
+
+												.rd-mailform-inline-button-wrap
+													button(type="submit").button.button-sm.button-primary Apply Code
+
+										.col-md-4.col-xl-12.col-xxl-4.shopping-cart-right.text-center.text-md-start
+											p Total:
+											h5 $84.00
+											a.button.button-sm.button-primary(href="checkout.html") Checkout
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

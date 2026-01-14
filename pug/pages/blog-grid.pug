@@ -1,0 +1,84 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Blog grid'
+
+block page
+	//- Page Header
+	include ../sections/_header-classic
+
+	section.section.section-lg
+			.container
+				.row.row-30.justify-content-center.justify-content-sm-start
+					.col-xs-10.col-sm-12.col-lg-9.col-xl-7.offset-lg-1.text-block-1
+						h1 Read our latest articles tips & news
+						h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros scelerisque id viverra ipsum, posuere congue est, cras duism ullamcorper venenatis.
+
+				.row.row-50.row-lg-60.row-offset-1.justify-content-center
+					.col-xs-10.col-sm-6.col-lg-5
+						+post-side({
+							img: 'blog-list-01-470x310',
+							title: 'Coffee machine rental and delivery business',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Lectus iaculis vivamus consectetur aliquam rhoncus, eu, placerat. Nulla non rhoncus sit ipsum ipsum sagittis, non ornare nisl. Habitant.'
+						})
+					.col-xs-10.col-sm-6.col-lg-5
+						+post-side({
+							img: 'blog-list-02-470x310',
+							title: 'The most expensive cup of coffee in the USA',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Purus risus egestas auctor donec pulvinar. Rhoncus in sed egestas tortor magna euismod. Aliquam urna consectetur lacus dolor massa.'
+						})
+					.col-xs-10.col-sm-6.col-lg-5
+						+post-side({
+							img: 'blog-list-03-470x310',
+							title: 'Basic mistakes when making coffee',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Morbi aliquet ullamcorper diam etiam scelerisque volutpat ipsum. Blandit quis neque mattis id eleifend senectus adipiscing hendrerit. '
+						})
+					.col-xs-10.col-sm-6.col-lg-5
+						+post-side({
+							img: 'blog-list-04-470x310',
+							title: 'How to make a perfect cup of coffee',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Egestas cursus sapien suspendisse porttitor varius sollicitudin velit ipsum. Egestas dolor ut pretium mattis dolor fermentum et. Nunc sem.'
+						})
+					.col-xs-10.col-sm-6.col-lg-5
+						+post-side({
+							img: 'blog-list-05-470x310',
+							title: 'Choosing a home coffee machine',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Augue id risus nunc sagittis viverra in enim pellentesque. Sed elementum, massa, sagittis odio ac augue enim, integer. Turpis nunc.'
+						})
+					.col-xs-10.col-sm-6.col-lg-5
+						+post-side({
+							img: 'blog-list-06-470x310',
+							title: 'The difference between Arabica and Robusta',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Nisl, quam urna, id non. Nisi, platea placerat aliquam arcu. Orci morbi a eget ipsum adipiscing velit sed sollicitudin et. Et molestie.'
+						})
+				+pag([
+					{start: true, actionClass: 'disabled'},
+					{prev: true, actionClass: 'disabled'},
+					{value: '1', actionClass: 'active'},
+					{value: '2'},
+					{value: '3'},
+					{next: true},
+					{end: true}
+				]).justify-content-center
+
+	//- Page Footer
+	include ../sections/_footer-dark

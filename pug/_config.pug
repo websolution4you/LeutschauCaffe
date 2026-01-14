@@ -1,0 +1,168 @@
+-
+	var
+		htmlClass = "wide wow-animation",
+		fonts = "//fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;700&display=swap",
+		logo = {
+			default: 'logo-dark-150x150.png',
+			inverse: 'logo-light-150x150.png',
+			light:   'logo-light-290x290.png',
+			name:    'Beans'
+		},
+		links = {
+			post: 'blog-post.html',
+			getTemplate:'#get-template'
+		},
+		colors = {
+			primary: '#b8784e'
+		},
+		menu = [
+			{
+				title: 'Home',
+				link: 'index.html',
+				dropdown: [
+					{
+						title: 'Home Variant 1',
+						link: 'index-variant-1.html'
+					},
+					{
+						title: 'Home Variant 2',
+						link: 'index-variant-2.html'
+					},
+					{
+						title: 'Home Variant 3',
+						link: 'index-variant-3.html'
+					},
+					{
+						title: 'Home Variant 4',
+						link: 'index-variant-4.html'
+					},
+					{
+						title: 'Home Variant 5',
+						link: 'index-variant-5.html'
+					},
+					{
+						title: 'Home Variant 6',
+						link: 'index-variant-6.html'
+					}
+				]
+			},
+			{
+				title: 'About',
+				link: 'about.html',
+				dropdown: [
+					{
+						title: 'Team'
+					},
+					{
+						title: 'Press'
+					},
+					{
+						title: 'FAQ',
+						link: 'faq.html'
+					},
+					{
+						title: 'Careers'
+					},
+					{
+						title: 'Testimonials'
+					},
+					{
+						title: 'Team Member Profile'
+					}
+				]
+			},
+			{
+				title: 'Menu'
+			},
+			{
+				title: 'Shop',
+				link: 'catalog.html',
+				dropdown: [
+					{
+						title: 'Catalog'
+					},
+					{
+						title: 'Single Product'
+					},
+					{
+						title: 'Shopping Cart'
+					},
+					{
+						title: 'Checkout'
+					}
+				]
+			},
+			{
+				title: 'News',
+				link: 'blog.html',
+				dropdown: [
+					{
+						title: 'Blog'
+					},
+					{
+						title: 'Blog classic'
+					},
+					{
+						title: 'Blog grid'
+					},
+					{
+						title: 'Blog list'
+					},
+					{
+						title: 'Blog Post'
+					}
+				]
+			},
+			{
+				title: 'Pages',
+				link: null,
+				megamenu: [
+					{
+						list: [
+							{ title: 'Services' },
+							{ title: 'Single Service' },
+							{ title: 'Pricing' },
+							{ title: 'Login Page' },
+							{ title: 'Registration Page' },
+							{ title: 'Search results' }
+						]
+					},
+					{
+						list: [
+							{ title: '404' },
+							{ title: '503' },
+							{ title: 'Under Construction' },
+							{ title: 'Coming Soon' },
+							{ title: 'Site Map' },
+							{ title: 'Privacy Policy' }
+						]
+					},
+					{
+						list: [
+							{ title: 'Gallery Grid' },
+							{ title: 'Gallery Masonry' },
+							{ title: 'Gallery Creative' },
+							{ title: 'Gallery Slider' },
+							{ title: 'Typography' }
+						]
+					},
+					{
+						list: [
+							{ title: 'Tabs and accordions' },
+							{ title: 'Progress bars' },
+							{ title: 'Forms' },
+							{ title: 'Tables' },
+							{ title: 'Grid' },
+							{ title: 'Buttons' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Contacts'
+			}
+		],
+
+		// Predefined variables
+		breadcrumbs = [],
+		pageName = 'Home'

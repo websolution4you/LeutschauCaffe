@@ -1,0 +1,56 @@
+/** @section Vide */
+.vide {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  video {
+    will-change: transform;
+    pointer-events: none;
+  }
+}
+
+
+a {
+  color: inherit;
+}
+
+
+
+//Custom
+.vide:not(.swiper-slide) {
+  height: 100vh;
+}
+
+.vide-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.ie-10,.ie-11{
+  .vide-inner{
+    .row{
+      width: 100%;
+    }
+  }
+}
+
+
+.vide-inner{
+  .quote{
+    padding: 0 15px;
+  }
+}

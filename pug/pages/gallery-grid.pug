@@ -1,0 +1,133 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Gallery Grid'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							class: 'no-bg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner-small.section-fullwidth-body-offset-top.section-lg.inset-xl-0
+							.row.justify-content-sm-center.row-20.section-gallery-column-insets.row-xl-custom(data-lightgallery="group")
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-16-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-16-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Ristretto
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-17-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-17-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Cortadito
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-18-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-18-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Black Eye
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-19-1170x878_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-19-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Cafe au Lait
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-20-1170x779_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-20-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Interior
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-21-1170x779_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-21-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Coffee Grinding
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-22-1170x779_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-22-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Friendly Atmosphere
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-23-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-23-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Friendly Atmosphere
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-24-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-24-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Coffee Shop Exterior
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-25-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-25-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Satisfied Customers
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-26-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-26-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Comfortable Service
+
+								.col-sm-10.col-md-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-md(data-lightgallery="item", href='images/gallery-27-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-27-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Customized Drinks
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

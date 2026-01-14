@@ -1,0 +1,554 @@
+/** @section  Forms Styles*/
+
+// Form styles
+// --------------------------------------------------
+
+.rd-mailform {
+	position: relative;
+	text-align: left;
+
+	> p > span {
+		color: $gray-dark;
+	}
+
+	* + .button, * + .button-wrap {
+		margin-top: 20px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		p + .button-wrap {
+			margin-top: 30px;
+		}
+		.row + p {
+			margin-top: 30px;
+		}
+	}
+	@media (max-width: $screen-sm-min - 1) {
+		.button-wrap {
+			text-align: center;
+		}
+	}
+}
+
+// Form wrap
+.form-wrap {
+	position: relative;
+
+	&.has-error {
+		.form-input {
+			border-color: $form-feedback-invalid-color;
+		}
+	}
+
+}
+
+.form-input {
+	display: block;
+	width: 100%;
+	height: $input-height;
+	padding: $input-padding-vertical $input-padding-hoizontal;
+	font-size: $form-input-font-size;
+	font-weight: $input-font-weight;
+	line-height: $input-line-height;
+	color: $form-input-color;
+	background-color: $form-input-background;
+	background-image: none;
+	border: 1px solid $form-input-background;
+	border-radius: $form-input-border-color-radius;
+	-webkit-appearance: none;
+	transition: .3s ease-in-out;
+	box-shadow: none;
+	background-clip: unset;
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+		border-color: $form-input-border-color;
+		background-color: $form-input-background;
+	}
+}
+
+textarea.form-input {
+	height: 150px;
+	min-height: 50px;
+	max-height: 200px;
+	resize: vertical;
+}
+
+// Form wrapper
+// -------------------------
+
+.form-wrap {
+	position: relative;
+	margin-bottom: 0;
+}
+
+.form-wrap-validation {
+	.form-validation {
+		@include media-breakpoint-up(md) {
+			top: 28px;
+		}
+	}
+}
+
+.form-wrap + .form-wrap,
+.form-wrap + .button {
+	margin-top: 20px;
+}
+
+.rd-mailform-registration {
+	.form-wrap + .form-wrap {
+		margin-top: 15px;
+	}
+}
+
+// Form labels
+// -------------------------
+
+.form-label {
+	position: absolute;
+	top: 25px;
+	left: $input-padding-hoizontal;
+	font-size: $form-input-font-size;
+	font-weight: $input-font-weight;
+	line-height: $input-line-height;
+	color: $form-input-color-placeholder;
+	pointer-events: none;
+	z-index: 9;
+	transition: .3s;
+	transform: translateY(-50%);
+
+	&.focus {
+		opacity: 0;
+	}
+
+	&.auto-fill {
+		color: $form-input-color;
+	}
+}
+
+.form-label-outside {
+	@include media-breakpoint-up(md) {
+		position: static;
+		margin-bottom: 2px;
+
+		&, &.focus, &.auto-fill {
+			transform: none;
+			color: $form-input-color-placeholder;
+			font-size: $form-input-font-size;
+		}
+
+		&.focus {
+			opacity: 1;
+		}
+	}
+}
+
+// Form validation
+// -------------------------
+
+.form-validation {
+	position: absolute;
+	right: 10px;
+	top: 2px;
+	font-size: 9px;
+	line-height: 11px;
+	color: $error-color;
+	margin-top: 2px;
+	transition: .3s;
+	z-index: 11;
+}
+
+.form-validation-left {
+	.form-validation {
+		right: auto;
+		top: 100%;
+		left: 0;
+	}
+}
+
+// Form output
+// -------------------------
+
+#form-output-global {
+	position: fixed;
+	bottom: 30px;
+	left: 15px;
+	visibility: hidden;
+	transform: translateX(-500px);
+	transition: .3s all ease;
+	z-index: 9999999;
+	@media(max-width: 576px) {
+		margin-right: 15px;
+	}
+	&.active {
+		transform: translateX(0);
+		visibility: visible;
+	}
+
+	@include media-breakpoint-up(sm) {
+		left: 30px;
+
+	}
+}
+
+.form-output {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	font-size: 14px;
+	line-height: 1.5;
+	margin-top: 2px;
+	transition: .3s;
+	opacity: 0;
+	visibility: hidden;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.error {
+		color: $error-color;
+	}
+
+	&.success {
+		color: $success-color;
+	}
+}
+
+// RD Mailform Inline
+// -------------------------
+
+.rd-mailform-inline {
+	&-form-wrap {
+		width: 100%;
+	}
+
+	&-button-wrap {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.form-label {
+		top: 27px;
+		left: 21px;
+		font-size: inherit;
+		color: inherit;
+	}
+
+	.form-input {
+		padding-left: 20px;
+	}
+
+	.form-input, &-button-wrap .button {
+		height: 55px;
+	}
+
+	&-xs {
+		.form-input, .rd-mailform-inline-button-wrap .button {
+			height: 44px;
+		}
+		.form-label {
+			top: 22px;
+		}
+		.rd-mailform-inline-button-wrap .button {
+			min-width: 130px;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		&-button-wrap {
+			margin-top: 0;
+		}
+	}
+	@include media-breakpoint-up(md) {
+		&-button-wrap .button {
+			min-width: 200px;
+		}
+	}
+}
+
+.ie-11 {
+	.rd-mailform-inline-xs .form-input {
+		line-height: 16px;
+	}
+}
+
+// Radio and Checkbox Custom
+// -------------------------
+
+// Base Styles
+//
+.radio .radio-custom,
+.radio-inline .radio-custom,
+.checkbox .checkbox-custom,
+.checkbox-inline .checkbox-custom {
+	opacity: 0;
+
+	&, &-dummy {
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		margin-left: -32px;
+		margin-top: 5px;
+		outline: none;
+		cursor: pointer;
+	}
+
+	&-dummy {
+		pointer-events: none;
+		background: #f2f2f2;
+		border: 1px solid #d7d7d7;
+		//box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15);
+
+		&:after {
+			position: absolute;
+			opacity: 0;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.radio-custom:checked + .radio-custom-dummy:after,
+.checkbox-custom:checked + .checkbox-custom-dummy:after {
+	opacity: 1;
+}
+
+// Custom Radio Styles
+//
+.radio,
+.radio-inline {
+	padding-left: 32px;
+	color: $gray-dark;
+
+	.radio-custom-dummy {
+		border-radius: 50%;
+
+		&:after {
+			content: '';
+			top: 3px;
+			right: 3px;
+			bottom: 3px;
+			left: 3px;
+			background: $gray-dark;
+			border-radius: 50%;
+		}
+	}
+}
+
+// Custom Checkbox Styles
+//
+.checkbox,
+.checkbox-inline {
+	padding-left: 20px;
+	.checkbox-custom-dummy {
+		pointer-events: none;
+		border-radius: 3px;
+		margin-left: 0;
+		left: 0;
+
+		&:after {
+			content: '\e5ca';
+			font-family: 'Material Icons';
+			font-size: 20px;
+			line-height: 10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: $gray-darker;
+		}
+	}
+}
+
+// RD Mailform Payment
+//
+.rd-mailform-payment {
+	&-inset {
+		padding-left: 30px;
+	}
+
+	* + .form-wrap-radio {
+		margin-top: 20px;
+	}
+	* + .hr-custom {
+		margin-top: 20px;
+	}
+	.list > li + li {
+		margin-top: 7px;
+	}
+	.form-wrap + .button-wrap {
+		margin-top: 30px;
+	}
+	.form-wrap + .form-wrap {
+		margin-top: 5px;
+	}
+
+	.rd-mailform-payment-top {
+		> [class*="col-"] + [class*="col-"] {
+			margin-top: 7px;
+		}
+	}
+
+	.button-wrap {
+		text-align: left;
+	}
+
+	&-titles {
+		color: $gray-dark;
+	}
+	.hr-custom {
+		background: #ececec;
+	}
+
+	@include media-breakpoint-up(sm) {
+		.rd-mailform-payment-top {
+			> [class*="col-"] + [class*="col-"] {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.tabs-custom-checkout {
+		&.tabs-custom .nav-custom-tabs li + li {
+			margin-left: 25px;
+		}
+	}
+
+	.rd-mailform-payment-wrap {
+		max-width: 367px;
+	}
+}
+
+.label-custom {
+	display: inline-block;
+	padding: 5px 18px;
+
+	&-primary {
+		color: $white;
+		background: $primary;
+
+		&:hover {
+			color: $white;
+			background: darken(saturate(adjust_hue($primary, 0), 14.866760168302946%), 15.294117647058819%);
+		}
+	}
+}
+
+.comment-form,
+.feedback-form,
+.contact-form {
+	.form-wrap {
+		margin-bottom: 0;
+	}
+}
+
+// ReCaptcha
+.recaptcha {
+	div {
+		display: block;
+		transform-origin: 0 0;
+	}
+
+	iframe {
+		display: block;
+	}
+}
+
+.form-radio-custom {
+	input {
+		display: none;
+	}
+	.radio-custom-dummy {
+		position: absolute;
+		left: 0;
+		top: 5px;
+		display: inline-block;
+		margin-left: 0;
+		margin-top: 0;
+	}
+	.radio-inline {
+		position: relative;
+		cursor: pointer;
+	}
+}
+
+.ie-10, .ie-11 {
+	.form-radio-custom {
+		.form-wrap {
+			input {
+				display: none;
+			}
+		}
+	}
+}
+
+.rd-form {
+	* + .button, * + .button-wrap {
+		margin-top: 20px;
+	}
+}
+
+/* RD Mailform Boxed */
+.rd-mailform-boxed {
+	.form-wrap {
+		position: relative;
+	}
+
+	.rd-mailform-icon {
+		position: absolute;
+		top: 3px;
+		bottom: 3px;
+		right: 3px;
+		margin-top: 0;
+		padding: 0;
+		min-width: 39px;
+		font-size: 24px;
+		color: $white;
+		background-color: $primary;
+		border: 0;
+
+		&:hover {
+			color: $white;
+			background: darken($primary, 10%);
+		}
+	}
+
+	.form-input {
+		height: 45px;
+		padding: 15px 52px 15px 22px;
+	}
+
+	.form-label {
+		top: 23px;
+		left: 22px;
+	}
+
+	.form-input,
+	.form-label {
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.form-validation {
+		right: 50px;
+	}
+}
+
+%context-dark {
+	.rd-mailform-boxed {
+		.form-input,
+		.form-label {
+			color: $white;
+			background-color: transparent;
+		}
+	}
+}

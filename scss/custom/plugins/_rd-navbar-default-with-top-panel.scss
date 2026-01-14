@@ -1,0 +1,302 @@
+//
+// RD Navbar default
+// --------------------------------------------------
+
+.rd-navbar-default-with-top-panel {
+  @extend %rd-navbar-transition;
+
+  // General styles for all type navbar
+  .contact-info{
+    text-align: left;
+    font-size: 14px;
+    a{
+      @include link($white,$primary);
+    }
+  }
+
+  .rd-navbar-aside-right {
+    .rd-navbar-aside-inner-right {
+      display: flex;
+
+      > .icon {
+        color: $gray-dark;
+
+        > span {
+          position: relative;
+          top: -3px;
+          padding-left: 5px;
+          font-size: 14px;
+          font-family: $font-family-base;
+          vertical-align: bottom;
+
+          @include media-breakpoint-up(lg) {
+            padding-left: 10px;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  // Fixed layout
+  &.rd-navbar-fixed {
+    .rd-navbar-top-panel{
+      a{
+        @include link(#070707,$primary);
+      }
+    }
+    // Mobile brand
+    .rd-navbar-mobile-brand {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .rd-navbar-brand{
+      display: none;
+    }
+
+    p + p {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    * + .right-side {
+      margin-top: 25px;
+    }
+
+    .rd-navbar-search-toggle { right: 44px; }
+    .rd-navbar-search.active .rd-navbar-search-toggle { right: 5px; }
+
+    .rd-search { right: 95px; }
+
+    .rd-navbar-search.active {
+      .rd-search { right: 55px; }
+    }
+
+    .rd-navbar-collapse-toggle {
+      right: 4px;
+    }
+
+    .rd-navbar-aside-right {
+      .rd-navbar-aside-inner-right {
+        > .icon {
+          position: fixed;
+          top: 15px;
+          right: 100px;
+          z-index: 99;
+        }
+      }
+    }
+  }
+
+
+  // Fullwidth & Static layout
+  &.rd-navbar-fullwidth,
+  &.rd-navbar-static {
+    .rd-navbar-top-panel-inner{
+      .contact-info{
+        .link-accent{
+          color: $primary;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .rd-navbar-aside-right {
+      width: 100%;
+    }
+
+    .rd-navbar-dropdown {
+      margin-top: 34px;
+    }
+
+    .rd-navbar-megamenu {
+      margin-top: 0;
+    }
+
+    .rd-search {
+      left: 15.5%;
+
+      .form-label {
+        top: 31px;
+        left: 56px;
+        font-style: normal;
+
+        &:before {
+          content: '\f43b';
+          position: absolute;
+          top: 50%;
+          left: -50px;
+          font: 400 32px/24px "Material Design Icons";
+          color: $gray-dark;
+          transform: translateY(-50%);
+        }
+      }
+
+      .form-label, .form-input {
+        font-size: 26px;
+        line-height: 24px;
+        color: $gray-dark;
+      }
+
+      .form-input {
+        padding: 10px 10px 2px 5px;
+        background: $white;
+        border-color: $white;
+      }
+
+      .rd-search-results-live {
+        margin-top: 20px;
+      }
+    }
+
+    .rd-navbar-brand {
+      position: absolute;
+      top: -85px;
+      left: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 100%;
+        max-width: 150px;
+      }
+      .brand{
+        .brand-logo-white,
+        .brand-logo-light{
+          display: none;
+        }
+      }
+      @include media-breakpoint-up(xl) {
+        width: 170px;
+        height: 170px;
+      }
+    }
+
+    .rd-navbar-inner {
+      padding-left: 15%;
+      padding-right: 30px;
+    }
+
+    .rd-navbar-top-panel-inner {
+
+    }
+
+    // is stuck
+    &.rd-navbar--is-stuck {
+      //hide collapse
+      box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.15);
+      .rd-navbar-collapse-toggle,
+      .rd-navbar-top-panel,
+      .rd-navbar-brand {
+        display: none;
+      }
+
+      .rd-search {
+        left: 17px;
+        right: 60px;
+
+        .rd-search-results-live {
+          margin-top: 12px;
+        }
+      }
+
+      .rd-navbar-inner {
+        padding: 10px;
+      }
+    }
+
+  }
+
+
+  // Fullwidth layout
+  &.rd-navbar-fullwidth {
+
+    // is stuck
+    &.rd-navbar--is-stuck {
+      .rd-navbar-brand {
+        display: none;
+      }
+    }
+  }
+
+
+  // Static layout
+  &.rd-navbar-static {
+
+    // Navbar top panel
+    .rd-navbar-top-panel{
+      background: $gray-dark;
+
+
+      .rd-navbar-top-panel-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+        padding-left: 16%;
+        height: 105px;
+
+        .contact-info {
+          .group-lg {
+            > div + div {
+              @include media-breakpoint-up(xxl) {
+                margin-left: 95px;
+              }
+            }
+
+            div:last-child {
+              p {
+                &:first-child a {
+                  color: $white;
+
+                  &:hover,
+                  &:focus {
+                    color: $primary;
+                  }
+                }
+
+                &:last-child a {
+                  &:hover,
+                  &:focus {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .right-side {
+          max-width: 108px;
+
+          @include media-breakpoint-up(xl) {
+            max-width: none;
+          }
+        }
+
+        p {
+          margin-bottom: 0;
+          color: $white;
+        }
+        p + p { margin-top: 0; }
+      }
+    }
+  }
+
+}

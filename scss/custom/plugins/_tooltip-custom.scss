@@ -1,0 +1,49 @@
+/** @section Tooltip Custom */
+
+
+.tooltip {
+	font-size: $font-size-body;
+	line-height: 1.2;
+
+	&.bs-tooltip-top {
+		.arrow::before {
+			border-top-color: $tooltip-arrow-color;
+		}
+	}
+
+	&.bs-tooltip-bottom {
+		.arrow::before {
+			border-bottom-color: $tooltip-arrow-color;
+		}
+	}
+}
+
+.tooltip-custom {
+	color: $primary;
+
+	.tooltip {
+		z-index: 1;
+		font-family: $font-family-base;
+
+		&.in {
+			opacity: $tooltip-opacity;
+		}
+
+		&-inner {
+			max-width: $tooltip-max-width;
+			padding: 4px 8px;
+			font-size: 14px;
+			border-radius: 0;
+			background: $tooltip-bg;
+		}
+
+		&.top .tooltip-arrow {
+			border-top-color: $tooltip-bg;
+		}
+
+		&.bottom .tooltip-arrow {
+			border-bottom-color: $tooltip-bg;
+		}
+	}
+}
+

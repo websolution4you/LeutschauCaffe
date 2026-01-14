@@ -1,0 +1,70 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+block variables
+	- pageName = 'Buttons'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-light
+
+	+breadcrumbs({
+		class: 'no-bg breadcrumbs-classic',
+		subpage: true
+	})
+
+	//- Buttons
+	section.section-lg.section-lg--inset-top-60.bg-default
+		.container
+			h3 Button Sizes
+
+			p 4 different sizes: large, default, middle and small.
+
+			.group-xl
+				button.button.button-lg.button-primary Large
+				button.button.button-primary Default
+				button.button.button-sm.button-primary Middle
+				button.button.button-xs.button-primary Small
+
+			h3 Button Shapes
+			p 3 different shapes: default, round and circle. 
+
+			.group-xl
+				button.button.button-primary Default
+				button.button.button-ellipse-md.button-primary Round
+				button.button.button-circle.button-primary Circle
+
+			h3 Buttons with Icons
+			p Buttons are fully integrated with 900+ icons.
+
+			.group-xl
+				button.button.button-primary.button-icon.button-icon-left
+					span.icon.mdi.mdi-magnify
+					| Search
+
+				button.button.button-primary-outline.button-icon.button-icon-left
+					span.icon.mdi.mdi-magnify
+					| Search
+
+				button.button.button-primary.button-icon.button-icon-right
+					span.icon.mdi.mdi-arrow-right-bold
+					| Next Page
+
+				button.button.button-primary-outline.button-icon.button-icon-right
+					span.icon.mdi.mdi-arrow-right-bold
+					| Next Page
+
+
+			h3 Buttons with Shadow
+			p Enhance your button with a shadow effect.
+
+			.group-xl
+				button.button.button-primary.button-shadow
+					| Shadow
+				button.button.button-primary-outline.button-shadow
+					| Shadow
+
+	//- Page Footer
+	include ../sections/_footer-minimal-dark

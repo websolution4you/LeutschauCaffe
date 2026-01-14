@@ -1,0 +1,24 @@
+extends  ../_skeleton
+
+block variables
+	- pageName = 'Under Construction'
+
+block page
+
+	.page-content(style='background: #191919 url(images/background-07-1920x1080.jpg) center/cover no-repeat')
+		.one-page.bg-overlay-black.text-center.one-screen-content
+
+			.one-page-header
+				+logo
+
+			//- Under Construction
+			.container
+				.row.justify-content-sm-center.align-items-sm-center.justify-content-center
+					.col-lg-10
+						h2 Our Website Is Under Construction
+						.group-lg.unit-20
+							a.button.button-primary(href="index.html") Back to Home Page
+							a.button.button-white-outline(href="contacts.html") Contact Us
+
+			.one-page-footer
+				+rights

@@ -1,0 +1,42 @@
+/** @section Twitter Feed*/
+
+.page .twitter {
+  > h6 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $font-family-base;
+    color: $gray-lighter;
+  }
+}
+
+.twitter-item {
+  position: relative;
+  padding-left: 35px;
+}
+
+.twitter-item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: $primary;
+  font-family: FontAwesome;
+  content: "\f099";
+}
+
+.twitter-item + .twitter-item {
+  margin-top: 15px;
+
+  @include media-breakpoint-up(xl) {
+    margin-top: 30px;
+  }
+}
+
+.twitter-item a {
+  color: $primary;
+}
+
+.twitter-item a:hover {
+  color: $white;
+  text-decoration: none;
+}

@@ -1,0 +1,362 @@
+/** @section Lists */
+
+// Vertical list
+.list {
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+.list-xs > li + li {
+	margin-top: 5px;
+}
+
+.list-sm > li + li {
+	margin-top: 10px;
+}
+
+.list-md > li + li {
+	margin-top: 18px;
+}
+
+.list-lg > li + li {
+	margin-top: 25px;
+}
+
+.list-xl > li + li {
+	margin-top: 30px;
+}
+
+@include media-breakpoint-up(md) {
+	.list-xl > li + li {
+		margin-top: 60px;
+	}
+}
+
+
+// List inline
+.list-inline {
+	> li {
+		display: inline-block;
+	}
+}
+
+html {
+	.list-inline-md {
+		@include spacing(20px, 8px);
+
+		@include media-breakpoint-up(lg) {
+			@include spacingX(30px);
+		}
+	}
+}
+
+
+// List terms
+.list-terms {
+	dt + dd {
+		margin-top: 5px;
+	}
+	dd + dt {
+		margin-top: 25px;
+	}
+}
+
+* + .list-terms {
+	margin-top: 25px;
+}
+
+
+// Index list
+.index-list {
+	counter-reset: li;
+
+	> li {
+		.list-index-counter {
+			&:before {
+				content: counter(li, decimal-leading-zero);
+				counter-increment: li;
+			}
+		}
+	}
+}
+
+
+// Marked list
+.list-marked {
+	text-align: left;
+
+	> li {
+		position: relative;
+		padding-left: 25px;
+
+		&::before {
+			position: absolute;
+			display: inline-block;
+			left: 0;
+			top: 1px;
+			min-width: 25px;
+			content: '\f105';
+			font: 400 14px/24px 'FontAwesome';
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 4px;
+	}
+}
+
+* + .list-marked {
+	margin-top: 15px;
+}
+
+p + .list-marked {
+	margin-top: 10px;
+}
+
+
+// Ordered List
+.list-ordered {
+	counter-reset: li;
+	text-align: left;
+
+	> li {
+		position: relative;
+		padding-left: 25px;
+
+		&:before {
+			position: absolute;
+			content: counter(li, decimal) '.';
+			counter-increment: li;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 15px;
+			color: $gray-400;
+		}
+	}
+
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+* + .list-ordered {
+	margin-top: 15px;
+}
+
+
+.list {
+	> li + li {
+		margin-top: 10px;
+	}
+}
+
+
+// List inline
+//
+
+.list-inline {
+	margin-left: -5px;
+	margin-right: -5px;
+
+	> li {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+.list-inline-1 {
+	margin-left: -1px;
+	margin-right: -1px;
+
+	> li {
+		padding-left: 1px;
+		padding-right: 1px;
+
+	}
+}
+
+.list-inline-12 {
+	margin-left: -12px;
+	margin-right: -12px;
+
+	> li {
+		padding-left: 12px;
+		padding-right: 12px;
+
+	}
+}
+
+.list-inline {
+	&-gray-lighter {
+		a {
+			color: $gray-lighter;
+
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+		}
+	}
+}
+
+// List inline dashed
+//
+
+.list-inline-dashed {
+	margin-left: 0;
+	margin-right: -12px;
+
+	> li {
+		padding-left: 0;
+		padding-right: 12px;
+
+		&:after {
+			padding-left: 12px;
+			vertical-align: middle;
+		}
+
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+// Description Lists
+//
+
+// List terms
+//
+
+.list-terms {
+	.heading-6 { font-weight: 400; }
+
+	dd { line-height: 24px; }
+
+	dt + dd { margin-top: 10px; }
+	dd + dt { margin-top: 40px; }
+
+	@include media-breakpoint-up(xl) {
+		dd + dt { margin-top: 60px; }
+	}
+}
+
+// List index
+//
+
+.list-index {
+	counter-reset: li;
+
+	li {
+	}
+	.list-index-counter {
+		&:before {
+			content: counter(li, decimal)".";
+			counter-increment: li;
+			margin-right: 12px;
+		}
+	}
+
+	&-inset-left {
+		@include media-breakpoint-up(md) {
+			padding-left: 42px;
+		}
+	}
+}
+
+// List marked
+//
+
+.list-marked {
+	li {
+		position: relative;
+		padding-left: 32px;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: inline-block;
+			margin-top: 1px;
+			font: 400 18px/24px "Material Design Icons";
+			content: '\f238';
+			color: $primary;
+		}
+	}
+
+	&-inset-left {
+		@include media-breakpoint-up(md) {
+			padding-left: 35px;
+		}
+	}
+
+	&-gray-lighter {
+		li:before {
+			color: $gray-lighter;
+		}
+	}
+}
+
+
+// List Vertical Line
+//
+
+.list-inline-vertical-line {
+	margin-left: 0;
+	margin-right: -16px;
+
+	> li {
+		padding-left: 0;
+		padding-right: 16px;
+
+		&:after {
+			content: '|';
+			padding-left: 16px;
+			height: 24px;
+		}
+
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.list-primary {
+	> li {
+		color: $primary;
+	}
+}
+
+
+
+.site-map{
+	.list-marked{
+		li{
+			a{
+				@include link($primary,$gray-dark);
+			}
+		}
+	}
+}
+
+
+.search-list{
+	margin-top: 20px;
+	.search-list-item{
+		h5 + p{
+			margin-top: 5px;
+		}
+		p + p{
+			margin-top: 3px;
+		}
+	}
+	li + li{
+		margin-top: 15px;
+	}
+}

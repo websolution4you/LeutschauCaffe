@@ -1,0 +1,297 @@
+/** @section Backgrounds */
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+
+// Light Backgrounds
+.bg-default {
+	@include bg-behaviour($body-bg);
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+
+// Dark Backgrounds
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+}
+
+
+// Accent Backgrounds
+.bg-accent {
+	@extend %context-dark;
+	& + & {
+		padding-top: 0;
+	}
+}
+
+
+// Background Image
+.bg-image {
+	background-size: cover;
+	background-position: center;
+}
+
+
+// Desktop only
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+
+
+.bg-default {
+	background: $white;
+
+
+	.post-classic {
+		.list-inline-vertical-line, .list-inline-vertical-line a {
+			color: $gray-lighter;
+		}
+	}
+
+	.list-inline-vertical-line {
+		>li { color: $gray-lighter; }
+	}
+}
+
+.bg-accent {
+	@include bg-behaviour($primary);
+
+	// change color of primary button on primary bg
+	.btn-primary {
+		@include btn-variant($primary, $white, $white, $primary, darken($white, 5%), darken($white, 5%));
+	}
+}
+
+.bg-secondary-3 {
+	background: $secondary;
+}
+
+.bg-gray-dark {
+	background: $gray-dark;
+
+	.icon-boxed {
+		h6 { color: $white; }
+		p { color: $gray-lighter; }
+	}
+
+	&.page-footer {
+		h6 {
+			color: $white;
+		}
+	}
+
+	.twitter {
+		color: $gray-lighter;
+
+		.twitter-date {
+			color: $gray-light;
+		}
+	}
+
+	// Scroll
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { background-color: rgba($white, 0.75); }
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_draggerRail { background-color: rgba($white, 0.15); }
+	.mCS-dark-thin.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{ background-color: #000; background-color: rgba($white,0.9); }
+
+	h3 { color: $white; }
+	h1 { color: $white; }
+
+	.text-desc { color: $gray-lighter; }
+
+	// Isotop
+	.isotope-filters li a {
+		color: $white;
+		border-color: $white;
+
+		&.active,
+		&:hover {
+			border-color: $primary;
+		}
+
+		&:hover {
+			color: $gray-dark;
+			background: $white;
+			border-color: $white;
+
+			&:before {
+				border-color: $white transparent transparent transparent;
+			}
+		}
+	}
+
+	// Product Menu
+	.product-menu {
+		.product-menu-title {
+			a {
+				color: $white;
+
+				&:hover,
+				&:focus {
+					color: $primary;
+				}
+			}
+		}
+
+		.product-menu-price p {
+			color: $white;
+		}
+
+		.hr-custom {
+			background: $gray-light;
+		}
+	}
+
+	.contact-info {
+		.icon {
+			color: #747474;
+		}
+
+		p:not(.rights), p:not(.rights) a {
+			color: $white;
+		}
+
+		.button-primary {
+			&:hover, &:focus {
+				color: $gray-dark;
+				background: $white;
+				border-color: $white;
+			}
+		}
+
+		a {
+			&:not(.button) {
+				&:hover,
+				&:focus {
+					color: $primary;
+				}
+			}
+		}
+
+	}
+
+}
+
+.bg-gray-lighter {
+	background: $gray-lighter;
+}
+
+.bg-gray-lightest {
+	background: $gray-lightest;
+}
+
+.bg-gray-lighter-1 {
+	background: #d6d5d5;
+}
+
+.bg-gray-lighter-2 {
+	background: #f6f6f6;
+}
+
+.bg-lg-gray-lighter-2 {
+	.post-classic {
+		.list-inline-vertical-line, .list-inline-vertical-line a {
+			color: $gray-lighter;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {
+		background: #f6f6f6;
+
+		.form-input {
+			background: $white;
+		}
+	}
+}
+
+.bg-overlay-black {
+	background: rgba($black, .6);
+
+	h2, .text-extra-big, section > * { color: $white; }
+
+	.time_circles > div > span { color: $white; }
+
+	.time_circles > div > h4 { color: $white; }
+
+	.privacy {
+		a {
+			color: $gray-light;
+
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.bg-overlay-black-3 {
+	background: rgba($black, .3);
+	pointer-events: none;
+  > * {
+    pointer-events: auto;
+  }
+	h1, h5 {
+		color: $white;
+	}
+}
+
+.bg-overlay-inverse-xl {
+	@media (min-width: $screen-lg-min) and (max-width: $screen-xl-min - 1) {
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba($white, .9);
+			content: '';
+			z-index: -1;
+		}
+	}
+}
+
+.shadow-area-lg {
+	box-shadow: $shadow-area-lg;
+}
+
+

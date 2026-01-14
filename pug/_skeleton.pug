@@ -1,0 +1,44 @@
+include _config
+include _functions
+include _mixins
+
+block variables
+-main()
+
+doctype html
+html(lang="en" class= htmlClass)
+	head
+		block title
+			title= pageName
+
+		meta( charset='utf-8' )
+		meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+
+		link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+		link(rel="stylesheet" type="text/css" href= fonts)
+		link(rel="stylesheet" href="css/bootstrap.css")
+		link( rel='stylesheet', href='css/fonts.css' )
+		link(rel="stylesheet" href="css/style.css")
+
+	body
+		.page-loader.preloader
+			.page-loader-body
+				.cssload-thecube
+					.cssload-cube.cssload-c1
+					.cssload-cube.cssload-c2
+					.cssload-cube.cssload-c4
+					.cssload-cube.cssload-c3
+		.page
+			block page
+
+		//- Global Mailform Output
+		#form-output-global.snackbars
+
+
+		//- Java script
+		script(src="js/core.min.js")
+		script(src="js/script.js")
+
+		if(pageName === 'Privacy Policy')
+			//coded by Drel

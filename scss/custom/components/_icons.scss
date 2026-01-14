@@ -1,0 +1,222 @@
+/** @section Icons */
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  display: inline-block;
+  text-align: center;
+  font-size: 36px;
+
+  &.icon-circle {
+  }
+
+  &:before {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+// Alternate icons
+// --------------------------------------------------
+
+%icon-white {
+  color: $white;
+}
+
+.icon-white {
+  @extend %icon-white;
+}
+
+.icon-primary {
+  color: $primary;
+
+  > .heading-3 {
+    color: $primary;
+  }
+
+  &.icon-circle {
+
+  }
+
+  &.icon-bordered, &.icon-outline:after {
+    border-color: #e6e6e6;
+  }
+}
+
+.icon-gray-lighter {
+  color: $gray-lighter;
+}
+
+.icon-gray-dark {
+  color: $gray-dark;
+}
+
+.icon-primary-fill {
+  color: $white;
+  background: $primary;
+}
+
+.icon {
+  &-facebook {
+    background: #547abb;
+
+    &, &:hover, &:focus {
+      @extend %icon-white;
+    }
+
+    &:hover, &:focus {
+      background: darken(#547abb, 15%);
+    }
+  }
+
+  &-twitter {
+    background: #44c0f3;
+
+    &, &:hover, &:focus {
+      @extend %icon-white;
+    }
+
+    &:hover, &:focus {
+      background: darken(#44c0f3, 15%);
+    }
+  }
+
+  &-google-plus {
+    background: #e75854;
+
+    &, &:hover, &:focus {
+      @extend %icon-white;
+    }
+
+    &:hover, &:focus {
+      background: darken(#e75854, 15%);
+    }
+  }
+}
+
+
+// Icons Sizes
+// --------------------------------------------------
+
+.icon-xs {
+  font-size: 12px;
+}
+
+.icon-sm {
+  font-size: 25px;
+  text-align: center;
+
+  &.icon-circle {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &-mod-22 {
+    font-size: 22px;
+
+    &.icon-circle {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+  }
+
+  &-mod-20 {
+    font-size: 20px;
+  }
+}
+
+.icon-md {
+  font-size: 44px;
+
+  &-mod {
+    font-size: 46px;
+  }
+
+  &-mod-50 {
+    font-size: 50px;
+
+    &.icon-rect {
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+    }
+  }
+}
+
+.icon-lg {
+  font-size: 60px;
+
+  &.icon-circle {
+  }
+}
+
+
+// Icons Shapes
+// --------------------------------------------------
+
+.icon-circle {
+  &, &.icon-outline:after {
+    border-radius: 50%;
+  }
+
+  &-lg {
+    width: 90px;
+    height: 90px;
+    line-height: 86px;
+  }
+
+  &-xl {
+    width: 110px;
+    height: 110px;
+    line-height: 106px;
+
+    &.icon-outline {
+
+    }
+  }
+}
+
+.icon-bordered {
+  border: 1px solid;
+}
+
+.icon-outline {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border: 2px solid;
+  }
+}
+
+
+// Icons Position
+// --------------------------------------------------
+
+.icon-rotate-180 {
+  transform: rotate(180deg);
+}
+
+
+.icon-boxed {
+  @include media-breakpoint-up(xxl) {
+    .unit-body {
+      padding-right: 100px;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+/** @section  Team*/
+
+.team-member {
+  max-width: 290px;
+  margin-right: auto;
+  margin-left: auto;
+  .icon-sm {
+    font-size: 20px;
+  }
+
+  h6 + p {
+    margin-top: 5px;
+  }
+
+  p + .list-inline {
+    margin-top: 15px;
+  }
+
+  &-desc {
+    color: $gray-lighter;
+  }
+
+  .icon {
+    color: #c0c0c0;
+  }
+
+  a.icon {
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+}
+
+.team-member-profile {
+  max-width: none;
+  text-align: center;
+
+  h3 + p {
+    margin-top: 10px;
+  }
+  p + .contact-info {
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 15px;
+    }
+  }
+  .contact-info {
+    p + p {
+      margin-top: 7px;
+    }
+    @include media-breakpoint-up(md) {
+      p + p {
+        margin-top: 18px;
+      }
+    }
+    a {
+      color: $gray-light;
+
+      &:hover,
+      &:focus {
+        color: $primary;
+      }
+    }
+  }
+  .list-inline + .button{
+    margin-top: 10px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 25px;
+    }
+  }
+  .contact-info + .list-inline {
+    margin-top: 10px;
+    @include media-breakpoint-up(md) {
+      margin-top: 25px;
+    }
+  }
+  .list-inline {
+    a {
+      &:hover,
+      &:focus {
+        color: $primary;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
+  @media (min-width: $screen-lg-min) and (max-width: $screen-xl-min - 1) {
+    .unit-left {
+      max-width: 40%;
+    }
+    h3 {
+      font-size: 28px;
+    }
+    p + .contact-info {
+      margin-top: 30px;
+    }
+  }
+}

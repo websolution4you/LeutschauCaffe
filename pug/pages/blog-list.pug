@@ -1,0 +1,63 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Blog list'
+
+block page
+	//- Page Header
+	include ../sections/_header-classic
+
+	section.section.section-lg
+			.container
+				.row.row-30
+					.col-xl-7.offset-xl-1.text-block-1
+						h1 Read our latest articles tips & news
+						h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros scelerisque id viverra ipsum, posuere congue est, cras duism ullamcorper venenatis.
+
+				.row.row-offset-1
+					.col-12
+						+post-side({
+							img: 'blog-list-01-470x310',
+							title: 'Coffee machine rental and delivery business',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Nulla netus condimentum enim, urna, aliquam. Elementum eget ipsum sapien urna, cursus amet, cras cursus. Libero blandit egestas sollicitudin sociis. Ipsum mi.'
+						}).post-side-left
+						+post-side({
+							img: 'blog-list-02-470x310',
+							title: 'The most expensive cup of coffee in the USA',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Sit justo id at neque. Volutpat magna commodo malesuada fringilla et. Interdum amet platea quam faucibus hendrerit vitae suspendisse. Posuere eu velit sit magna. Eget in.'
+						}).post-side-left
+						+post-side({
+							img: 'blog-list-03-470x310',
+							title: 'The history of Irish coffee',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Nunc, blandit arcu accumsan, maecenas cursus amet at. Velit nisi at enim sit pulvinar risus consectetur vitae. Tellus quisque blandit quisque et. Donec cursus elit neque sed.'
+						}).post-side-left
+						+post-side({
+							img: 'blog-list-04-470x310',
+							title: 'How to make a perfect cup of coffee',
+							author: 'James Lee',
+							date: 'March 14, 2023',
+							comments: '2',
+							text: 'Gravida tortor arcu, ipsum, ac condimentum. Sed interdum congue dolor ullamcorper id bibendum fringilla faucibus fermentum. Mi nulla sollicitudin tristique sit convallis hac.'
+						}).post-side-left
+						+pag([
+							{start: true, actionClass: 'disabled'},
+							{prev: true, actionClass: 'disabled'},
+							{value: '1', actionClass: 'active'},
+							{value: '2'},
+							{value: '3'},
+							{next: true},
+							{end: true}
+						])
+
+	//- Page Footer
+	include ../sections/_footer-dark

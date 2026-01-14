@@ -1,0 +1,169 @@
+/** @section Countdown */
+
+.countdown {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left:-5px;
+	margin-right:-5px;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.countdown-block {
+	position: relative;
+	flex: 0 1 auto;
+	padding: 0 10px;
+	@include media-breakpoint-up(sm) {
+	  padding: 0 20px
+	}
+	@include media-breakpoint-up(md) {
+	  padding: 0 10px;
+	}
+	@include media-breakpoint-up(xl) {
+		padding: 0 15px;
+	}
+}
+
+
+
+.countdown-wrap {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.countdown-circle {
+	fill: transparent;
+
+	html:not(.ie-11):not(.ie-10) & {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.countdown-circle-bg {
+	stroke: white;
+	stroke-width: 10px;
+}
+
+.countdown-circle-fg {
+	stroke: $primary;
+	stroke-width: 10px;
+}
+
+.countdown-counter {
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 0;
+	color: $white;
+}
+
+.countdown-title {
+	font-size: 14px;
+	line-height: 1.2;
+	color: $white;
+	position: absolute;
+	text-transform: capitalize;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -26px;
+	@include media-breakpoint-up(sm) {
+		bottom: -37px;
+	}
+
+}
+
+* + .countdown {
+	margin-top: 35px;
+}
+
+.countdown + * {
+	margin-top: 35px;
+}
+
+.countdown-block-seconds {
+	display: none;
+}
+
+@media(min-width: 700px) {
+	.countdown-block-seconds {
+		display: block;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.countdown {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.countdown-block {
+		padding: 0 15px;
+	}
+
+	.countdown-counter {
+		font-size: 34px;
+	}
+
+	.countdown-circle-bg {
+		stroke-width: 12px;
+	}
+
+	.countdown-circle-fg {
+		stroke-width: 12px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.countdown-block {
+		padding: 0 35px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.countdown-counter {
+		font-size: 36px;
+	}
+}
+
+
+%context-dark {
+	.countdown-counter {
+		color: $white;
+	}
+}
+
+
+.one-page{
+	.countdown{
+		@include media-breakpoint-up(sm) {
+			padding-top: 28px;
+		}
+		padding-bottom: 40px;
+	}
+	@include media-breakpoint-up(xl) {
+		padding-bottom: 0;
+	}
+}
+
+
+.ie-10,.ie-11{
+	.countdown{
+		width: 100%;
+		.countdown-block{
+			width: 200px;
+			height: 130px;
+			svg{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

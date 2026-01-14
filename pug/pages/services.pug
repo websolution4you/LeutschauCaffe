@@ -1,0 +1,144 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Services'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					+breadcrumbs({
+						bg: 'background-01-960x1080.jpg'
+					})
+				.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-lg-gray-lighter-2.text-start
+					.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+						h3 A Few Words About Our Services
+						.divider.divider-lg.divider-left-0.divider-primary
+						p Beans Coffee Production provides coffee connoisseurs with a wide array of choices that satisfy discriminating palates, while providing prompt and courteous service.
+						p From growing to harvesting coffee, from roasting to brewing, from serving to keeping customers coming back for more – you need to strive for excellence. you can learn more about our services by reading the information below or contacting our administrators.
+						//- RD Video
+						article.video-play.ratio.ratio-16x9
+							video.video(src='video/video-for-player-1.mp4', controls='', poster='video/video-for-player-1.jpg', data-video-play='.video-btn-1')
+							button.video-btn.video-btn-1.play
+						h3.text-center.text-md-start Our Services
+						.divider.divider-lg.divider-md-left-0.divider-primary
+
+						.box-service.unit.unit-sm.flex-column.flex-md-row.text-center.text-md-start
+							.unit-left
+								img(src="images/services-01-290x210.jpg" width="290" height="210" alt="")
+							.unit-body
+								h6
+									a(href="single-service.html") Pre-Roasting Processing
+								p Before roasting coffee beans, they must be cleaned & prepared, and it involves a great amount of expert work. Our team knows how to prepare the beans for roasting.
+
+						.box-service.unit.unit-sm.flex-column.flex-md-row.text-center.text-md-start
+							.unit-left
+								img(src="images/services-02-290x210.jpg" width="290" height="210" alt="")
+							.unit-body
+								h6
+									a(href="single-service.html") Roasting
+								p What’s your favorite coffee roast? Dark? Light? Somewhere in between? Whatever your answer is, our coffee experts can roast any coffee the way you like it.
+
+						.box-service.unit.unit-sm.flex-column.flex-md-row.text-center.text-md-start
+							.unit-left
+								img(src="images/services-03-290x210.jpg" width="290" height="210" alt="")
+							.unit-body
+								h6
+									a(href="single-service.html") Packing
+								p We developed exclusive coffee packing technology, which allows to hold the aroma of coffee beans for longer so that you can enjoy you favorite coffee almost anytime.
+
+						.box-service.unit.unit-sm.flex-column.flex-md-row.text-center.text-md-start
+							.unit-left
+								img(src="images/services-04-290x210.jpg" width="290" height="210" alt="")
+							.unit-body
+								h6
+									a(href="single-service.html") Delivery
+								p Our delivery department works hard everyday to quickly deliver the desired coffee right to your door without any delays. It is absolutely free for our regular customers.
+
+						h3 Our Advantages
+						.divider.divider-lg.divider-left-0.divider-primary
+						.row.justify-content-sm-center.row-40
+							.col-sm-6.col-xl-12.col-xxl-6
+								.box-offer.box-offer-white
+									span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-headset.icon-primary
+									h6 Free Consultations
+									.divider.divider-lg
+									p Have a question about our products or services? Call us to get a free consultation.
+
+							.col-sm-6.col-xl-12.col-xxl-6
+								.box-offer.box-offer-white
+									span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-account-check.icon-primary
+									h6 Qualified Specialists
+									.divider.divider-lg
+									p Beans is a team of seasoned coffee experts that know how to make coffee properly.
+
+							.col-sm-6.col-xl-12.col-xxl-6
+								.box-offer.box-offer-white
+									span.icon.icon-text.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.icon-primary
+										span.heading-3 12
+									h6 Supplying Сountries
+									.divider.divider-lg
+									p We order coffee beans from 12 countries that specialize in coffee production.
+
+							.col-sm-6.col-xl-12.col-xxl-6
+								.box-offer.box-offer-white
+									span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-seal.icon-primary
+									h6 Quality Guarantee
+									.divider.divider-lg
+									p Every coffee drink you buy or order at our shop has 100% quality guarantee
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-2")
+
+
+	section#section-2.section-fullwidth.section-animate.animate-content
+		a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-1")
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					.sticky.sticky-top
+						.section-cover(style="background: #302f2f url(images/background-02-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+				.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner
+						.row.justify-content-sm-center.align-items-sm-center.section-xs
+							.col-sm-12
+								h3 Get in Touch
+								.divider.divider-lg.divider-left-0.divider-primary
+
+								//- RD Mailform
+								form.rd-mailform.text-start.feedback-form(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+									.row.justify-content-sm-center.row-md-30
+										.col-md-12
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="services-name") First name
+												input#services-name.form-input(type="text" name="name" data-constraints='@Required')
+										.col-md-12
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="services-last-name") Last name
+												input#services-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="services-email") E-mail
+												input#services-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="services-phone") Phone
+												input#services-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+										.col-md-12
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="services-message") Message
+												textarea#services-message.form-input(name="message" data-constraints="@Required" style="min-height: 200px;")
+
+									.button-wrap
+										button(type="submit").button.button-primary Send
+
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+
+	//- Page Footer
+	include ../sections/_footer-divided

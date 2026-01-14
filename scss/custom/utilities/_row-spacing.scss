@@ -1,0 +1,142 @@
+/** @section Row spacing */
+
+.row-0 {
+  @include grid-offset(0px);
+}
+
+.row-15 {
+  @include grid-offset(15px);
+}
+
+.row-20 {
+  @include grid-offset(20px);
+}
+
+.row-xl-20 {
+  @include grid-offset(30px);
+  @include media-breakpoint-up(md) {
+    @include grid-offset(20px);
+  }
+}
+
+.row-30 {
+  @include grid-offset(30px);
+}
+
+.row-60 {
+  @include grid-offset(60px);
+}
+
+.row-lg-0 {
+  @include grid-offset(0px);
+  @media(max-width: 991px) {
+    @include grid-offset(50px);
+  }
+}
+
+.row-40 {
+  @include grid-offset(40px);
+}
+
+.row-50 {
+  @include grid-offset(50px);
+}
+
+.row-xl-50 {
+  @include grid-offset(30px);
+  @include media-breakpoint-up(xl) {
+    @include grid-offset(50px);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .row-md-30 {
+    @include grid-offset(30px);
+  }
+}
+
+.row-xl-0 {
+  @include media-breakpoint-up(xl) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.g-0-xl {
+  @include media-breakpoint-up(xl) {
+    margin-right: 0;
+    margin-left: 0;
+    > [class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.g-0-lg {
+  @include media-breakpoint-up(lg) {
+    margin-right: 0;
+    margin-left: 0;
+    > [class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+
+
+.row-md-30{
+  @include grid-offset(15px);
+  @include media-breakpoint-up(md) {
+    @include grid-offset(30px);
+  }
+}
+
+@include media-breakpoint-up( lg ) {
+  .row-lg-60 {
+    @include grid-offset( 60px );
+  }
+}
+
+@include media-breakpoint-up( xl ) {
+  .row-xl-30 {
+    @include grid-offset( 30px );
+  }
+
+  .row-xl-70 {
+    @include grid-offset( 70px );
+  }
+}
+
+$grid-gutter-width-narrow: 10px;
+$grid-gutter-width-narrow-20: 20px;
+
+// Row Narrow
+.row-narrow {
+  margin-right: ($grid-gutter-width-narrow / -2);
+  margin-left: ($grid-gutter-width-narrow / -2);
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: ($grid-gutter-width-narrow / 2);
+    padding-left: ($grid-gutter-width-narrow / 2);
+  }
+
+}
+
+// Row Narrow
+.row-xl-custom {
+  margin-right: ($grid-gutter-width-narrow-20 / -2);
+  margin-left: ($grid-gutter-width-narrow-20 / -2);
+  @include media-breakpoint-up(xl) {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  > .col,
+  > [class*="col-"] {
+    padding-right: ($grid-gutter-width-narrow-20 / 2);
+    padding-left: ($grid-gutter-width-narrow-20 / 2);
+  }
+}
+

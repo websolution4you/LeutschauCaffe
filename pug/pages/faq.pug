@@ -1,0 +1,58 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'FAQ'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-02-960x1080.jpg'
+						})
+					.col-sm-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							h3 Some of Your Questions
+							.divider.divider-lg.divider-left-0.divider-primary
+							ul.list.list-marked.list-primary
+								li What is the best temperature to brew coffee?
+								li What is the difference between arabica and robusta?
+								li How to store coffee?
+								li What is a Kopi Luak (Kopi Luwak)?
+								li How do you spell Espresso?
+
+							.section-faq-body-wrap
+								h6 What is the best temperature to brew coffee?
+								p According to chemical studies, the optimal water temperature for drip coffee is 95-98C. According to my notes, colder water doesn't extract enough caffeine/essential oils from the beans, and above such temperature the acidity increases wildly.
+
+								h6 What is the difference between arabica and robusta?
+								p Arabica beans and robusta beans are two different species of coffee. They are the primary species of coffee that find their way into the American cup. The general differences are those of taste, and the conditions under which the two species differ in production.
+								p Arabicas have a wider taste range, between varieties. They range in taste from sweet-soft to sharp-tangy. Their unroasted smell is sometimes likened to blueberries. Their roasted smell is perfumey with fruity notes and sugary tones.
+								p These types of coffee beans are delicate, they require cool tropical climates, lots of moisture, rich soil, shade and sun. They are subject to attack from various pests, and are extremely vulnerable to cold and bad handling.
+								p Robustas taste range is neutral to harsh and they are often described as tasting grain-like, oatmeally. Their unroasted smell is often described as raw-peanutty. Their roasted smell is often likened to burnt rubber.
+
+								h6 How to store coffee?
+								p One should always store coffee beans in a glass, air-tight container. Air and moisture are coffee's principle enemies. Glass is best because it doesn't retain the odors of the beans or the oils, which could contaminate future beans stored in the same container. However, if you use glass, make sure the container is not exposed to light, as sunlight is believed to reduce freshness.
+								p Please note that coffee can be consumed in a week to a week and a half from the time it was roasted. This is the only way to have truly fresh coffee.
+								p Do not freeze ground coffee. There are two key problems here. One, the freezing will damage some of subtle tastes in the coffee and two, when the coffee is taken out the container will sweat, exposing your coffee to moisture.
+
+								h6 What is a Kopi Luak (Kopi Luwak)?
+								p The only coffee of commerce today that is the product of an animal's digestive tract is Kopi Luak or Luwak from Sumatra, Java and Sulawesi in Indonesia. It is reported that the yearly crop is about 80 LB total. It retails in the US for about $18.50 oz. or $296.00 LB. and is available from John Martinez & Son in Atlanta, GA.
+								p According to the former head of the Indonesian national zoo, as told to the Smithsonian's rep. Kopi Luak is a fiction with a great sales pitch. Does it really exist? That is a good question. Is something being sold in the US as Kopi Luak? Yes.
+
+								h6 How do you spell Espresso?
+								p By far, the most common spelling used throughout the world today is "espresso". This is a shortened form of the original Italian name for the drink "caffe espresso" (accent marks omitted). This spelling is considered to be the correct spelling by the vast majority of of coffee consumers, vendors, retailers, and producers.
+								p Some English language dictionaries also list "expresso" as a variant spelling. However, this does not mean the spelling is 'equally valid.'
+								p It was pointed out during the great "espresso vs. expresso" debate (spring '94) that the Italian alphabet does not even contain the letter "X," which is incorrect. However, the right way to write and pronounce the name of the drink in Englisg is ‘espresso’.
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

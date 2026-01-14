@@ -1,0 +1,82 @@
+/** @section Pagination */
+
+// Variables
+$pag-simple-color: $black;
+$pag-simple-active-color: $primary;
+$pag-simple-disabled-color: $pagination-disabled-color;
+
+// Base
+.pag {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	padding-left: 0;
+
+}
+
+.pag-simple-link {
+	position: relative;
+	z-index: 0;
+	display: inline-flex;
+	font-weight: 500;
+	font-size: 24px;
+	color: $pag-simple-color;
+	vertical-align: middle;
+	transition: .25s;
+
+	&:hover {
+		color: $pag-simple-active-color;
+	}
+
+	&.inactive {
+		pointer-events: none;
+	}
+}
+
+.pag-simple-item {
+	&.active {
+		.pag-simple-link {
+			color: $pag-simple-active-color;
+		}
+	}
+
+	&.disabled {
+		.pag-simple-link {
+			color: $pag-simple-disabled-color;
+			pointer-events: none;
+			opacity: .7;
+		}
+	}
+
+	&.pag-mobile-hide {
+		display: none;
+	}
+}
+
+.pag-simple-item + .pag-simple-item { margin-left: 22px; }
+
+
+// Spacing
+* + .pag { margin-top: 40px; }
+
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.pag-simple-item {
+		&.pag-mobile-hide {
+			display: inline-flex;
+		}
+	}
+
+	.pag-simple-item + .pag-simple-item { margin-left: 20px; }
+}
+
+@include media-breakpoint-up( lg ) {
+	.pag-simple-item + .pag-simple-item { margin-left: 36px; }
+
+	* + .pag { margin-top: 60px; }
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .pag { margin-top: 84px; }
+}

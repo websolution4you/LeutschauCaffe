@@ -1,0 +1,41 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Search Results'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+						.col-xl-6
+							.sticky-xl.sticky-top
+								+breadcrumbs({
+									bg: 'background-02-960x1080.jpg'
+								})
+						.col-sm-8.col-xl-6
+							.section-fullwidth-body.bg-default.text-start.section-lg
+								.section-fullwidth-body-inner
+									.row.align-items-sm-center.justify-content-sm-center.section-md.section-md--inset-top-140
+										.col-sm-12
+											//RD Navbar Search
+											form.rd-search.rd-mailform-inline(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+												.rd-mailform-inline-form-wrap
+													.form-wrap
+														label.form-label(for="rd-search-results") Search...
+														input.form-input(id="rd-search-results" type="text" name="s" autocomplete="off")
+												.form-wrap
+													.rd-mailform-inline-button-wrap
+														button(type="submit").button.button-width-165.button-primary Search
+
+											.rd-search-results
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

@@ -1,0 +1,207 @@
+extends  ../_skeleton
+
+block variables
+	-
+		var footerBackSection = "section-3"
+
+block page
+	include ../sections/_header-minimal-transparent
+
+	section#section-0.section-mac-height.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			div(style="background: #302f2f url(images/background-15-1920x1080.jpg) center/cover no-repeat;")
+				.bg-overlay-black-3
+					.container
+						.row.justify-content-sm-center.align-items-sm-center.section-cover.section-lg-mod
+							.col-sm-12.col-xl-10.text-center
+								a.brand.brand-mod-sm-inverse.d-none.d-md-inline-block(href="index.html")
+									img(src="images/logo-light-150x150.png" width="150" height="150" alt="")
+								h5.font-default.text-regular Welcome to
+								h1 Beans Coffee Production
+								.group-lg.unit-20
+									a.button.button-anis.button-width-194.button-primary(href="#") Buy Beans Now
+									a.button.button-anis.button-width-194.button-white-outline(href="#" data-custom-scroll-to="section-1") Start a Journey
+
+
+				a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-1")
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-0")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky.sticky-top
+							.section-cover(style="background: #302f2f url(images/background-18-960x1080.jpg) center/cover no-repeat;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-lg-gray-lighter-2.text-start
+						.section-fullwidth-body-inner.section-lg
+							h3 Homepage Layouts
+							.divider.divider-lg.divider-left-0.divider-primary
+							.thumbnail-home-wrap
+								.thumbnail-apollo
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-rayen-mod.thumbnail-rayen-primary(href="index-variant-1.html")
+										figure
+											img(width='640', height='360', src='images/landing-01-640x360.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+									h6.thumbnail-apollo-title
+										a.primary-link(href="index-variant-1.html") Classic
+
+								.thumbnail-apollo
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-rayen-mod.thumbnail-rayen-primary(href="index-variant-2.html")
+										figure
+											img(width='640', height='360', src='images/landing-02-640x360.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+									h6.thumbnail-apollo-title
+										a.primary-link(href="index-variant-2.html") Modern
+
+								.thumbnail-apollo
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-rayen-mod.thumbnail-rayen-primary(href="index-variant-3.html")
+										figure
+											img(width='640', height='360', src='images/landing-03-640x360.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+									h6.thumbnail-apollo-title
+										a.primary-link(href="index-variant-3.html") Creative
+
+
+								.thumbnail-apollo
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-rayen-mod.thumbnail-rayen-primary(href="index-variant-4.html")
+										figure
+											img(width='640', height='360', src='images/landing-06-640x360.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+									h6.thumbnail-apollo-title
+										a.primary-link(href="index-variant-4.html") Corporate
+
+
+								.thumbnail-apollo
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-rayen-mod.thumbnail-rayen-primary(href="index-variant-5.html")
+										figure
+											img(width='640', height='360', src='images/landing-05-640x360.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+									h6.thumbnail-apollo-title
+										a.primary-link(href="index-variant-5.html") Dark
+
+
+								.thumbnail-apollo
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-rayen-mod.thumbnail-rayen-primary(href="index-variant-6.html")
+										figure
+											img(width='640', height='360', src='images/landing-07-640x360.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+									h6.thumbnail-apollo-title
+										a.primary-link(href="index-variant-6.html") Light
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-2")
+
+	section#section-2.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-1")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky.sticky-top
+							.section-cover(style="background: #302f2f url(images/background-02-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%; min-height: 200px;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-lg
+							h3 eCommerce Ready
+							.divider.divider-lg.divider-left-0.divider-primary
+							p We have included all you may need to build an Amazing eCommerce Website from scratch. Create your successful business now!
+							ul.list.list-marked.list-marked-inset-left
+								li Grid View
+								li Shopping Cart Page
+								li Checkout Page
+								li Single Product Page
+
+							img.shadow-area-lg(src="images/landing-04-640x361.jpg" width="640" height="361" alt="")
+
+							h3 Blog Pages
+							.divider.divider-lg.divider-left-0.divider-primary
+							p Create any kind of blog variations & styles using our well-done Blog pages
+
+							img(src="images/landing-05-668x359.png" width="668" height="359" alt="")
+
+							a.button.button-sm.button-width-194.button-primary(href="#") Buy Beans Now
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-3")
+
+	section#section-3.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-2")
+			.container-fluid
+				.row.justify-content-sm-center.g-0
+					.col-xl-6
+						.sticky-xl.sticky-top
+							.section-cover.section-relative(style="background: #302f2f url(images/background-19-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%; min-height: 200px;")
+								.section-absolute-center
+									a.brand(href="index.html")
+										img(src="images/logo-light-150x150.png" width="150" height="150" alt="")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-lg-gray-lighter-2.text-xl-start
+						.section-fullwidth-body-inner.section-lg
+							h3 Template Features
+							.divider.divider-lg.divider-lg-left-0.divider-primary
+							.row.justify-content-sm-center.row-40
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-vector-square.icon-primary
+										h6 Advanced UI Kit for Web Developers
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-bulletin-board.icon-primary
+										h6 Extended Bootstrap Toolkit
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-cellphone-link.icon-primary
+										h6 Extremely Responsive and Retina-ready
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-headset.icon-primary
+										h6 Dedicated #[br.d-none.d-xxl-inline-block] 24/7 Support
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-text.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.icon-primary
+											span.heading-3 48
+										h6 HTML #[br.d-none.d-xxl-inline-block] Pages
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-text.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.icon-primary
+											span.heading-3 8
+										h6 Header & Footer Layouts
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-text.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.icon-primary
+											span.heading-3 4
+										h6 Gallery #[br.d-none.d-xxl-inline-block] Layouts
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-text.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.icon-primary
+											span.heading-3 40
+										h6 PSD #[br.d-none.d-xxl-inline-block] Files
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided-socials

@@ -1,0 +1,59 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Contacts'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					+breadcrumbs({
+						bg: 'background-06-960x1080.jpg'
+					})
+				.col-sm-10.col-md-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner
+						.row.align-items-sm-center.justify-content-sm-center.section-lg
+							.col-sm-12.section-mailform-wrap-25
+								h3 Get in Touch
+								.divider.divider-lg.divider-left-0.divider-primary
+								p You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our salon personally. We would be happy to answer your questions.
+
+								//- RD Mailform
+								form.rd-mailform.text-start(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+									.row.justify-content-sm-center.row-15
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="contacts-name") First name
+												input#contacts-name.form-input(type="text" name="name" data-constraints='@Required')
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="contacts-last-name") Last name
+												input#contacts-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="contacts-email") E-mail
+												input#contacts-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+										.col-md-6
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="contacts-phone") Phone
+												input#contacts-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+										.col-md-12
+											.form-wrap.form-wrap-validation
+												label.form-label.form-label-outside(for="contacts-message") Message
+												textarea#contacts-message.form-input(name="message" data-constraints="@Required" style="height:200px;")
+									.button-wrap
+										button(type="submit").button.button-primary Send
+
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+
+	//- Page Footer
+	include ../sections/_footer-divided
+
+

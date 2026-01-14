@@ -1,0 +1,566 @@
+//
+// RD Navbar components
+// --------------------------------------------------
+
+// RD Navbar Toggle
+
+.rd-navbar-toggle {
+  // make toggle, but only before 1199, because on navbar-sidebar we need restyle toggle
+  @include media-breakpoint-down(xl) {
+    @include make-toggle(
+            $rd-navbar-toggle-preset,
+            48px,
+            24px,
+            $rd-navbar-fixed-toggle-color
+    );
+    display: none;
+    position: fixed;
+    top: 4px;
+    left: 4px;
+  }
+  display: none;
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Make search toggle
+.rd-navbar-search-toggle {
+  @include toggle-icons-via-rotation(48px, 51px, 20px, $rd-navbar-fixed-toggle-color, '\f43b', '\f24c', 'Material Design Icons', 'Material Design Icons');
+  transition: .3s ease-in-out;
+
+  &:hover span,
+  &:focus span {
+    color: $primary;
+  }
+}
+
+// Collapse toggle
+.rd-navbar-collapse-toggle {
+  @include make-toggle(
+          $rd-navbar-collapse-toggle-preset,
+          48px,
+          20px,
+          $rd-navbar-fixed-toggle-color
+  );
+  background-color: transparent;
+  border: none;
+  display: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Collapse item style on fixed and fullwidth navbar
+.rd-navbar-fixed,
+.rd-navbar-fullwidth {
+
+  .rd-navbar-collapse-toggle {
+    display: block;
+  }
+
+  .rd-navbar-collapse-items {
+    opacity: 0;
+    visibility: hidden;
+    right: 15px;
+    width: 275px;
+    padding: 20px;
+    z-index: 20;
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    transition: all .3s ease;
+    color: $black;
+
+    // Inside collapse appearance style
+    .list-inline {
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .icon {
+      color: $black;
+    }
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
+
+    //active state
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+//collapse item on fixed
+.rd-navbar-fixed {
+  .rd-navbar-collapse-toggle {
+    position: fixed;
+    top: 4px;
+    right: -4px;
+  }
+
+  .rd-navbar-collapse-items {
+    position: fixed;
+    top: 60px;
+    background: $rd-navbar-fixed-bg;
+  }
+}
+
+// collapse item on fullwidth
+.rd-navbar-fullwidth {
+  .rd-navbar-collapse-toggle {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+  }
+
+  .rd-navbar-collapse-items {
+    position: absolute;
+    top: 50px;
+    background: $rd-navbar-fixed-bg;
+  }
+}
+
+// RD Navbar Brand
+.rd-navbar-brand {
+  a {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 180px;
+    color: $primary;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  img {
+    max-width: 180px;
+  }
+}
+
+// Mobile brand
+.rd-navbar-mobile-brand {
+  display: none;
+  img {
+    max-width: 180px;
+  }
+}
+
+// RD Navbar Dropdown
+.rd-navbar-dropdown {
+  display: none;
+}
+
+// General style for rd-navbar-inner and top panel
+.rd-navbar-top-panel-inner,
+.rd-navbar-inner {
+  max-width: $rd-navbar-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Placeholders
+//------------------------
+
+// Mobile search
+%rd-default-mobile-search {
+
+  //Disable livesearch
+  #rd-search-results-live {
+    display: none;
+  }
+
+  //Search toggle
+  .rd-navbar-search-toggle {
+    position: fixed;
+    top: 4px;
+    z-index: 20;
+    right: 1px;
+    height: 48px;
+  }
+
+  // Search form
+  .rd-search {
+    position: fixed;
+    top: 3px;
+    z-index: 999;
+    right: 47px;
+    left: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease-in-out;
+
+    .form-input {
+      border: none;
+    }
+  }
+
+  // Active state
+  .rd-navbar-panel.active {
+
+    .rd-navbar-brand,
+    .rd-navbar-collapse-toggle,
+    .rd-navbar-toggle {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .rd-navbar-search.active {
+    .rd-search {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .rd-navbar-search-toggle {
+      right: 1px;
+    }
+  }
+}
+
+// Default desktop search
+%rd-navbar-default-search {
+
+  // Navbar aside right
+  .rd-navbar-aside-right {
+    position: relative;
+  }
+
+  // Search form
+  .rd-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease-in-out;
+
+    .form-label {
+      font-style: italic;
+    }
+
+    .form-input {
+      border: none;
+      border-bottom: 1px solid $gray-lighter;
+    }
+  }
+
+  // Active state
+  .rd-navbar-panel.active {
+
+    .rd-navbar-nav {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .rd-navbar-search.active {
+    .rd-search {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+// Default navbar first level navigation
+%rd-navbar-default-menu-first-lvl {
+  .rd-navbar-nav {
+    @include clearfix;
+
+    > li {
+      float: left;
+      position: relative;
+      // padding need for builder
+      padding-left: 5px;
+      padding-right: 5px;
+
+      > a {
+        @extend %rd-navbar-default-link-font;
+        display: inline-block;
+        position: relative;
+        padding: 1px 3px;
+        color: $gray-dark;
+        transition: .3s ease-in-out;
+
+        @include media-breakpoint-up(xl) {
+          padding: 1px 10px;
+        }
+
+      }
+
+      &.active,
+      &.focus {
+        > a {
+          color: $primary;
+        }
+      }
+
+      a {
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      &.rd-navbar-submenu {
+        > a {
+          padding-right: 20px;
+
+          &:after {
+            content: '\f236';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: auto;
+            font: 16px/24px "Material Design Icons";
+            transform: translateY(-50%);
+            transition: .3s transform ease-in-out;
+          }
+        }
+      }
+
+      &.focus > a, > a:hover {
+        &:after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      &.rd-navbar--has-megamenu {
+        position: static;
+      }
+
+      + li {
+        margin-left: 6px;
+
+        @media (min-width: 1550px) {
+          margin-left: 35px;
+        }
+      }
+    }
+
+    li.focus {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// Default menu dropdowns
+%rd-navbar-default-menu-dropdown {
+
+  .rd-navbar-nav li {
+    &.opened,
+    &.focus {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  // Dropdown and megamenu styles
+  .rd-navbar-dropdown,
+  .rd-navbar-megamenu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    width: 212px;
+    padding: 20px 35px;
+    visibility: hidden;
+    transition: .3s all ease;
+    text-align: left;
+    opacity: 0;
+    background: $white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      transform: rotate(-180deg);
+    }
+
+    &:before {
+      border-width: 8px 8px 0 8px;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    &:after {
+      z-index: -1;
+      margin-left: -1px;
+      border-width: 9px 9px 0 9px;
+      border-color: lighten($gray-lighter, 15%) transparent transparent transparent;
+    }
+    > li{
+      li + li {
+        margin-top: 16px;
+      }
+    }
+    .rd-navbar-dropdown {
+      left: 100%;
+      top: -1px;
+      margin: 0;
+      z-index: 2;
+    }
+
+    .rd-navbar-dropdown .rd-navbar-dropdown {
+      z-index: 3;
+    }
+
+    &.rd-navbar-open-left,
+    &.rd-navbar-open-left .rd-navbar-dropdown {
+      //right: 100%;
+      //left: auto;
+    }
+    
+    @include media-breakpoint-up(xl) {
+      //margin-left: -10px;
+    }
+  }
+  .rd-navbar-dropdown{
+    li + li{
+      margin-top: 16px;
+    }
+  }
+  .rd-navbar-nav > .rd-navbar-submenu > .rd-navbar-dropdown.rd-navbar-open-left {
+    right: 0;
+  }
+
+  // Megamenu
+  .rd-navbar-megamenu {
+
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    @media(min-width: 1810px){
+      max-width: 1810px;
+    }
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 27px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  // DEBUG STYLE for megamenu
+  //.rd-navbar-megamenu {
+  //  opacity: 1!important;
+  //  visibility: visible!important;
+  //}
+
+  // DEBUG STYLE for dropdown
+  //.rd-navbar-nav > li.rd-navbar--has-dropdown > .rd-navbar-dropdown {
+  //  opacity: 1 !important;
+  //  visibility: visible !important;
+  //}
+
+  .rd-navbar-dropdown,
+  .rd-navbar-megamenu {
+    li {
+      > a {
+        &:before {
+          left: 5px;
+        }
+      }
+    }
+  }
+
+  .rd-navbar-dropdown {
+    margin-top: 25px;
+  }
+
+  .rd-navbar-dropdown,
+  .rd-navbar-megamenu {
+    li {
+      position: relative;
+
+      > a {
+        @extend %rd-navbar-default-link-font;
+        position: relative;
+        display: inline-block;
+        text-transform: none;
+        color: $gray-dark;
+
+        &:hover, &:focus {
+          padding-left: 20px;
+          color: $primary;
+          background: transparent;
+
+          &:before {
+            opacity: 1;
+            color: $primary;
+            transform: translateX(0);
+          }
+        }
+
+        &, &:before {
+          transition: .3s all ease;
+        }
+
+        &:before {
+          content: '\f14f';
+          position: absolute;
+          top: 6px;
+          left: -2px;
+          font: 15px/24px "Material Design Icons";
+          margin-top: -6px;
+          transform: translateX(-200%);
+          color: $white;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        > span {
+          vertical-align: middle;
+        }
+      }
+
+      // if has dropdown add padding right near the arrow
+      &.rd-navbar--has-dropdown a {
+        padding-right:30px;
+      }
+    }
+
+    li {
+      &.rd-navbar--has-dropdown .rd-navbar-submenu-toggle{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 13px;
+        font-size: 22px;
+        line-height: 22px;
+        transform: translateY(-50%);
+        transition: .3s all ease;
+
+        &:after{
+          content: '\f105';
+          font-family: 'FontAwesome';
+        }
+
+
+      }
+    }
+  }
+}

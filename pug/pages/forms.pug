@@ -1,0 +1,166 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+block variables
+	- pageName = 'Forms'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-light
+
+	+breadcrumbs({
+		class: 'no-bg breadcrumbs-classic',
+		subpage: true
+	})
+
+	section.section-lg.section-lg--inset-top-60.bg-default
+		.container
+			h3.text-center Login Form
+			.row.justify-content-sm-center
+				.col-md-8.col-lg-6.col-xl-4
+					//- RD Mailform
+					form.rd-mailform.text-start
+						.form-wrap.form-wrap-validation
+							label.form-label.form-label-outside(for="forms-login-name") Username or e-mail
+							input#forms-login-name.form-input(type="text" name="name" data-constraints='@Required')
+						.form-wrap.form-wrap-validation
+							label.form-label.form-label-outside(for="forms-login-password") Password
+							input#forms-login-password.form-input(type="password" name="password" data-constraints="@Required")
+						button(type="submit").button.button-block.button-primary Sign In
+
+					p.text-small or enter with
+
+					ul.list-inline
+						li
+							a.icon.icon-sm.icon-sm-mod-22.icon-circle.icon-facebook.fa.fa-facebook-f(href="#")
+						li
+							a.icon.icon-sm.icon-sm-mod-22.icon-circle.icon-twitter.fa.fa-twitter(href="#")
+						li
+							a.icon.icon-sm.icon-sm-mod-22.icon-circle.icon-google-plus.fa.fa-google-plus(href="#")
+
+
+	hr
+
+	section.section-lg.bg-default
+		.container
+			h3.text-center Contact Form
+			.row.justify-content-center
+				.col-md-10.col-xl-8
+					//- RD Mailform
+					form.rd-mailform.text-start(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.row.justify-content-center.row-15
+							.col-md-6
+								.form-wrap.form-wrap-validation
+									label.form-label.form-label-outside(for="forms-name") First name
+									input#forms-name.form-input(type="text" name="name" data-constraints='@Required')
+							.col-md-6
+								.form-wrap.form-wrap-validation
+									label.form-label.form-label-outside(for="forms-last-name") Last name
+									input#forms-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+							.col-md-6
+								.form-wrap.form-wrap-validation
+									label.form-label.form-label-outside(for="forms-email") E-mail
+									input#forms-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+							.col-md-6
+								.form-wrap.form-wrap-validation
+									label.form-label.form-label-outside(for="forms-phone") Phone
+									input#forms-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+							.col-md-12
+								.form-wrap.form-wrap-validation
+									label.form-label.form-label-outside(for="forms-message") Message
+									textarea#forms-message.form-input(name="message" data-constraints="@Required")
+						.button-wrap
+							button(type="submit").button.button-primary Send
+
+	hr
+
+	section.section-lg.bg-default
+		.container
+			h3.text-center Newsletter
+			.row.justify-content-center
+				.col-md-8.col-xl-6
+					p Sign up to our newsletter and be the first to know about latest company news, special offers, events, and discounts.
+
+					//- RD Mailform
+					form.rd-mailform.rd-mailform-inline.text-start(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+						.rd-mailform-inline-form-wrap
+							.form-wrap
+								label.form-label(for="inline-email") Enter your e-mail
+								input#inline-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+
+						.form-wrap.rd-mailform-inline-button-wrap
+							button(type="submit").button.button-primary Newsletter
+
+	hr
+
+	section.section-lg.bg-default
+		.container
+			h3.text-center Contact Us (with reCAPTCHA)
+			.row.justify-content-center
+				.col-md-9.col-lg-7.col-xl-5
+					form.rd-form.rd-mailform.contact-form(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+						.row.row-sm-bottom.row-md-30
+							.col-md-6
+								.form-wrap
+									input#contact-2-name.form-input(type='text' name='name' data-constraints='@Required')
+									label.form-label(for='contact-2-name') Your Name
+
+							.col-md-6
+								.form-wrap
+									input#contact-2-phone.form-input(type='text' name='phone' data-constraints='@Numeric')
+									label.form-label(for='contact-2-phone') Phone
+
+							.col-md-12
+								.form-wrap
+									input#contact-2-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+									label.form-label(for='contact-2-email') E-mail
+
+							.col-12
+								.form-wrap
+									label.form-label(for='contact-2-message') Your Message
+									textarea#contact-2-message.form-input(name='message' data-constraints='@Required')
+
+							.col-12
+								.form-wrap.form-validation-left
+									//Google captcha
+									.recaptcha#captcha1( data-sitekey='6LfZlSETAAAAAC5VW4R4tQP8Am_to4bM3dddxkEt', data-auto-size='' )
+
+							.col-12
+								button.button.button-md.button-primary(type='submit') Send Message
+
+
+
+	hr
+
+	section.section.section-md.bg-default.text-center
+		.container
+			h3 MailChimp
+			.row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+				p.big Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+				//Mailchimp
+				form.rd-form.mailchimp-mailform.rd-form-inline(data-form-output='form-output-global' action='https://templatemonster.us1.list-manage.com/subscribe/post?u=1e39a6d114a4cc130a4edbe43&id=9fc9ef194a' method='post')
+					.form-wrap
+						label.form-label(for='mailchimp-email') Enter your e-mail
+						input#mailchimp-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+					.form-button.button-wrap
+						button.button.button-primary(type='submit') Subscribe
+
+	hr
+
+	section.section.section-md.bg-default.text-center
+		.container
+			h3 Campaign Monitor
+			.row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+				p.big Sign up to our newsletter and be the first to know about latest news, special offers, events, and discounts.
+				//Campaign Monitor
+				form.rd-form.campaign-mailform.rd-form-inline(data-form-output='form-output-global' action='https://templatermonster.createsend.com/t/j/s/zjjikd/' method='post')
+					.form-wrap
+						label.form-label(for='campaign-email') Enter your e-mail
+						input#campaign-email.form-input(type='email' name='cm-zjjikd-zjjikd' data-constraints='@Email @Required')
+					.form-button.button-wrap
+						button.button.button-primary(type='submit') Subscribe
+
+	//- Page Footer
+	include ../sections/_footer-minimal-dark

@@ -1,0 +1,45 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Registration Page'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-02-960x1080.jpg'
+						})
+					.col-sm-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default
+						.section-fullwidth-body-inner
+							.row.align-items-sm-center.justify-content-sm-center.section-lg
+								.col-md-8.col-lg-6.col-xl-8.col-xxl-7.section-mailform-wrap
+									h3 Fill the Form
+
+									//- RD Mailform
+									form.rd-mailform.rd-mailform-registration.text-start
+										.form-wrap.form-wrap-validation
+											label.form-label.form-label-outside(for="registration-page-name") Username
+											input#registration-page-name.form-input(type="text" name="name" data-constraints='@Required')
+										.form-wrap.form-wrap-validation
+											label.form-label.form-label-outside(for="registration-page-email") E-mail
+											input#registration-page-email.form-input(type="text" name="email" data-constraints='@Email @Required')
+										.form-wrap.form-wrap-validation
+											label.form-label.form-label-outside(for="registration-page-password") Password
+											input#registration-page-password.form-input(type="password" name="password" data-constraints="@Required")
+										.form-wrap.form-wrap-validation
+											label.form-label.form-label-outside(for="registration-page-confirm-password") Confirm Password
+											input#registration-page-confirm-password.form-input(type="password" name="password" data-constraints="@Required")
+										button(type="submit").button.button-block.button-primary Registration
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

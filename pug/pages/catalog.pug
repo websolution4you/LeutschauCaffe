@@ -1,0 +1,176 @@
+extends  ../_skeleton
+
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Catalog'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6.section-fullwidth-left.position-relative(style="background: #302f2f url(images/background-01-960x1080.jpg) center/cover no-repeat;")
+					+breadcrumbs({
+						bg: 'background-01-960x1080.jpg'
+					})
+				.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+						.product-wrap
+							ul.list.list-inline.list-inline-23.products-list
+								li
+									a(href="#") Lavazza (46)
+								li
+									a(href="#") Maxwell (12)
+								li
+									a(href="#") Douwe Egberts (53)
+								li
+									a(href="#") Don Francisco (65)
+								li
+									a(href="#") Findlays Finest (34)
+								li
+									a(href="#") Nescafe (34)
+							.hr-custom
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-01-116x205.png" width="116" height="205" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Lavazza Crema e Gusto
+										p Lavazza Crema e Gusto Espresso is a special blend of Robusta and Arabica beans.
+										h6.product-price $14.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-02-148x207.png" width="148" height="207" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Maxwell House Original Roast Ground Coffee
+										p Having a very interesting history, this coffee is easily recognized all over the globe.
+										h6.product-price $12.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-03-116x210.png" width="116" height="210" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Douwe Egberts Filter Blend Ground Coffee Medium Roast
+										p Douwe Egberts Real Coffee is a blend of the world’s finest quality beans.
+										h6.product-price $18.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-04-143x207.png" width="143" height="207" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Don Francisco Hawaiian Hazelnut Coffee 12 Ounce
+										p One of the best hazelnut coffees, and if you are a big coffee drinker, you must try it.
+										h6.product-price $15.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-05-109x208.png" width="109" height="208" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Guilt-Free Decaf by Findlays Finest Gourmet Coffee
+										p 100% Arabic beans roasted to perfection to bring out the natural flavor of coffee.
+										h6.product-price $18.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-06-110x203.png" width="110" height="203" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Kicking Horse Power Dark Whole Bean Coffee
+										p Kicking Horse Dark Coffee is one of the best when it comes to the true taste.
+										h6.product-price $17.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-07-154x207.png" width="154" height="207" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Melitta Coffee Classic Blend Ground Medium Roast
+										p Melitta Coffee offers you all the coffee's flavor, providing a rich, full-bodied cup.
+										h6.product-price $13.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							.unit.unit-xs.flex-sm-row.product
+								.unit-left.product-img-wrap
+									a(href="single-product.html")
+										img(src="images/product-08-86x207.png" width="86" height="207" alt="")
+								.unit-body
+									.product-body
+										h6
+											a(href="single-product.html") Teeccino Herbal Coffee Mediterranean Caffeine Free
+										p Teeccino contains no coffee beans and has deliciously rich, full-bodied flavor.
+										h6.product-price $16.00
+
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+							a.button.button-block.button-primary-outline.button-icon.button-icon-left(href="#")
+								span.icon.mdi.mdi-sync
+								| View More
+
+							nav.pagination-classic
+								ul.list-inline
+									li.active
+										a(href='#') 1
+									li
+										a(href='#') 2
+									li
+										a(href='#') 3
+									li
+										a(href='#') 4
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+
+	//- Page Footer
+	include ../sections/_footer-divided

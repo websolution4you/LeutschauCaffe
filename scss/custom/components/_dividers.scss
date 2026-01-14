@@ -1,0 +1,60 @@
+/** @section Dividers */
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+}
+
+
+
+// Divider
+.divider {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: auto;
+	margin-left: auto;
+	width: 30px;
+	height: 2px;
+	background: $gray-lighter;
+
+	&-sm-left{
+		margin-right: auto;
+		margin-left: auto;
+		@include media-breakpoint-up(sm){
+			margin-left: 0;
+		}
+	}
+
+	&-lg {
+		width: 70px;
+		height: 3px;
+		&-left-0 {
+			margin-left: 0;
+		}
+	}
+
+	&-primary {
+		background: $primary;
+	}
+
+	&-left-0 {
+		margin-left: 0;
+	}
+
+	@media (min-width: $screen-lg-min) {
+		&-lg-left-0 {
+			margin-left: 0;
+		}
+	}
+}
+
+// HR Custom
+.hr-custom {
+	height: 1px;
+	max-width: 1770px;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	background: $gray-lighter;
+}

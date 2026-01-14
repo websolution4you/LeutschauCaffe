@@ -1,0 +1,550 @@
+/** @section Variables */
+
+
+//
+// Variables Custom
+// --------------------------------------------------
+
+
+
+// Color system
+// Gray colors
+$white: #ffffff;
+$gray-100: #edeff4;
+$gray-200: #d7d7d7;
+$gray-300: #cccccc;
+$gray-400: #b7b7b7;
+$gray-500: #9b9b9b;
+$gray-600: #868e96;
+$gray-700: #2c343b;
+$gray-800: #151515;
+$gray-900: #111111;
+$black: #000000;
+
+// Body
+$body-bg: $white;
+$body-color: $gray-500;
+
+$theme-colors: ();
+
+// Accent colors
+$black:               #070707;
+$gray-darker:             #222;
+$gray-dark:               #302f2f;
+$gray:                    #555;
+$gray-light:              #878787;
+$gray-lighter:            #c1c1c1;
+$gray-lightest:           #f5f7f9;
+
+$primary:                 #b8784e;
+$secondary:               #f3f4ef;
+$secondary-2:             #443b56;
+
+$white:                   #fff;
+
+$danger-color: #f5543f;
+$success-color: #98bf44;
+
+// Additional colors
+$facebook: #4d70a8;
+$facebook-light: #748abc;
+$facebook-darken: darken($facebook, 5%);
+
+$twitter: #02bcf3;
+$twitter-light: #81cbdb;
+$twitter-darken: darken($twitter, 5%);
+
+$google: #e2411e;
+$google-light: #de7272;
+$google-darken: darken($google, 5%);
+
+// Disable smooth-scroll in bootstrap
+$enable-smooth-scroll:        false;
+
+// Page
+$page-boxed-width: 1600px;
+$page-boxed-background-color: $gray-100;
+$page-boxed-background-image: url(../images/bg-pattern-boxed.png);
+
+// Components
+// Define common padding and border radius sizes and more.
+$border-width: 1px;
+
+$border-radius: 0;
+$border-radius-lg: .3rem;
+$border-radius-sm: .2rem;
+
+$transition-base: all .3s ease-in-out;
+
+// Map
+$map-height: 200px;
+$map-xs-height: 250px;
+$map-md-height: 450px;
+
+// Custom
+$shadow-area-1: -3px 0px 50px -2px rgba(0, 0, 0, 0.09);
+$shadow-area-2: 1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+
+$font-weight-bold: 700;
+
+// Base fonts
+$font-size-body: 14px;
+$font-size-lg: 18px;
+$font-size-sm: 12px;
+
+$_lh-base: 28px;
+$_lh-lg: 28px;
+$_lh-sm: 18px;
+
+$font-weight-base: 400;
+
+// ** < Calculated font values >
+$line-height-base: ($_lh-base / $font-size-body);
+$line-height-lg: ($_lh-lg / $font-size-lg);
+$line-height-sm: ($_lh-sm / $font-size-sm);
+// ** </ Calculated font values >
+
+// Headings
+$headings-font-family: inherit;
+$headings-font-weight: 500;
+$headings-line-height: 1.1;
+$headings-color: $gray-800;
+
+// Template Heading Values
+$_h1-fsz: 60;
+$_h2-fsz: 48;
+$_h3-fsz: 36;
+$_h4-fsz: 24;
+$_h5-fsz: 18;
+$_h6-fsz: 16;
+
+$_h1-lh: 72;
+$_h2-lh: 70;
+$_h3-lh: 48;
+$_h4-lh: 30;
+$_h5-lh: 26;
+$_h6-lh: 24;
+
+// ** < Calculated Headings values >
+$h1-font-size: $_h1-fsz * 1px;
+$h2-font-size: $_h2-fsz * 1px;
+$h3-font-size: $_h3-fsz * 1px;
+$h4-font-size: $_h4-fsz * 1px;
+$h5-font-size: $_h5-fsz * 1px;
+$h6-font-size: $_h6-fsz * 1px;
+
+$h1-line-height: ($_h1-lh / $_h1-fsz);
+$h2-line-height: ($_h2-lh / $_h2-fsz);
+$h3-line-height: ($_h3-lh / $_h3-fsz);
+$h4-line-height: ($_h4-lh / $_h4-fsz);
+$h5-line-height: ($_h5-lh / $_h5-fsz);
+$h6-line-height: ($_h6-lh / $_h6-fsz);
+// ** </ Calculated Headings values >
+
+// Icon Fonts
+$fa: 'FontAwesome';
+$mdi: 'Material Design Icons';
+$mi: 'Material Icons';
+
+// Lead
+$lead-font-size: 24px;
+$lead-line-height: 34px;
+$lead-font-weight: 300;
+
+// Hr
+$hr-border-color: $gray-200;
+$hr-border-width: $border-width;
+
+// Mark
+$mark-padding: 5px 10px;
+$mark-bg: $primary;
+
+$dt-font-weight: inherit;
+$list-inline-padding: 5px;
+
+// Code
+$code-font-size: 90%;
+$code-padding-y: 3px;
+$code-padding-x: 5px;
+$code-color: $gray-900;
+$code-bg: $gray-100;
+
+//
+// Links
+//
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-press-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+// Custom
+$zindex-rd-navbar: 1080;
+$zindex-lg: 1090;
+$zindex-layout-panel: 1100;
+
+// Grid breakpoints
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+        xxs: 0,
+        xs: 480px,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1600px,
+        xxxl: 1800px
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+$screen-fullhd: 1600px;
+
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1200px
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-gutter-width-narrow: 30px;
+
+$container-padding-x: $grid-gutter-width;
+
+// Buttons
+$input-btn-padding-y: 11px;
+$input-btn-padding-x: 35px;
+$input-btn-font-size: 14px;
+$input-btn-line-height: 1.25;
+
+$input-btn-padding-y-sm: 5px;
+$input-btn-padding-x-sm: 25px;
+$input-btn-line-height-sm: 1.5;
+
+$input-btn-padding-y-lg: 12px;
+$input-btn-padding-x-lg: 50px;
+$input-btn-line-height-lg: 1.5;
+
+$btn-font-weight: 400;
+$btn-letter-spacing: .1em;
+$btn-text-transform: uppercase;
+
+$btn-box-shadow: 0;
+$btn-focus-box-shadow: 0;
+$btn-active-box-shadow: 0;
+
+$btn-link-disabled-color: $gray-600;
+
+$btn-block-spacing-y: .5rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: $border-radius;
+$btn-border-radius-lg: $border-radius-lg;
+$btn-border-radius-sm: $border-radius-sm;
+
+$btn-transition: all .15s ease-in-out;
+
+// Forms
+$form-input-height: 50px;
+$form-input-lg-height: 60px;
+$form-input-sm-height: 40px;
+
+$form-input-color: $gray-400;
+$form-input-color-placeholder: $form-input-color;
+
+$form-input-background: #f5f5f5;
+$form-input-border-color: $form-input-background;
+$form-input-border-radius: $border-radius;
+
+$form-input-font-size: 14px;
+$form-input-line-height: 24px;
+$form-input-font-weight: 400;
+
+$form-input-border: 1px solid $form-input-border-color;
+$form-input-padding-horizontal: 19px;
+$form-input-line-height: round($form-input-font-size * 1.7);
+
+$form-input-padding-vertical: round(($form-input-height - $form-input-line-height) / 2) + 1px;
+$form-input-padding: $form-input-padding-vertical $form-input-padding-horizontal;
+
+@if ($form-input-border != none) {
+  $form-input-padding-vertical: round(($form-input-height - $form-input-line-height - (nth($form-input-border, 1) * 2)) / 2);
+  $form-input-padding: $form-input-padding-vertical $form-input-padding-horizontal;
+}
+
+$form-textarea-default-height: 135px;
+$form-textarea-default-min-height: $form-input-height;
+$form-textarea-default-max-height: round($form-textarea-default-height * 1.7);
+
+$form-feedback-valid-color: $success-color;
+$form-feedback-invalid-color: $danger-color;
+
+// Pagination
+$pagination-padding-y: 10px;
+$pagination-padding-x: 10px;
+$pagination-font-size: 14px;
+$pagination-line-height: 24px;
+
+$pagination-color: $gray-500;
+$pagination-bg: $white;
+$pagination-border-width: 2px;
+$pagination-border-color: $gray-200;
+
+$pagination-hover-color: $white;
+$pagination-hover-bg: $primary;
+$pagination-hover-border-color: $primary;
+
+$pagination-active-color: $white;
+$pagination-active-bg: $primary;
+$pagination-active-border-color: $primary;
+
+$pagination-disabled-color: $gray-400;
+$pagination-disabled-bg: $gray-200;
+$pagination-disabled-border-color: $gray-200;
+
+// Tooltips
+$tooltip-max-width: 200px;
+$tooltip-color: $white;
+$tooltip-bg: $primary;
+$tooltip-opacity: 1;
+$tooltip-padding-y: 6px;
+$tooltip-padding-x: 10px;
+$tooltip-margin: 0;
+
+$tooltip-arrow-width: 6px;
+$tooltip-arrow-height: 6px;
+$tooltip-arrow-color: $tooltip-bg;
+
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               #fff;
+//** Global text color on `<body>`.
+$body-color:            $gray-light;
+
+//** Global textual link color.
+$link-color:            $primary;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $gray-dark;
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// Import fonts
+
+
+$font-family-sans-serif:  "Montserrat", Helvetica, Arial, sans-serif;
+$font-family-serif:       "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+
+$font-family-base:        $font-family-sans-serif;
+$font-family-sec:         $font-family-serif;
+
+
+// Template width (w/o units)
+$template-width:          2050;
+
+// Template width var for resizing
+$template-width-min:      ($template-width+1)*1px;
+$layout-boxed-width:      1920px;
+
+
+// Base FZ & LH (w/o units)
+$base-text-size:          14;
+$base-lh-size:            24;
+
+$base-vm-size:            (($base-text-size*100)/$template-width)*1vw;
+
+
+$font-size-body:          $base-text-size * 1px;
+$font-size-lg:         ceil(($font-size-body * 1.25)); // ~18px
+$font-size-sm:         ceil(($font-size-body * 0.85)); // ~12px
+
+$font-weight-base:        400;
+
+//PSD FZ headers /FOR EDIT (w/o units)
+$Size-h1:                 70;
+$Size-h2:                 50;
+$Size-h3:                 36;
+$Size-h4:                 28;
+$Size-h5:                 26;
+$Size-h6:                 22;
+
+//PSD LH headers /FOR EDIT (w/o units)
+$Lh-h1:                   84;
+$Lh-h2:                   60;
+$Lh-h3:                   44;
+$Lh-h4:                   40;
+$Lh-h5:                   34;
+$Lh-h6:                   28;
+
+
+//Calculating FZ headers
+$h1-font-size:            $Size-h1*1px;
+$h2-font-size:            $Size-h2*1px;
+$h3-font-size:            $Size-h3*1px;
+$h4-font-size:            $Size-h4*1px;
+$h5-font-size:            $Size-h5*1px;
+$h6-font-size:            $Size-h6*1px;
+
+
+//** line-height for headers /FOR EDIT
+// $font-lh-h_: floor((PSD l-h / $h1-font-size));
+
+$h1-line-height:              ($Lh-h1 / $Size-h1);
+$h2-line-height:              ($Lh-h2 / $Size-h2);
+$h3-line-height:              ($Lh-h3 / $Size-h3);
+$h4-line-height:              ($Lh-h4 / $Size-h4);
+$h5-line-height:              ($Lh-h5 / $Size-h5);
+$h6-line-height:              ($Lh-h6 / $Size-h6);
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        ($base-lh-size / $base-text-size); // l-h/fz-base
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-body * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    $font-family-sec;
+$headings-font-weight:    700;
+$headings-line-height:    1.2;
+$headings-color:          $gray-dark;
+
+
+//== Forms variables
+//
+
+$input-height: 50px;
+$form-input-color: $gray-light;
+$form-input-color-placeholder: $gray-lighter;
+$form-input-background: #f2f2f2;
+$form-input-border-color: #f2f2f2;
+$form-input-border-color-radius: 0;
+$form-input-font-size: 12px;
+$input-line-height: 24px;
+$input-font-weight: 400;
+$input-padding-vertical: 12px;
+$input-padding-hoizontal: 15px;
+$error-color: #d9534f;
+$success-color: #5cb85c;
+
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+// Extra Large screen / 4k desktop
+$screen-xl:                  1800px;
+$screen-xl-min:              $screen-xl;
+$screen-xl-desktop:          $screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:             ($screen-xs-min - 1);
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);
+
+// Define media prefix
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+
+//== Flex Grid system
+//
+//## Define your custom flex responsive grid.
+
+$shell-width:         300px;
+$shell-xs-width:      480px;
+
+$shell-xl-width:      1800px;
+
+$range-ws:            45px;
+$range-ws-sm:         40px;
+$range-ws-lg:         66px;
+
+$cell-count:          12;
+$cell-spacing:        30px;
+$cell-spacing-narrow: 10px;
+
+//== Shadows
+//
+//##
+
+$shadow-area-ambient: 0px 0px 1px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xxs: 1px 1px 1px rgba(0, 0, 0, 0.15);
+$shadow-area-xs: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-sm: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-md: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-lg: 0 5px 23px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xl: 0 12px 36px 0 rgba(0, 0, 0,.15);
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           253px;
+//** Tooltip background color
+$tooltip-bg:                  $primary;
+$tooltip-opacity:             1;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg;

@@ -1,0 +1,17 @@
+//- title - object of breadcrumb custom
+
+mixin breadcrumb-classic(title)
+  .hr-custom.bg-gray-lighter-1.veil-tablet.veil-mobile
+  section.section-md.section-md--inset-bottom-60.breadcrumb-custom
+    .container
+      a.brand(href="index.html")
+        img(src="images/logo-dark-150x150.png" width="150" height="150" alt="")
+      h2.d-none.d-lg-block= title
+
+      ul.list-inline.list-inline-dashed
+        li
+          a(href="index.html") Home
+        li
+          a(href="#") Pages
+        li= title
+    .hr-custom.bg-gray-lighter-1

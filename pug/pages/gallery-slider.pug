@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Gallery Slider'
+
+block page
+	//- Page Header
+	include ../sections/_header-classic
+
+	section.section.section-lg
+			.container
+				.row
+					.col-lg-10.col-xl-7.offset-lg-1.text-block-1
+						h1 Our gallery
+						h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros scelerisque id viverra ipsum, posuere congue est, cras duism ullamcorper.
+
+				.row.row-offset-1.justify-content-center
+					.col-sm-10
+						.owl-carousel.owl-carousel-gallery( data-items='1', data-loop='true', data-nav='true', data-margin='30', data-sm-margin='100', data-mouse-drag="false", data-dots="false" )
+							+thumbnail-fade({
+								img: 'gallery-slider-01-970x580',
+								imgOriginal: 'gallery-slider-01-1200x800'
+							})
+							+thumbnail-fade({
+								img: 'gallery-slider-02-970x580',
+								imgOriginal: 'gallery-slider-02-1200x800'
+							})
+							+thumbnail-fade({
+								img: 'gallery-slider-03-970x580',
+								imgOriginal: 'gallery-slider-03-1200x800'
+							})
+
+	//- Page Footer
+	include ../sections/_footer-dark

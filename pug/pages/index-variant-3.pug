@@ -1,0 +1,496 @@
+extends  ../_skeleton
+
+block variables
+	-
+		var activeIndex = 1
+
+block title
+	title Home Variant 3
+
+block page
+	//- Page Header
+	include ../sections/_header-sidebar
+
+	section.bg-gray-dark
+		//- Swiper
+		.swiper-container.swiper-slider.swiper-slider-modern.text-xl-end(data-autoplay="3000" data-slide-effect="fade" data-swiper!={simulateTouch: true})
+			.swiper-wrapper
+				.swiper-slide(data-slide-bg='images/background-12-1440x1000.jpg')
+					.swiper-slide-caption
+						.container-wide.container-fluid
+							.row.justify-content-sm-center.justify-content-xl-end.g-0-xl
+								.col-md-10.col-xl-12.col-xxl-8
+									h1 Fall In Love With Coffee All Over Again
+
+				.swiper-slide(data-slide-bg='images/background-21-1440x1000.jpg')
+					.swiper-slide-caption
+						.container-wide.container-fluid
+							.row.justify-content-sm-center.justify-content-xl-end.g-0-xl
+								.col-md-10.col-xl-12.col-xxl-10
+									h1 Good Coffee Is Like Friendship Rich, and Warm and Strong
+
+				.swiper-slide(data-slide-bg='images/background-22-1440x1000.jpg')
+					.swiper-slide-caption
+						.container-wide.container-fluid
+							.row.justify-content-sm-center.justify-content-xl-end.g-0-xl
+								.col-md-10.col-xl-12.col-xxl-11
+									h1 Bring Home the Coffee They Serve in Award-Winning Restaurants.
+
+			//- Swiper Pagination
+			.container-wide.position-relative
+				.swiper-pagination
+
+
+	section.section-lg.section-lg-0
+		.row.g-0.product-box-wrap
+			.col-lg-6
+				.product-box
+					.row.justify-content-sm-center.justify-content-md-start.justify-content-lg-center.g-0.align-items-md-center
+						.col-md-6.col-lg-5.col-xl-6.product-box-img-wrap
+							.product-box-img-wrap-inner
+								img(src='images/product-10-143x344.png', width='143', height='344', alt='')
+						.col-sm-6.col-md-4.col-lg-6.col-xl-6.section-cart
+							h6
+								a(href="single-product.html") Teeccino Herbal Coffee Caffeine Free 11-Ounce Bags
+							.divider.divider-lg.bg-gray-lighter
+							p Teeccino contains no coffee beans and has deliciously rich, full-bodied flavor.
+							.product-box-bottom
+								.product-box-bottom-left
+									p Retail Price
+									h6 $14.00
+								.product-box-bottom-right
+									p Trade Price
+									h6 $11.00
+							a.icon.icon-sm.icon-circle.icon-primary-fill.mdi.mdi-cart(href="shopping-cart.html")
+
+			.col-lg-6
+				.product-box
+					.row.justify-content-sm-center.justify-content-md-start.justify-content-lg-center.g-0.align-items-md-center
+						.col-md-6.col-lg-5.col-xl-6.product-box-img-wrap
+							.product-box-img-wrap-inner
+								img(src='images/product-11-196x346.png', width='196', height='346', alt='')
+						.col-sm-6.col-md-4.col-lg-6.col-xl-6.section-cart
+							h6
+								a(href="single-product.html") Lavazza Crema e Gusto — Ground Coffee
+							.divider.divider-lg.bg-gray-lighter
+							p Lavazza Crema e Gusto Espresso is a special blend of Robusta and Arabica beans.
+							.product-box-bottom
+								.product-box-bottom-left
+									p Retail Price
+									h6 $14.00
+								.product-box-bottom-right
+									p Trade Price
+									h6 $11.00
+							a.icon.icon-sm.icon-circle.icon-primary-fill.mdi.mdi-cart(href="shopping-cart.html")
+
+			.col-lg-6
+				.product-box
+					.row.justify-content-sm-center.justify-content-md-start.justify-content-lg-center.g-0.align-items-md-center.flex-xl-row-reverse
+						.col-md-6.col-lg-5.col-xl-6.product-box-img-wrap
+							.product-box-img-wrap-inner
+								img(src='images/product-12-185x338.png', width='185', height='338', alt='')
+						.col-sm-6.col-md-4.col-lg-6.col-xl-6.section-cart.section-cart-inverse
+							h6
+								a(href="single-product.html") 454 Horse Power Dark Whole Bean Coffee 12.3-Ounce
+							.divider.divider-lg.bg-gray-lighter
+							p Kicking Horse Dark Coffee is one of the best when it comes to the true taste.
+							.product-box-bottom
+								.product-box-bottom-left
+									p Retail Price
+									h6 $14.00
+								.product-box-bottom-right
+									p Trade Price
+									h6 $11.00
+							a.icon.icon-sm.icon-circle.icon-primary-fill.mdi.mdi-cart(href="shopping-cart.html")
+
+			.col-lg-6
+				.product-box
+					.row.justify-content-sm-center.justify-content-md-start.justify-content-lg-center.g-0.align-items-md-center.flex-xl-row-reverse
+						.col-md-6.col-lg-5.col-xl-6.product-box-img-wrap
+							.product-box-img-wrap-inner
+								img(src='images/product-13-249x335.png', width='249', height='335', alt='')
+						.col-sm-6.col-md-4.col-lg-6.col-xl-6.section-cart.section-cart-inverse
+							h6
+								a(href="single-product.html") Melitta Coffee Classic Blend Ground Medium Roast
+							.divider.divider-lg.bg-gray-lighter
+							p Melitta Coffee offers you all the coffee's flavor, providing a rich, full-bodied cup.
+							.product-box-bottom
+								.product-box-bottom-left
+									p Retail Price
+									h6 $14.00
+								.product-box-bottom-right
+									p Trade Price
+									h6 $11.00
+							a.icon.icon-sm.icon-circle.icon-primary-fill.mdi.mdi-cart(href="shopping-cart.html")
+
+	section.bg-gray-dark.text-start(style="background: #302f2f url(images/background-01-1920x879.jpg) center/cover no-repeat")
+		.bg-overlay-black.section-lg.section-xl-insets
+			.container-fluid
+				.row.justify-content-sm-center.row-60
+					.col-sm-10.col-lg-4
+						.unit.unit-xs.flex-sm-row.icon-boxed
+							.unit-left
+								span.icon.icon-md-mod-50.icon-rect.icon-primary-fill.mdi.mdi-coffee
+							.unit-body
+								h6 Coffee Variety
+								p We sell and serve various types of coffee ranging from cappuccino to flat white.
+
+					.col-sm-10.col-lg-4
+						.unit.unit-xs.flex-sm-row.icon-boxed
+							.unit-left
+								span.icon.icon-md-mod-50.icon-rect.icon-primary-fill.mdi.mdi-thumb-up
+							.unit-body
+								h6 Own Roasting
+								p We roast all coffees we get from our suppliers using our exclusive hot roasting technique.
+
+					.col-sm-10.col-lg-4
+						.unit.unit-xs.flex-sm-row.icon-boxed
+							.unit-left
+								span.icon.icon-md-mod-50.icon-rect.icon-primary-fill.mdi.mdi-sale
+							.unit-body
+								h6 Wholesale and Retail
+								p We provide the best coffee to individual customers as well as to shops and supermarkets.
+
+					.col-sm-10.col-lg-4
+						.unit.unit-xs.flex-sm-row.icon-boxed
+							.unit-left
+								span.icon.icon-md-mod-50.icon-rect.icon-primary-fill.mdi.mdi-truck
+							.unit-body
+								h6 Express Delivery
+								p Our coffee delivery service is available to all US residents any time of the year, 24/7.
+
+					.col-sm-10.col-lg-4
+						.unit.unit-xs.flex-sm-row.icon-boxed
+							.unit-left
+								span.icon.icon-md-mod-50.icon-rect.icon-primary-fill.mdi.mdi-headset
+							.unit-body
+								h6 Free Consultations
+								p Have a question about our products or services? Call us to get a free consultation.
+
+					.col-sm-10.col-lg-4
+						.unit.unit-xs.flex-sm-row.icon-boxed
+							.unit-left
+								span.icon.icon-md-mod-50.icon-rect.icon-primary-fill.mdi.mdi-account-check
+							.unit-body
+								h6 Qualified Specialists
+								p Beans is a team of seasoned coffee experts that know how to make coffee properly.
+
+	section.section-lg.text-start.section-xl-insets
+		.container-fluid
+			.row.justify-content-sm-center.justify-content-xl-between.row-40
+				.col-sm-10.col-lg-6.col-xxl-6
+					h3 Menu
+					.divider.divider-lg.divider-left-0.divider-primary
+
+					//- Bootstrap tabs
+					#tabs-1.tabs-custom.tabs-custom-boxed.tabs-horizontal
+						//- Nav tabs
+						ul.nav-custom.nav-custom-tabs.nav-custom-tabs-left.nav
+							li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-1-1' data-bs-toggle='tab') Coffee
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-2' data-bs-toggle='tab') Other Drinks
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-3' data-bs-toggle='tab') Desserts
+							li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-4' data-bs-toggle='tab') Food
+
+					//- Tab panes
+					.tab-content.text-start
+						#tabs-1-1.tab-pane.fade.show.active
+							.row.row-30
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Espresso
+											.product-menu-price
+												h6 $1.99
+										p Lavazza, classic coffee, 30ml
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Ristretto
+											.product-menu-price
+												h6 $1.39
+										p Lavazza, arabica, robusta, 22ml
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Americano
+											.product-menu-price
+												h6 $2.49
+										p 60ml Espresso, 90ml Hot Water
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Lungo
+											.product-menu-price
+												h6 $1.29
+										p 60ml Less Concentrated Espresso
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Macchiato
+											.product-menu-price
+												h6 $2.29
+										p 60ml Espresso, Dot of Foamed Milk
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Cappuccino
+											.product-menu-price
+												h6 $1.58
+										p 60ml Espresso, 60ml Steamed Milk
+
+						#tabs-1-2.tab-pane.fade
+							.row.row-30
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Beer
+											.product-menu-price
+												h6 $1.73
+										p Bud Light Platinum, Natural Ice etc.
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Dark Beer
+											.product-menu-price
+												h6 $1.19
+										p Stoke, 4 Pines, Wicked Elf, Guinness
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Black Tea
+											.product-menu-price
+												h6 $1.38
+										p Arbor Teas, Wegmans, Simpson & Vail
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Green Tea
+											.product-menu-price
+												h6 $1.29
+										p Yamamotoyama, TeaVivre, Tazo Tea
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Red Tea
+											.product-menu-price
+												h6 $2.49
+										p Vanilla Red Tea, Pomegranate Red Tea, Ginger Tea, Peach Flavored Tea
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Water
+											.product-menu-price
+												h6 $1.23
+										p Perrier, Voss, Evian, Smartwater, Icelandic Glacial, Acqua Panna
+
+						#tabs-1-3.tab-pane.fade
+							.row.row-30
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Tiramisu
+											.product-menu-price
+												h6 $4.56
+										p Mascarpone, heavy cream, Tia Maria
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Ice Cream
+											.product-menu-price
+												h6 $1.26
+										p Fudge Brownie, Cherry Sundae etc.
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Cheeseburger
+											.product-menu-price
+												h6 $3.21
+										p Swiss cheese, ground beef, blue cheese
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Cheesecake
+											.product-menu-price
+												h6 $4.42
+										p Graham crackers, cream cheese
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Vanila Cupcake
+											.product-menu-price
+												h6 $5.92
+										p Cream butter, eggs, sugar
+
+						#tabs-1-4.tab-pane.fade
+							.row.row-30
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Burger
+											.product-menu-price
+												h6 $4.48
+										p Worcestershire sauce, onions, mustard, ground beef
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Burger XXL
+											.product-menu-price
+												h6 $1.66
+										p Ground beef, chopped iceberg lettuce, American cheese
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Double Burger
+											.product-menu-price
+												h6 $3.93
+										p 1 tbsp chopped red onion, Tabasco sauce, ground beef, sesame buns
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Chicken Burger
+											.product-menu-price
+												h6 $1.93
+										p 1 pound of ground white meat chicken, fresh breadcrumbs, cayenne pepper
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") Fish Burger
+											.product-menu-price
+												h6 $5.02
+										p 2 tbsp chopped parsley, catfish
+
+								.col-md-6
+									.product-menu.product-menu-modern.product-menu-secondary
+										.product-menu-top
+											.product-menu-title
+												h6
+													a(href="single-product.html") French Fries
+											.product-menu-price
+												h6 $1.03
+										p 1 russet potato, vegetable oil, salt
+
+				.col-sm-10.col-lg-6.col-xxl-5
+					h3 Video Review
+					.divider.divider-lg.divider-left-0.divider-primary
+
+					// Video
+					article.video-play.ratio.ratio-16x9
+						video.video(src='video/video-for-player-1.mp4', controls='', poster='video/video-for-player-1.jpg', data-video-play='.video-btn-1')
+						button.video-btn.video-btn-1.play
+
+
+	section.section-lg.bg-gray-lighter-2.section-xl-insets
+		.container-fluid
+			h3.text-center Latest Blog Posts
+			.divider.divider-lg.divider-primary
+
+			.row.justify-content-sm-center.text-start.post-box-wrap.row-60
+				.col-sm-10.col-xl-6.col-xxl-6
+					.post-grid.bg-image
+						.post-grid-img-wrap
+							img(src="images/post-06-870x580.jpg" width="870" height="580" alt="")
+							a.label-custom.label-custom-primary(href="#") Review
+						.post-grid-caption
+							ul.list-inline.list-inline-23
+								li November 16, 2023 at 2:23pm
+								li
+									span by #[a(href="team-member-profile.html") Harry Lucas]
+							h3
+								a(href="blog-post.html") How to Make a Perfect Cup of Coffee: an Ultimate Guide for Everyone
+							a.button.button-primary(href="blog-post.html") Read More
+
+				.col-sm-10.col-md-5.col-xl-3.col-xxl-3
+					.post-masonry.post-masonry-xl-fullheight
+						.post-masonry-img-wrap
+							img(src="images/post-07-420x280.jpg" width="420" height="280" alt="")
+						.post-masonry-body
+							h6
+								a(href="blog-post.html") Boutique Cafe in Seoul: Exclusive Review
+							p All coffee enthusiasts know that the ideal way to explore a new city is through its coffee shops, so naturally my week in Seoul, South Korea, was spent sipping my way through its small but swiftly...
+							.post-masonry-bottom
+								.post-masonry-meta 2 days ago
+								.post-masonry-member
+									span by #[a(href="team-member-profile.html") Harry Lucas]
+
+				.col-sm-10.col-md-5.col-xl-3.col-xxl-3
+					.post-masonry.post-masonry-fullheight
+						.post-masonry-img-wrap
+							img(src="images/post-08-420x280.jpg" width="420" height="280" alt="")
+						.post-masonry-body
+							h6
+								a(href="blog-post.html") 10 Best Coffee Types in the World
+							p The world’s finest arabica coffees are listed by country in no particular order since the biggest factor is personal preference. For example, some people might prefer the winey and fruity acidity of a Kenyan...
+							.post-masonry-bottom
+								.post-masonry-meta 2 days ago
+								.post-masonry-member
+									span by #[a(href="team-member-profile.html") Harry Lucas]
+
+				.col-12.text-center
+					a.button.button-primary-outline(href='blog.html') View All News
+
+	//- Page Footer
+	include ../sections/_footer-divided-widgets-map
+
+

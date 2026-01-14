@@ -1,0 +1,325 @@
+//- Image
+	@param {string} name
+mixin img( name, options )
+	-
+		var size = getImageSize( name );
+		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
+	img( src= procImg(name), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+	block
+
+//- Breadcrumbs
+	@param {Array}  [path] - other navigation path
+	@example +breadcrumbs([ { title:'About Us', link:'about-us.html' }, { title:'Team member' } ])
+mixin breadcrumbs( obj, path )
+	-
+		if ( !path ) {
+			if ( breadcrumbs && breadcrumbs.length ) path = breadcrumbs;
+			else path = [{ title: pageName }];
+		}
+
+	// Breadcrumbs
+	.section-fullwidth-left.breadcrumbs.bg-image( class= obj.class , style= obj.bg ? 'background-image: url(images/' + obj.bg + ')' : 'background: none', data-preset!={ title:'Breadcrumbs', category:'header', reload:false, id:'breadcrumbs' } )&attributes( attributes )
+		.row.row-sm-cente.align-items-sm-center.breadcrumb-modern.section-cover
+			.col-sm-12.cutom-col.section-sm
+				if (path[0].title.toLowerCase() !== 'home')
+						.breadcrumb-modern-top
+							ul.list-inline.list-inline-dashed
+								li: a( href='index.html' ) Home
+								- for ( var i = 0; i < path.length; i++ )
+									if (i === path.length - 1)
+										li.active= path[i].title
+									else
+										li: a( href= path[i].link )= path[i].title
+				if(obj.content)
+					block
+				else if(obj.subpage)
+					.breadcrumb-modern-body
+						+logo
+						h1.breadcrumbs-custom-title!= obj.title ? obj.title : path[path.length - 1].title
+					block
+				else
+					.breadcrumb-modern-body
+						+logo
+						h1.breadcrumbs-custom-title!= obj.title ? obj.title : path[path.length - 1].title
+					.breadcrumb-modern-bottom
+						.contact-info
+							.row.justify-content-sm-center
+								.col-md-4
+									span.icon.icon-sm.icon-circle.icon-bordered.icon-white.mdi.mdi-map-marker
+									p
+										a(href="contacts.html") 2130 Fulton Street, #[br] San Diego, CA 94117-1080 USA
+								.col-md-4
+									span.icon.icon-sm.icon-circle.icon-bordered.icon-white.mdi.mdi-phone
+									p
+										a(href="tel:#") 1-800-1234-567
+									p
+										a(href="tel:#") 1-800-8765-654
+
+
+
+//- Main Navigation
+mixin navigation( menu, type )
+	if(!type)
+		ul.rd-navbar-nav&attributes( attributes )
+			each item in menu
+				li.rd-nav-item( class= {active: item.active} )
+					a.rd-nav-link( href= item.link )= item.title
+					if(item.dropdown)
+						+navigation( item.dropdown, 'dropdown' )
+					if(item.megamenu)
+						+navigation( item.megamenu, 'megamenu' )
+
+	else if(type === 'dropdown')
+		ul.rd-menu.rd-navbar-dropdown
+			each item in menu
+				li.rd-dropdown-item( class= {active: item.active} )
+					a.rd-dropdown-link( href= item.link )= item.title
+					if(item.dropdown)
+						+navigation( item.dropdown, 'dropdown' )
+
+	else if(type === 'megamenu')
+
+		ul.rd-menu.rd-navbar-megamenu.row
+			each item in menu
+				li.rd-megamenu-item.col-lg-3
+					if (item instanceof Array)
+						+navigation( item, 'column' )
+					else
+						+navigation( item, 'block' )
+
+	else if(type === 'column')
+		each item in menu
+			+navigation( item, 'block' )
+
+	else if(type === 'block')
+		if (menu.title && menu.link)
+			h6.rd-megamenu-title: a( href= menu.link )= menu.title
+		else if (menu.title)
+			h6.rd-megamenu-title= menu.title
+		if (menu.list)
+			+navigation( menu.list, 'list' )
+
+	else if(type === 'list')
+		ul.rd-megamenu-list
+			each item in menu
+				li.rd-megamenu-list-item
+					a.rd-megamenu-list-link( href= item.link )= item.title
+
+
+//- Logo
+mixin logo
+	//Brand
+	a.brand( href='index.html' )&attributes( attributes )
+		+img( logo.default, {retina: true} ).brand-logo-dark
+		+img( logo.inverse, {retina: true} ).brand-logo-light
+		+img( logo.light, {retina: true} ).brand-logo-white
+
+
+//- Copyright
+mixin rights
+	p.rights&attributes( attributes )
+		span &copy;&nbsp;
+		span.copyright-year
+		span &nbsp;
+		span= logo.name
+		span .&nbsp;
+		span All Rights Reserved.
+		span &nbsp;
+		a( href='privacy-policy.html' ) Privacy Policy
+
+
+mixin img-set-dimensions(imgPath, imgClass)
+	-
+		var pos = 0,
+		imgWidth,
+		imgHeight,
+		defPos,
+		xPos,
+		dotPos;
+
+		while(true) {
+		var tpmPos = imgPath.indexOf("-", pos);
+		if(tpmPos == -1) break;
+		defPos = tpmPos;
+		pos = defPos + 1;
+		}
+
+		xPos = imgPath.indexOf('x');
+		dotPos = imgPath.indexOf('.');
+
+		imgWidth = imgPath.substring(defPos + 1, xPos);
+		imgHeight = imgPath.substring(xPos + 1, dotPos);
+
+	img(src= imgPath, width= imgWidth, height= imgHeight, alt="", class= imgClass)
+
+//- Post side
+	@param {object} data - data object
+	@param {string} data.img - post image
+	@param {string} data.title - post title
+	@param {string} data.text - post text
+mixin post-side( data )
+	// Post side
+	.post-side&attributes( attributes )
+		a.post-media.post-side-media( href='blog-post.html' )
+			+img( data.img ).post-img.post-side-img
+		.post-side-body
+			.post-side-title.h4: a( href='blog-post.html' )= data.title
+			.post-side-info.post-info
+				.post-info-item
+					.post-author: a( href='blog-post.html' )= data.author
+				.post-info-item
+					.post-date= data.date
+				.post-info-item
+					.post-info-icon.mdi.mdi-comment
+					.post-comments: a( href='blog-post.html' )= data.comments
+			.post-side-text.big= data.text
+			a.button.button-sm.button-primary.post-side-button( href='blog-post.html' ) Read more
+
+//- Pagination simple
+	@param {array} data - pagination data array
+	@param {object} item - single item object
+	@param {string} item.value - item value
+	@param {string} [item.prev] - set prev button to pagination
+	@param {string} [item.next] - set next button to pagination
+	@param {string} [item.actionClass] - add action class to item
+mixin pag( data )
+	ul.pag&attributes( attributes )
+		each item in data
+			li.pag-simple-item( class= item.actionClass )
+				if (item.start)
+					a.pag-simple-link.pag-simple-link-start( href='#' )
+						span.mdi.mdi-chevron-double-left.novi-icon
+				if (item.prev)
+					a.pag-simple-link.pag-simple-link-prev( href='#' )
+						span.mdi.mdi-chevron-left.novi-icon
+				else if (item.next)
+					a.pag-simple-link.pag-simple-link-next( href='#' )
+						span.mdi.mdi-chevron-right.novi-icon
+				else if (item.end)
+					a.pag-simple-link.pag-simple-link-end( href='#' )
+						span.mdi.mdi-chevron-double-right.novi-icon
+				else if (item.empty)
+					span.inactive.pag-simple-link( class= (item.class ? item.class : '') )= item.value
+				else
+					a.pag-simple-link( class= (item.class ? item.class : ''), href='#' )= item.value
+
+//- Thumbnail fade
+	@param {array} data - thumbnail data array
+mixin thumbnail-fade( data )
+	a.thumbnail-fade( data-lightgallery="item", href='images/' + data.imgOriginal + '.jpg' )&attributes( attributes )
+		+img( data.img ).thumbnail-fade-img
+		span.thumbnail-fade-icon.icon
+			svg( width='36' height='36' viewBox='0 0 36 36' fill='none' )
+				path( d='M18.0003 0.666626V35.3333M0.666992 18H35.3337' stroke='black' )
+
+//- Thumbnail creative
+	@param {array} data - thumbnail data array
+mixin thumbnail-creative( data )
+	a.thumbnail-creative( data-lightgallery="item", href='images/' + data.imgOriginal + '.jpg' )&attributes( attributes )
+		+img( data.img ).thumbnail-creative-img
+		.thumbnail-creative-caption
+			h4.thumbnail-creative-title= data.title
+			.thumbnail-creative-text= data.text
+
+//- Thumbnail simple
+	@param {array} data - thumbnail data array
+mixin thumbnail-simple( data )
+	a.thumbnail-simple( data-lightgallery="item", href='images/' + data.imgOriginal + '.jpg' )&attributes( attributes )
+		+img( data.img ).thumbnail-simple-img
+		span.thumbnail-simple-icon.icon
+			svg( width='36' height='36' viewBox='0 0 36 36' fill='none' )
+				path( d='M18.0003 0.666626V35.3333M0.666992 18H35.3337' stroke='white' )
+
+//- Video popup
+	@param {object} data - data object
+	@param {string} data.background - image path for background
+	@param {string} data.link - video link
+mixin video-popup( data )
+	a.video-popup( style="background-image: url('images/" + data.background + ".jpg');" data-lightgallery='item', href=data.link )&attributes( attributes )
+		span.video-popup-icon.icon
+			svg( width='26' height='36' viewBox='0 0 26 36' fill='none' )
+				path( d='M1 34.6667V1.33337L24.3333 18L1 34.6667Z' stroke='#302F2F' stroke-width='2' stroke-linejoin='round' )
+
+//- Box image
+	@param {object} data - data object
+mixin box-image( data )
+	a.box-image( href= data.link ? data.link : '#' )
+		+img( data.img )
+		.box-image-caption
+			span.box-image-button= data.title
+
+//- Quote side
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.quote - quote text
+	@param {string} data.cite - quote cite
+mixin quote-side( data )
+	// Quote
+	blockquote.quote-side&attributes( attributes )
+		.quote-side-item
+			.icon.quote-side-icon
+				svg(width='42' height='31' viewBox='0 0 42 31' fill='none' xmlns='http://www.w3.org/2000/svg')
+					path(d='M15.0866 12.8407C16.6534 13.6005 17.8664 14.7149 18.7256 16.1838C19.5848 17.6021 20.0144 19.299 20.0144 21.2745C20.0144 24.2124 19.0794 26.5678 17.2094 28.3407C15.3394 30.1136 12.9386 31 10.0072 31C7.07581 31 4.67509 30.1136 2.80505 28.3407C0.935018 26.5678 0 24.2124 0 21.2745C0 19.9575 0.176895 18.6405 0.530686 17.3235C0.884476 16.0065 1.69314 14.0057 2.95668 11.3211L8.26354 0H18.8773L15.0866 12.8407ZM37.0722 12.8407C38.639 13.6005 39.852 14.7149 40.7112 16.1838C41.5704 17.6021 42 19.299 42 21.2745C42 24.2124 41.065 26.5678 39.1949 28.3407C37.3249 30.1136 34.9242 31 31.9928 31C29.0614 31 26.6607 30.1136 24.7906 28.3407C22.9206 26.5678 21.9856 24.2124 21.9856 21.2745C21.9856 19.9575 22.1625 18.6405 22.5162 17.3235C22.87 16.0065 23.6787 14.0057 24.9422 11.3211L30.2491 0H40.8628L37.0722 12.8407Z' fill='#B8784E')
+		.quote-side-body
+			q.quote-side-text.big= data.quote
+			cite.quote-side-cite.big= data.cite
+
+//- Quote custom
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.quote - quote text
+	@param {string} data.cite - quote cite
+mixin quote-custom( data )
+	// Quote
+	blockquote.quote-custom&attributes( attributes )
+		.quote-custom-item
+			+img( data.img ).quote-custom-img
+		.quote-custom-body.big
+			.quote-custom-text
+				span.quote-custom-icon
+					svg( width='23' height='20' viewBox='0 0 23 20' fill='none' )
+						path(opacity='0.5' d='M6.37 10.43C7.30333 10.7567 8.02667 11.2933 8.54 12.04C9.05333 12.7867 9.31 13.6967 9.31 14.77C9.31 16.17 8.86667 17.3133 7.98 18.2C7.09333 19.0867 5.99667 19.53 4.69 19.53C3.33667 19.53 2.21667 19.0867 1.33 18.2C0.443333 17.2667 0 16.1233 0 14.77C0 14.1167 0.07 13.4633 0.21 12.81C0.396667 12.11 0.746667 11.1067 1.26 9.8L4.55 0H8.96L6.37 10.43ZM19.6 10.43C20.5333 10.7567 21.2567 11.2933 21.77 12.04C22.2833 12.7867 22.54 13.6967 22.54 14.77C22.54 16.17 22.0967 17.3133 21.21 18.2C20.3233 19.0867 19.2267 19.53 17.92 19.53C16.5667 19.53 15.4467 19.0867 14.56 18.2C13.6733 17.2667 13.23 16.1233 13.23 14.77C13.23 14.1167 13.3 13.4633 13.44 12.81C13.6267 12.11 13.9767 11.1067 14.49 9.8L17.78 0H22.19L19.6 10.43Z' fill='#878787')
+				q= data.quote
+			cite.quote-custom-cite= data.cite
+
+//- Product list
+	@param {object} data - data object
+mixin product-list( data )
+	.product-list
+		.heading-modify.product-list-header.heading-4
+			.product-list-title: a(href="single-product.html")= data.title
+			.product-list-price= data.price
+		.product-list-text= data.text
+
+//- Product simple
+	@param {object} data - data object
+mixin product-simple( data )
+	.product-simple
+		a.product-simple-media(href="single-product.html")
+			+img( data.img )
+		h4.heading-modify.product-simple-title: a(href="single-product.html")!= data.title
+		.product-simple-text= data.text
+		h4.heading-modify.product-simple-price= data.price
+		a.product-simple-button.button.button-primary.button-sm.button-sm-1( href='#' ) Add to cart
+
+//- Blurb side
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb-side( data )
+	// Blurb
+	.blurb-side&attributes( attributes )
+		.blurb-side-item
+			.icon.blurb-side-icon
+				if ( block )
+					block
+		.blurb-side-body
+			h3.blurb-side-title.heading-modify= data.title
+			.blurb-side-text.big= data.text

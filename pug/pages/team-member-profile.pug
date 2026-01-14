@@ -1,0 +1,151 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-progress-bar-linear
+
+block variables
+	-footerBackSection = "section-2"
+	- pageName = 'Team Member Profile'
+
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-11-960x1080.jpg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-lg-gray-lighter-2.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							.team-member-profile.unit.unit-sm.flex-md-row.unit-spacing-lg.unit-40.flex-column
+								.unit-left
+									img(src="images/user-03-320x320.jpg" width="320" height="320" alt="")
+								.unit-body
+									h3 Benjamin Cole
+									p.team-member-desc Co-Founder
+
+									.contact-info
+										p
+											a(href="tel:#") 1-800-5439-098
+										p
+											a(href="mailto:#") mail@demolink.org
+
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+									a.button.button-sm.button-primary(href="contacts.html") Get in Touch
+
+							p Benjamin enjoys being a “flame keeper”, coaching the best flavors and aromas from these organic and mystical seeds from faraway places. He founded Beans in 2002, when he discovered that no local coffee shop had a proper drinks assortment at that time.
+							p Benjamin’s career began with Austin Chase Coffee in Gig Harbor, WA and he quickly progressed from barista to trainer, to wholesale to new store start-up. Since exhibiting at first coffee festival in 1992, he has worn many hats as part of the industry over the years.
+							.row.justify-content-sm-center.progress-linear-wrap
+								.col-sm-12
+									+progress-bar-linear({
+										title: "Coffee Production",
+										value: "80"
+									})
+
+									+progress-bar-linear({
+										title: "Management",
+										value: "55"
+									})
+
+									+progress-bar-linear({
+										title: "Sales",
+										value: "95"
+									})
+
+							h3 Benjamin’s Blog Posts
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.blog-classic-wrap
+								article.post-classic
+									a.thumbnail-classic(href='blog-post.html')
+										figure
+											img(width='640', height='430', src='images/post-02-640x430.jpg', alt='')
+
+									h5.post-classic-title
+										a(href="blog-post.html") Boutique Cafe in Seoul
+									p All coffee enthusiasts know that the ideal way to explore a new city is through its coffee shops, so naturally my week in Seoul, South Korea, was spent sipping my way through its small but swiftly expanding specialty coffee community.
+									ul.list-inline.list-inline-vertical-line
+										li Nov 16, 2023 at 2:23pm
+										li
+											span by #[a(href="team-member-profile.html") Benjamin Cole]
+										li 225 Views
+										li
+											a(href="#") 12 Comments
+
+								article.post-classic
+									a.thumbnail-classic(href='blog-post.html')
+										figure
+											img(width='640', height='430', src='images/post-03-640x430.jpg', alt='')
+
+									h5.post-classic-title
+										a(href="blog-post.html") 10 Best Coffee Types in the World
+									p The world’s finest arabica coffees are listed by country in no particular order since the biggest factor is personal preference. For example, some people might prefer the winey and fruity acidity of a Kenyan coffee over the classic balance of a Colombian coffee.
+									ul.list-inline.list-inline-vertical-line
+										li Nov 16, 2023 at 2:23pm
+										li
+											span by #[a(href="team-member-profile.html") Benjamin Cole]
+										li 225 Views
+										li
+											a(href="#") 12 Comments
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-2")
+
+	section#section-2.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-1")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky-top.sticky
+							.section-cover(style="background: #302f2f url(images/background-02-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.bg-default.text-start
+						.section-fullwidth-body-inner
+							.row.justify-content-sm-center.align-items-sm-center.section-xs
+								.col-sm-12
+									h3 Get in Touch
+									.divider.divider-lg.divider-left-0.divider-primary
+
+									//- RD Mailform
+									form.rd-mailform.text-start(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+										.row.justify-content-sm-center.row-15
+											.col-md-12
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-name") First name
+													input#services-name.form-input(type="text" name="name" data-constraints='@Required')
+											.col-md-12
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-last-name") Last name
+													input#services-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+											.col-md-6
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-email") E-mail
+													input#services-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+											.col-md-6
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-phone") Phone
+													input#services-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+											.col-md-12
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-message") Message
+													textarea#services-message.form-input(name="message" data-constraints="@Required" style="min-height: 200px;")
+
+										.button-wrap
+											button(type="submit").button.button-primary Send
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

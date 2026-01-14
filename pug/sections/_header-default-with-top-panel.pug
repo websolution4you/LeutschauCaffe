@@ -1,0 +1,106 @@
+include ../elements/_widget-list-social
+
+header.page-header.page-header-absolute.page-header-dark
+  //- RD Navbar
+  .rd-navbar-wrap
+    nav.rd-navbar.rd-navbar-default.rd-navbar-default-with-top-panel(
+    data-layout=                'rd-navbar-fixed'
+    data-sm-layout=             'rd-navbar-fixed'
+    data-md-layout=             'rd-navbar-fixed'
+    data-md-device-layout=      'rd-navbar-fixed'
+    data-lg-layout=             'rd-navbar-static'
+    data-lg-device-layout=      'rd-navbar-static'
+    data-xl-layout=             'rd-navbar-static'
+    data-xl-device-layout=      'rd-navbar-static'
+    data-lg-stick-up-offset=    '46px'
+    data-xl-stick-up-offset=    '46px'
+    data-xxl-stick-up-offset=   '46px'
+    data-lg-stick-up=           'true'
+    data-xl-stick-up=           'true'
+    data-xxl-stick-up=          'true'
+    )
+      .rd-navbar-top-panel.rd-navbar-collapse-items
+        .rd-navbar-top-panel-inner
+          //-left side
+          .left-side
+            //- Contact Info
+            .contact-info
+              .group-lg.unit-20
+                .d-inline-block
+                  .unit.align-items-center.flex-row.unit-spacing-xxs
+                    .unit-left
+                      span.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-map-marker
+                    .unit-body
+                      p
+                        a(href="contacts.html") 2130 Fulton Street, #[br.d-none.d-lg-inline-block] San Diego, CA 94117-1080 USA
+                .d-inline-block
+                  .unit.align-items-center.flex-row.unit-spacing-xxs
+                    .unit-left
+                      span.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-calendar-clock
+                    .unit-body
+                      p Monday–Sunday #[br.d-none.d-lg-inline-block] 10:00am–02:00am
+                .d-inline-block
+                  .unit.align-items-center.flex-row.unit-spacing-xxs
+                    .unit-left
+                      span.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-phone
+                    .unit-body
+                      p
+                        a(href="tel:#") 1-800-1234-567
+                      p
+                        a.link-accent(href="#") Book a Table
+
+          //- right side
+          .right-side
+            ul.list-inline.list-inline-12.list-inline-gray-lighter
+              li
+                a.icon.icon-sm-mod-20.fa.fa-facebook-f(href="#")
+              li
+                a.icon.icon-sm-mod-20.fa.fa-twitter(href="#")
+              li
+                a.icon.icon-sm-mod-20.fa.fa-instagram(href="#")
+
+              li
+                a.icon.icon-sm-mod-20.fa.fa-google(href="#")
+              li
+                a.icon.icon-sm-mod-20.fa.fa-pinterest-p(href="#")
+              li
+                a.icon.icon-sm-mod-20.fa.fa-linkedin(href="#")
+
+
+      .rd-navbar-inner
+        //- RD Navbar Panel
+        .rd-navbar-panel
+          //- RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+            span
+
+          //- RD Navbar collapse toggle
+          button.rd-navbar-collapse-toggle(data-rd-navbar-toggle='.rd-navbar-collapse-items')
+            span
+
+          //- RD Navbar Brand
+          .rd-navbar-brand
+            +logo
+
+        .rd-navbar-aside-right
+          .rd-navbar-aside-inner-left
+            .rd-navbar-nav-wrap
+              .rd-navbar-nav-scroll-holder
+                //- RD Navbar Brand
+                .rd-navbar-mobile-brand
+                  a.brand(href='index.html')
+                    img(src="images/logo-dark-150x150.png" width="150" height="150" alt="")
+                +navigation( menu )
+
+          .rd-navbar-aside-inner-right
+            a.icon.icon-sm.mdi.mdi-cart-outline(href="checkout.html")
+              span 2
+            //RD Navbar Search
+            .rd-navbar-search
+              a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-panel" href="#")
+                span
+              form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+                div.form-wrap
+                  label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+                  input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                  #rd-search-results-live.rd-search-results-live

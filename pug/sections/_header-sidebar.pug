@@ -1,0 +1,89 @@
+include ../elements/_widget-list-social
+
+header.page-header.page-header-dark
+	//- RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-sidebar(
+			data-layout='rd-navbar-fixed',
+			data-sm-layout='rd-navbar-fixed',
+			data-md-device-layout='rd-navbar-fixed',
+			data-md-layout='rd-navbar-fixed',
+			data-lg-layout='rd-navbar-fixed',
+			data-lg-device-layout="rd-navbar-fixed",
+			data-xl-layout='rd-navbar-fixed',
+			data-xl-device-layout='rd-navbar-fixed',
+			data-xxl-layout='rd-navbar-fixed',
+			data-xxl-device-layout='rd-navbar-fixed'
+			)
+			.rd-navbar-inner
+				//- RD Navbar Panel
+				.rd-navbar-panel
+					//- RD Navbar Toggle
+					button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+						span
+
+				div
+					.rd-navbar-nav-wrap
+						.rd-navbar-toggle-custom(data-rd-navbar-toggle='.rd-navbar-hidden-wrap')
+							span.icon.icon-sm.mdi.mdi-menu
+							span.open-toggle Menu
+							span.close-toggle Close
+
+						.rd-navbar-nav-scroll-holder.rd-navbar-hidden-wrap
+							.rd-navbar-hidden-body
+								//- RD Navbar Brand
+								.rd-navbar-brand
+									a.brand(href='index.html')
+										img(src="images/logo-dark-150x150.png", width="150", height="150", alt="")
+
+								+navigation( menu )
+
+								.icon-wrap.text-start
+									a.icon.icon-sm.icon-cart.mdi.mdi-cart-outline(href='checkout.html')
+										span 2
+								//- RD Navbar Search
+								.rd-navbar-search
+									form.rd-search.rd-mailform-inline(action="search-results.html" method="GET")
+										.rd-mailform-inline-form-wrap
+											.form-wrap
+												label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+												input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+										.rd-mailform-inline-button-wrap
+											button(type="submit").icon.icon-sm.icon-primary-fill.mdi.mdi-magnify
+
+							.rd-navbar-visible-body
+								//- RD Navbar Brand
+								.rd-navbar-brand
+									a.brand(href='index.html')
+										img(src="images/logo-light-150x150.png", width="150", height="150", alt="")
+								//- Contact Info
+								.contact-info
+									.icon-circle-box
+										span.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-map-marker
+										p
+											a(href="contacts.html") 2130 Fulton Street, #[br] San Diego, CA 94117-1080 USA
+
+									.icon-circle-box
+										span.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-calendar-clock
+										p Monday–Sunday #[br] 10:00am–02:00am
+
+									.icon-circle-box
+										span.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-phone
+										p
+											a(href='tel:#') 1-800-1234-567
+										p.link-primary
+											a(href='#') Book a Table
+
+										ul.list-inline.list-inline-12.list-inline-gray-lighter
+											li
+												a.icon.icon-sm-mod-20.fa.fa-facebook-f(href='#')
+											li
+												a.icon.icon-sm-mod-20.fa.fa-twitter(href='#')
+											li
+												a.icon.icon-sm-mod-20.fa.fa-instagram(href='#')
+											li
+												a.icon.icon-sm-mod-20.fa.fa-google(href='#')
+											li
+												a.icon.icon-sm-mod-20.fa.fa-pinterest-p(href='#')
+											li
+												a.icon.icon-sm-mod-20.fa.fa-linkedin(href='#')

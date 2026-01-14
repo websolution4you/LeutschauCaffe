@@ -1,0 +1,169 @@
+extends  ../_skeleton
+
+block variables
+	-
+		var footerBackSection = "section-1"
+		var pageName = 'About'
+
+block title
+	title About
+
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+							.section-fullwidth-left.sticky-top-0.sticky(style="background: #302f2f url(images/background-04-960x1080.jpg) center/cover no-repeat;")
+								.row.row-sm-cente.align-items-sm-center.breadcrumb-modern.section-cover
+									.col-sm-12.cutom-col.section-sm
+										.breadcrumb-modern-top
+											ul.list-inline.list-inline-dashed
+												li
+													a(href="index.html") Home
+												li
+													a(href="#") About
+												li Our Story
+
+										.breadcrumb-modern-body
+											a.brand(href="index.html")
+												img(src="images/logo-light-150x150.png" width="150" height="150" alt="")
+											h1.breadcrumb-modern-title Our Story
+
+										.breadcrumb-modern-bottom
+											.contact-info
+												.row.justify-content-sm-center
+													.col-md-4.contact-info-left-link
+														span.icon.icon-sm.icon-circle.icon-bordered.icon-white.mdi.mdi-map-marker
+														p
+															a(href="contacts.html") 2130 Fulton Street, #[br] San Diego, CA 94117-1080 USA
+													.col-md-4
+														span.icon.icon-sm.icon-circle.icon-bordered.icon-white.mdi.mdi-phone
+														p
+															a(href="tel:#") 1-800-1234-567
+														p
+															a(href="tel:#") 1-800-8765-654
+
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							h3 A Few Words About Us
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.quote-mod-wrap
+								p We are excited to introduce Beans Coffee Production and invite you to enjoy the unique friendly atmosphere in our coffee shop. If you crave great coffee, you’ll love knowing that we provide a real alternative to chains with handcrafted coffee and espresso drinks.
+
+								.quote.quote-mod
+									.quote-body
+										span.icon.icon-lg.icon-rotate-180.mdi.mdi-format-quote.icon-primary
+
+										h4 Beans was established in 2002 as a powerful alternative to local coffee houses and stores allowing to buy, roast, and grind any type of coffee.
+
+										p.quote-autor
+											a(href="#") Dennis Williams
+
+								p Beans delivers way beyond the traditional coffee shop favorites. We have traditional breakfast choices, and plenty of healthy options (including gluten free, vegetarian, and vegan). Our lunch offerings include a wide variety of salads,  sandwiches and flatbreads.
+
+
+							h3 Timeline
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.blog-timeline
+								.blog-timeline-posts
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2023
+										.blog-timeline-post-body
+											p This year we are planning to open our new coffee shop in Chicago for everyone living there to enjoy the true taste of coffee, warm snacks, and mouthwatering desserts, which are affordably priced.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2015
+										.blog-timeline-post-body
+											p Our website was hugely updated in 2015 with new information, links from media resources, photos, videos, and more.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2013
+										.blog-timeline-post-body
+											p In 2013, we took part in the charity event devoted to children from poor families. It was an invaluable experience for every member of our team.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2010
+										.blog-timeline-post-body
+											p Our team was extended in 2010. We hired more baristas and sales managers, who later became our leading employees in coffee house and warehouse departments.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2008
+										.blog-timeline-post-body
+											p We developed and launched the first version of our website, which included basic information about us and coffee menu.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2006
+										.blog-timeline-post-body
+											p We extended our menu to include not only tasty and flavorful coffee drinks, but also other dishes, snacks, and desserts.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2002
+										.blog-timeline-post-body
+											p We opened our doors to local customers in 2002.
+
+
+							h3 Gallery
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.row.justify-content-sm-center.row-20.thumbnail-rayen-wrap(data-lightgallery="group")
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen(data-lightgallery="item" href='images/gallery-01-1170x780_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-01-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen(data-lightgallery="item" href='images/gallery-02-1170x780_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-02-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen(data-lightgallery="item" href='images/gallery-03-1170x779_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-03-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen(data-lightgallery="item" href='images/gallery-04-1170x779_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-04-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen(data-lightgallery="item" href='images/gallery-05-1170x779_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-05-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen(data-lightgallery="item" href='images/gallery-06-1170x781_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-06-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

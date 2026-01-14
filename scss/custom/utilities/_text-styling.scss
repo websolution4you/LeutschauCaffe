@@ -1,0 +1,85 @@
+/** @section Text styling */
+
+// Text styles
+.text-italic {
+	font-style: italic;
+}
+
+.text-normal {
+	font-style: normal;
+}
+
+// Text decoration
+.text-underline {
+	text-decoration: underline;
+}
+
+.text-strike {
+	text-decoration: line-through;
+}
+
+// Text weight
+.fw-thin,.text-thin {
+	font-weight: 100;
+}
+
+.fw-light,.text-light {
+	font-weight: 300;
+}
+
+.fw-regular,.text-regular {
+	font-weight: 400;
+}
+
+.fw-medium,.text-medium {
+	font-weight: 500;
+}
+
+.fw-sbold,.text-sbold {
+	font-weight: 600;
+}
+
+.fw-bold,.text-bold {
+	font-weight: 700;
+}
+
+.fw-ubold {
+	font-weight: 900;
+}
+
+// Text spacing
+.text-spacing-0 {
+	letter-spacing: 0;
+}
+
+
+.text-spacing-40 {
+	letter-spacing: 0.04em;
+}
+
+.text-spacing-120{
+	letter-spacing: 0.12em;
+}
+
+
+.text-primary {
+	color: $primary !important;
+}
+
+.font-default{
+	font-family: $font-family-base;
+}
+
+//
+// Colors
+// --------------------------------------------------
+.page {
+	@include text-variant('.text-black', $black, $primary);
+	@include text-variant('.text-gray-darker', $gray-darker, $primary);
+	@include text-variant('.text-gray-dark', $gray-dark, $primary);
+	@include text-variant('.text-gray', $gray, $primary);
+	@include text-variant('.text-gray-light', $gray-light, $primary);
+	@include text-variant('.text-gray-lighter', $gray-lighter, $primary);
+	@include text-variant('.text-primary', $primary, darken($primary, 10%));
+	@include text-variant('.text-white', $white, darken($white, 10%));
+}

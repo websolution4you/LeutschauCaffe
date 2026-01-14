@@ -1,0 +1,177 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-2"
+	- pageName = 'Single Product'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-13-960x1080.jpg',
+							class: 'product-mode',
+							content: true
+						}).breadcrumb-modern-body.product-single
+								.product-image
+									img.product-image-area(src='images/product-09-263x483.png', alt='')
+									ul.product-thumbnails
+										li.active(data-large-image='images/product-09-263x483.png')
+											img(src='images/product-09_01-37x68.png', alt='', width='37', height='68')
+										li(data-large-image='images/product-09_02-263x483.png')
+											img(src='images/product-09_02-37x68.png', alt='', width='37', height='68')
+										li(data-large-image='images/product-09_03-263x483.png')
+											img(src='images/product-09_03-37x68.png', alt='', width='37', height='68')
+										li(data-large-image='images/product-09_04-263x483.png')
+											img(src='images/product-09_04-37x68.png', alt='', width='37', height='68')
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-lg-gray-lighter-2.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							.single-product
+								h3 Kicking Horse Coffee 454 Horse Power Dark Whole Bean Coffee 12.3-Ounce Tins
+								p Kicking Horse Dark Coffee is one of the best when it comes to the true taste. This African, heavy bodied coffee is rich with earthy and cocoa tones.
+
+								ul.list
+									li #[span ROASTER] Bongo Java Roasting Co.
+									li #[span FLAVOR NOTES] Fruity, Sweet
+									li #[span TASTING NOTES] Bright, Sweet, Fruity
+									li #[span PROCESS] Other
+									li #[span COFFEE TYPE] Single Origin
+									li #[span REGION] Africa
+									li #[span COUNTRY] Ethiopia
+									li #[span ELEVATION] 1900 - 2100 masl
+									li #[span CERTIFICATION] Fair Trade, Organic
+
+								.row.single-product-price.row-20
+									.col-md-6
+										p Retail price:
+										h4 $16.00
+										a.button.button-sm.button-primary.button-icon.button-icon-left(href="shopping-cart.html")
+											span.icon.mdi.mdi-cart-outline
+											| Add to Cart
+
+									.col-md-6
+										p Wholesale price:
+										h4 $14.00
+										a.button.button-sm.button-primary-outline(href="checkout.html") Make an Order
+
+								//- Bootstrap tabs
+								#tabs-2.tabs-custom.tabs-vertical
+									//- Nav tabs
+									ul.nav-custom.nav-custom-tabs.nav
+										li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-2-1' data-bs-toggle='tab') Description
+										li.nav-item(role='presentation'): a.nav-link(href='#tabs-2-2' data-bs-toggle='tab') Video Review
+										li.nav-item(role='presentation'): a.nav-link(href='#tabs-2-3' data-bs-toggle='tab') Customer Review
+
+									//- Tab panes
+									.tab-content.text-start
+										div#tabs-2-1.tab-pane.fade.show.active
+											p Kicking Horse Dark Coffee is one of the best when it comes to the true taste. This African, heavy bodied coffee is rich with earthy and cocoa tones, and is perfect for everyday drinking.
+											p Our organic coffees are grown in the shade of the rainforest canopy, providing a natural environment for birds and plants. These conditions offer superior quality.
+										div#tabs-2-2.tab-pane.fade
+											//- RD Video
+											article.video-play.ratio.ratio-16x9
+												video.video(src='video/video-for-player-1.mp4', controls='', poster='video/video-for-player-1.jpg', data-video-play='.video-btn-1')
+												button.video-btn.video-btn-1.play
+										div#tabs-2-3.tab-pane.fade
+											ul.list-inline.list-inline-12
+												li
+													a(href="team-member-profile.html") Juan Smith
+												li 3 days ago
+											p It was a unique and very enjoyable experience. You have such a diverse variety of beautiful products of the highest quality plus superb service. I am now a fan of your store!
+
+											ul.list-inline.list-inline-12
+												li
+													a(href="team-member-profile.html") Jim Jones
+												li 3 days ago
+											p I loved everything about buying from you! My purchase was carefully packaged and quickly shipped. I was also pleased with great service and delivery times. There is no such awesome store on the web that can match you.
+
+											ul.list-inline.list-inline-12
+												li
+													a(href="team-member-profile.html") Toby Wilson
+												li 3 days ago
+											p I wanted to say thank you for the amazing product and for the fast processing and delivery. It was impressive, you weren't kidding. I was surprised with such an excellent quality.
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-2")
+
+	section#section-2.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-1")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky.sticky-top
+							.section-cover(style="background: #302f2f url(images/background-01-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-lg
+							h3 Similar Products
+							.divider.divider-lg.divider-left-0.divider-primary
+							.product-wrap
+								.unit.unit-xs.flex-sm-row.product
+									.unit-left.product-img-wrap
+										a(href="single-product.html")
+											img(src="images/product-01-116x205.png" width="116" height="205" alt="")
+									.unit-body
+										.product-body
+											h6
+												a(href="single-product.html") Lavazza Crema e Gusto
+											p Lavazza Crema e Gusto Espresso is a special blend of Robusta and Arabica beans.
+											h6.product-price $14.00
+
+											a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+												span.icon.mdi.mdi-cart-outline
+												| Add to Cart
+
+								.unit.unit-xs.flex-sm-row.product
+									.unit-left.product-img-wrap
+										a(href="single-product.html")
+											img(src="images/product-02-148x207.png" width="148" height="207" alt="")
+									.unit-body
+										.product-body
+											h6
+												a(href="single-product.html") Maxwell House Original Roast Ground Coffee
+											p Having a very interesting history, this coffee is easily recognized all over the globe.
+											h6.product-price $12.00
+
+											a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+												span.icon.mdi.mdi-cart-outline
+												| Add to Cart
+
+								.unit.unit-xs.flex-sm-row.product
+									.unit-left.product-img-wrap
+										a(href="single-product.html")
+											img(src="images/product-03-116x210.png" width="116" height="210" alt="")
+									.unit-body
+										.product-body
+											h6
+												a(href="single-product.html") Douwe Egberts Filter Blend Ground Coffee Medium Roast
+											p Douwe Egberts Real Coffee is a blend of the world’s finest quality beans.
+											h6.product-price $18.00
+
+											a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+												span.icon.mdi.mdi-cart-outline
+												| Add to Cart
+
+								.unit.unit-xs.flex-sm-row.product
+									.unit-left.product-img-wrap
+										a(href="single-product.html")
+											img(src="images/product-04-143x207.png" width="143" height="207" alt="")
+									.unit-body
+										.product-body
+											h6
+												a(href="single-product.html") Don Francisco Hawaiian Hazelnut Coffee 12 Ounce
+											p One of the best hazelnut coffees, and if you are a big coffee drinker, you must try it.
+											h6.product-price $15.00
+
+											a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+												span.icon.mdi.mdi-cart-outline
+												| Add to Cart
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

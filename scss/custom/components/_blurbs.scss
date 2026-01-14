@@ -1,0 +1,45 @@
+/** @section Blurbs */
+
+/* Blurb side */
+.blurb-side {
+	@include group( 30px, 14px );
+}
+
+div.blurb-side-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	color: $white;
+	border-radius: 50%;
+	background-color: $primary;
+}
+
+.blurb-side-title {
+	color: $primary;
+}
+
+* + .blurb-side-text { margin-top: 5px }
+.blurb-side + .blurb-side { margin-top: 36px }
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.blurb-side {
+		display: flex;
+	}
+}
+
+@include media-breakpoint-up( xl ) {
+	.blurb-side {
+		@include groupX( 50px );
+	}
+
+	div.blurb-side-icon {
+		width: 100px;
+		height: 100px;
+	}
+
+	* + .blurb-side-text { margin-top: 15px }
+	.blurb-side + .blurb-side { margin-top: 46px }
+}

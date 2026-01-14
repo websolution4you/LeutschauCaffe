@@ -1,0 +1,130 @@
+extends  ../_skeleton
+
+block variables
+	-
+		var activeIndex = 1
+		var footerBackSection = "section-5"
+
+block title
+	title Home Variant 6
+
+block page
+	//- Page Header
+	include ../sections/_header-classic
+
+	section.section.section-lg.bg-default
+		.container
+			.row.justify-content-center
+				.col-lg-11.col-xl-9.text-block-1.text-center
+					h1 Get the most out of your favorite coffee
+
+			.row.row-30.row-offset-2.align-items-center
+				.col-xs-6
+					+video-popup({
+						background: 'index-variant-6-01-570x749',
+						link: 'https://www.youtube.com/embed/d5k9CILJivQ'
+					}).video-popup-1
+				.col-xs-6
+					+video-popup({
+						background: 'index-variant-6-02-570x470',
+						link: 'https://www.youtube.com/embed/d5k9CILJivQ'
+					})
+
+	section.section.section-lg.bg-default.text-center.text-xs-start
+		.container
+			.row
+				.col-lg-9.col-xl-6.offset-xl-1.text-block-1
+					h1 The best place to have your coffee
+					.text-lg We are excited to introduce Beans Coffee Production and invite you to enjoy the unique friendly atmosphere in our coffee shop. If you crave great coffee, you’ll love knowing that we provide a real alternative to chains with handcrafted coffee and espresso drinks.
+					a.button.button-primary.button-sm.button-sm-1( href='about.html' ) Read more
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-30
+				.col-xs-6.col-md-4
+					+box-image({
+						img: 'index-variant-6-03-370x499',
+						title: 'Menu',
+						link: 'menu.html'
+					})
+				.col-xs-6.col-md-4
+					+box-image({
+						img: 'index-variant-6-04-370x499',
+						title: 'Our store',
+						link: 'catalog.html'
+					})
+				.col-xs-6.col-md-4
+					+box-image({
+						img: 'index-variant-6-05-370x499',
+						title: 'Book a table'
+					})
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-30
+				.col-lg-6.col-xl-4.offset-xl-1.text-block-1
+					h1 Our advantages
+				.col-lg-6.col-xl-5.offset-xl-1
+					.box-list
+						h3.heading-modify.box-list-title Coffee variety
+						.big.box-list-text We sell and serve various types of coffee ranging from cappuccino to flat white.
+					.box-list
+						h3.heading-modify.box-list-title Own roasting
+						.big.box-list-text We sell and serve various types of coffee ranging from cappuccino to flat white.
+					.box-list
+						h3.heading-modify.box-list-title Wholesale and retail
+						.big.box-list-text We sell and serve various types of coffee ranging from cappuccino to flat white.
+					.box-list
+						h3.heading-modify.box-list-title Express delivery
+						.big.box-list-text We sell and serve various types of coffee ranging from cappuccino to flat white.
+
+	section.section.section-lg.bg-gray-dark
+		.container.isotope-wrap
+			.row.row-30
+				.col-lg-8.col-xl-6.offset-xl-1.text-block-1.text-center.text-xs-start
+					h1 Cozy atmosphere and comfortable interior
+			.row.row-30.row-offset-1.isotope( data-column-class='.col-1', data-lightgallery='group' )
+				.col-1.isotope-item.isotope-sizer
+				.col-xs-6.col-md-4.offset-md-2.isotope-item.mt-md-3
+					+thumbnail-fade({
+						img: 'index-variant-6-06-370x460',
+						imgOriginal: 'index-variant-6-06-800x1200'
+					}).thumbnail-fade-sm
+				.col-xs-6.col-md-5.isotope-item
+					+thumbnail-fade({
+						img: 'index-variant-6-07-470x380',
+						imgOriginal: 'index-variant-6-07-1200x800'
+					}).thumbnail-fade-sm
+				.col-xs-6.col-md-4.isotope-item
+					+thumbnail-fade({
+						img: 'index-variant-6-08-370x510',
+						imgOriginal: 'index-variant-6-09-800x1200'
+					}).thumbnail-fade-sm
+				.col-xs-6.col-md-5.offset-md-1.isotope-item
+					+thumbnail-fade({
+						img: 'index-variant-6-09-470x370',
+						imgOriginal: 'index-variant-6-08-1200x800'
+					}).thumbnail-fade-sm
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-30
+				.col-lg-6.col-xl-5.offset-xl-1.text-block-1
+					h1 Testimonials
+					h5 We provide the best coffee to individual customers as well as to shops and supermarkets. Here are the recent customer reviews.
+				.col-lg-6.col-xl-6.mt-lg-4
+					+quote-side({
+						quote: 'I started getting coffee from Beans long before it was possible to buy freshly roasted fair trade coffee closer to home. I\'ve tried others, but none are as good as the ones made by Beans’ team.\n',
+						cite: 'Cody Fisher'
+					})
+					+quote-side({
+						quote: 'When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing close to Beans French Roast aroma, taste and smoothness.',
+						cite: 'Courtney Henry'
+					})
+					+quote-side({
+						quote: 'I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service.',
+						cite: 'Floyd Miles'
+					})
+
+	//- Page Footer
+	include ../sections/_footer-dark

@@ -1,0 +1,312 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Menu'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					+breadcrumbs({
+						bg: 'background-12-960x1080.jpg'
+					})
+				.col-sm-10.col-md-11.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+						h3 Coffee Shop Menu
+						.divider.divider-lg.divider-left-0.divider-primary
+
+						.row.isotope-wrap
+							//- Isotope Filters
+							.col-xl-12
+								ul.isotope-filters.isotope-filters-horizontal
+									li
+										a.active(data-isotope-filter='*', data-isotope-group='gallery', href='#') All Menu
+									li
+										a(data-isotope-filter='Coffee', data-isotope-group='gallery', href='#') Coffee
+									li
+										a(data-isotope-filter='Food', data-isotope-group='gallery', href='#') Food
+									li
+										a(data-isotope-filter='Other Drinks', data-isotope-group='gallery', href='#') Other Drinks
+									li
+										a(data-isotope-filter='Desserts', data-isotope-group='gallery', href='#') Desserts
+
+							//- Isotope Content
+							.col-xl-12
+								.isotope(data-isotope-layout='fitRows', data-isotope-group='gallery')
+									.row
+										.col-12.col-md-6.isotope-item(data-filter='*')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Espresso
+													.product-menu-price
+														p $1.99
+												p Lavazza, classic coffee, 30ml
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Coffee')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Ristretto
+													.product-menu-price
+														p $1.39
+												p Lavazza, arabica, robusta, 22ml
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Coffee')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Americano
+													.product-menu-price
+														p $2.49
+												p 60ml Espresso, 90ml Hot Water
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Coffee')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Lungo
+													.product-menu-price
+														p $1.39
+												p 60ml Less Concentrated Espresso
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Coffee')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Macchiato
+													.product-menu-price
+														p $2.49
+												p 60ml Espresso, Dot of Foamed Milk
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Coffee')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Cappuccino
+													.product-menu-price
+														p $1.39
+												p 60ml Espresso, 60ml Steamed Milk, 60ml Foamed Milk
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Burger
+													.product-menu-price
+														p $4.49
+												p Worcestershire sauce, onions, mustard, ground beef
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Burger XXL
+													.product-menu-price
+														p $1.39
+												p Ground beef, chopped iceberg lettuce, American cheese
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Double Burger
+													.product-menu-price
+														p $4.49
+												p 1 tbsp chopped red onion, Tabasco sauce, ground beef, sesame buns
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Chicken Burger
+													.product-menu-price
+														p $1.39
+												p 1 pound of ground white meat chicken, fresh breadcrumbs, cayenne pepper
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Fish Burger
+													.product-menu-price
+														p $4.49
+												p 2 tbsp chopped parsley, catfish
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") French Fries
+													.product-menu-price
+														p $1.39
+												p 1 russet potato, vegetable oil, salt
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Desserts')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Tiramisu
+													.product-menu-price
+														p $4.49
+												p Mascarpone, heavy cream, Tia Maria
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Red Beer
+													.product-menu-price
+														p $1.39
+												p Highland Gaelic Ale, Amber Ale etc.
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Beer
+													.product-menu-price
+														p $4.49
+												p Bud Light Platinum, Natural Ice etc.
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Dark Beer
+													.product-menu-price
+														p $1.39
+												p Stoke, 4 Pines, Wicked Elf, Guinness
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Balck Tea
+													.product-menu-price
+														p $4.49
+												p Arbor Teas, Wegmans, Simpson & Vail
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Green Tea
+													.product-menu-price
+														p $1.39
+												p Yamamotoyama, TeaVivre, Tazo Tea
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Red Tea
+													.product-menu-price
+														p $4.49
+												p Vanilla Red Tea, Pomegranate Red Tea, Ginger Tea, Peach Flavored Tea
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Other Drinks')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Water
+													.product-menu-price
+														p $1.39
+												p Perrier, Voss, Evian, Smartwater, Icelandic Glacial, Acqua Panna
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Desserts')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Ice Cream
+													.product-menu-price
+														p $4.49
+												p Fudge Brownie, Cherry Sundae etc.
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Food')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Cheaseburger
+													.product-menu-price
+														p $1.39
+												p Swiss cheese, ground beef, blue cheese
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Desserts')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Cheasecake
+													.product-menu-price
+														p $4.49
+												p Graham crackers, cream cheese
+												.hr-custom
+
+										.col-12.col-md-6.isotope-item(data-filter='Desserts')
+											.product-menu
+												.product-menu-top
+													.product-menu-title
+														h6
+															a(href="single-product.html") Vanila Cupcake
+													.product-menu-price
+														p $1.39
+												p Cream butter, eggs, sugar
+												.hr-custom
+
+						a.button.button-gray-primary-outline(href="#") Download Menu (PDF)
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+
+	//- Page Footer
+	include ../sections/_footer-divided

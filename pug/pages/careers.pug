@@ -1,0 +1,224 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-table-custom
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Careers'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-08-960x1080.jpg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							h3 Start Your Career with Us
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.row.justify-content-sm-center.offset-top-45
+								.col-sm-12
+									p Our success is driven by the quality and dedication of our employees. Become the member of our friendly team!
+									p At Beans, we seek individuals who share our values as a means of reinforcing and furthering the group's successful philosophy. We are looking for motivated, positive and hardworking individuals to join our team.
+									p We strive to meet the needs of each employee because our success depends on the satisfaction, effort and commitment of each team member. To this end, we support and energize all employees to continuously improve productivity and exceed guest expectations. Joining us should not be merely the process of getting a job, but rather, making an occupation a lifestyle choice.
+
+							h3 Current Vacancies
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.row.justify-content-sm-center.row-30.post-vacancy-wrap
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") General Manager
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Barista
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Coffee Specialist
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Sales Manager
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Financial Analyst
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Wholesale Manager
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Warehouse Specialist
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+								.col-sm-6
+									article.post-vacancy.post-vacancy-secondary
+										h6.post-vacancy-title
+											a(href="#") Logistics Manager
+										.post-vacancy-body
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-map-marker.icon-gray-lighter
+												.unit-body
+													p San Diego
+
+											.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-timelapse.icon-gray-lighter
+												.unit-body
+													p Full Time
+
+											.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+												.unit-left
+													span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+												.unit-body
+													p Nov 23, 2023
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

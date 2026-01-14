@@ -1,0 +1,550 @@
+extends  ../_skeleton
+
+
+block variables
+	-
+		var activeIndex = 1
+
+block title
+	title Home Variant 2
+
+block page
+	//- Page Header
+	include ../sections/_header-default-with-top-panel
+
+	section.section.swiper-container.swiper-slider.swiper-slider-corporate.text-start(data-autoplay="3000" data-slide-effect="fade"
+	data-swiper!={
+		navigation: {
+			nextEl: '.swiper-button-next-custom',
+			prevEl: '.swiper-button-prev-custom',
+		}
+	})
+		.swiper-wrapper
+			.swiper-slide(data-slide-bg='images/background-01-1920x879.jpg')
+				.swiper-slide-caption
+					.container-fluid.container-wide
+						h1 Bring Home The Coffee
+						h5.swiper-desc We sell coffee that has amazing taste and flavor!
+						.group-lg.unit-20
+							a.button.button-width-194.button-primary(href="catalog.html") Shop Now
+							a.button.button-width-194.button-white-outline(href="menu.html") View Menu
+
+			.swiper-slide(data-slide-bg='images/background-15-1920x1080.jpg')
+				.swiper-slide-caption
+					.container-fluid.container-wide
+						h1 Good Coffee Is Like Friendship
+						h5.swiper-desc Enjoy rich, warm and strong coffee at our coffee shop
+						.group-lg.unit-20
+							a.button.button-width-194.button-primary(href="catalog.html") Shop Now
+							a.button.button-width-194.button-white-outline(href="menu.html") View Menu
+
+			.swiper-slide(data-slide-bg='images/background-16-1920x1080.jpg')
+				.swiper-slide-caption
+					.container-fluid.container-wide
+						h1 Get the Most Out of Your Favorite Coffee
+						h5.swiper-desc Take your time to enjoy any coffee at our shop or have it delivered right to your door
+						.group-lg.unit-20
+							a.button.button-width-194.button-primary(href="catalog.html") Shop Now
+							a.button.button-width-194.button-white-outline(href="menu.html") View Menu
+
+		//- Swiper Pagination
+		.swiper-pagination
+
+		//- Swiper Navigation
+		.swiper-button-next-custom
+			span.icon.mdi.mdi-chevron-right
+		.swiper-button-prev-custom
+			span.icon.mdi.mdi-chevron-left
+
+	section.section.section-lg-60
+		.row.row-30.justify-content-sm-center.g-0-lg.box-hovered-wrap
+			.col-md-6.col-lg-3
+				.box-hovered
+					span.icon.icon-md-mod-50.mdi.mdi-coffee.icon-gray-dark
+					h6 Coffee Variety
+					p We sell and serve various types of coffee ranging from cappuccino to flat white.
+
+			.col-md-6.col-lg-3
+				.box-hovered
+					span.icon.icon-md.mdi.mdi-thumb-up.icon-gray-dark
+					h6 Own Roasting
+					p We roast all coffees we get from our suppliers using our exclusive hot roasting technique.
+
+			.col-md-6.col-lg-3
+				.box-hovered
+					span.icon.icon-md-mod-50.mdi.mdi-sale.icon-gray-dark
+					h6 Wholesale and Retail
+					p We provide the best coffee to individual customers as well as to shops and supermarkets.
+
+			.col-md-6.col-lg-3
+				.box-hovered
+					span.icon.icon-md-mod-50.mdi.mdi-truck.icon-gray-dark
+					h6 Express Delivery
+					p Our coffee delivery service is available to all US residents any time of the year, 24/7.
+
+	section.bg-overlay-inverse-xl.section-lg.bg-secondary-3.text-start(style="background: #302f2f url(images/background-20-1920x912.jpg) center/cover no-repeat;")
+		.container-wide.container-fluid
+			h3 Menu
+			.divider.divider-lg.divider-left-0.divider-primary
+
+			.row.product-menu-mod-wrap.row-20
+				.col-md-6.col-lg-4.col-xl-3.col-xxl-2
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Espresso
+						p Lavazza, classic coffee, 30ml
+						.product-menu-price
+							p $1.99
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Cappuccino
+						p 60ml Espresso, 60ml Steamed Milk, 60ml Foamed Milk
+						.product-menu-price
+							p $1.39
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Double Burger
+						p Tabasco sauce, ground beef
+						.product-menu-price
+							p $6.49
+						.hr-custom
+
+				.col-md-6.col-lg-4.col-xl-3.col-xxl-2
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Ristretto
+						p Lavazza, arabica, robusta, 22ml
+						.product-menu-price
+							p $1.99
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Burger
+						p Worcestershire sauce, onions, mustard, ground beef
+						.product-menu-price
+							p $4.99
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Fish Burger
+						p 2 tbsp chopped parsley, catfish
+						.product-menu-price
+							p $4.59
+						.hr-custom
+
+				.col-md-6.col-lg-4.col-xl-3.col-xxl-2
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Americano
+						p 60ml Espresso, 90ml Hot Water
+						.product-menu-price
+							p $2.49
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Burger XXL
+						p Ground beef, chopped iceberg lettuce, American cheese
+						.product-menu-price
+							p $5.99
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") French Fries
+						p 1 russet potato, vegetable oil, salt
+						.product-menu-price
+							p $4.99
+						.hr-custom
+
+				.col-md-6.col-lg-4.col-xl-3.col-xxl-2
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Lungo
+						p 60ml Less Concentrated Espresso
+						.product-menu-price
+							p $1.99
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Macchiato
+						p 60ml Espresso, Dot of Foamed Milk
+						.product-menu-price
+							p $2.49
+						.hr-custom
+
+					.product-menu.product-menu-mod
+						.product-menu-title
+							h6
+								a(href="single-product.html") Tiramisu
+						p Mascarpone, heavy cream
+						.product-menu-price
+							p $4.99
+						.hr-custom
+			.group-lg.unit-20
+				a.button.button-primary(href="menu.html") View All Menu
+				a.button.button-primary-outline(href="#") Download Menu (PDF)
+	section.section-xs.section-triangle-bottom.bg-gray-dark
+		.container-wide.container.fluid
+			.row.justify-content-sm-center
+				.col-sm-10.col-md-8.col-xl-6.col-xxl-4.text-center
+					h1 Our Store
+					p.text-desc Our online store offers a great variety of popular coffee drinks as well as our own specialty coffees. They are available for order at very affordable prices.
+
+	section.section-lg-bottom.text-center.section-lg-60
+		.row.justify-content-sm-center.justify-content-lg-start.g-0-lg.product-classic-wrap.row-lg-0
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-01-116x205.png" width="116" height="205" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Lavazza Crema e Gusto
+						p Lavazza Crema e Gusto Espresso is a special blend of Robusta and Arabica beans.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-02-148x207.png" width="148" height="207" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Maxwell House Original Roast Ground Coffee
+						p Having a very interesting history, this coffee is easily recognized all over the globe.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-03-116x210.png" width="116" height="210" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Douwe Egberts Filter Blend Ground Coffee Medium Roast
+						p Douwe Egberts Real Coffee is a blend of the world’s finest quality beans.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-04-143x207.png" width="143" height="207" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Don Francisco Hawaiian Hazelnut Coffee 12 Ounce
+						p One of the best hazelnut coffees, and if you are a big coffee drinker, you must try it.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-05-109x208.png" width="109" height="208" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Guilt-Free Decaf by Findlays Finest Gourmet Coffee
+						p 100% Arabic beans roasted to perfection to bring out the natural flavor of coffee.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-06-110x203.png" width="110" height="203" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Kicking Horse Coffee  Dark Whole Bean Coffee 12.3
+						p Kicking Horse Dark Coffee is one of the best when it comes to the true taste.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-07-154x207.png" width="154" height="207" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Melitta Coffee Classic Blend Ground Medium Roast
+						p Melitta Coffee offers you all the coffee's flavor, providing a rich, full-bodied cup.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+			.col-sm-10.col-md-6.col-lg-4.col-xl-3
+				.product-classic
+					.product-classic-inner
+						a.product-classic-img-wrap(href="single-product.html")
+							img(src="images/product-08-86x207.png" width="86" height="207" alt="")
+						h6.product-classic-title
+							a(href="single-product.html") Teeccino Herbal Coffee Caffeine Free 11-Ounce Bags
+						p Teeccino contains no coffee beans and has deliciously rich, full-bodied flavor.
+						h6.product-classic-price $14.00
+						a.button.button-sm.button-primary.button-icon.button-icon-left(href="single-product.html")
+							span.icon.mdi.mdi-cart-outline
+							| Add to Cart
+
+		a.button.button-primary(href="catalog.html") View All Products
+
+
+	section.section-lg.bg-gray-lighter-2
+		.container-wide.container-fluid
+			h3.text-center Latest News
+			.divider.divider-lg.divider-primary
+			.row.justify-content-center.text-start.post-box-wrap.row-50
+				.col-md-8.col-xl-4.col-lg-7
+					.post-box
+						a.post-box-img-wrap(href="blog-post.html")
+							img.img-responsive.center-block(src='images/post-01-570x370.jpg', width='570', height='370', alt='')
+						.post-box-caption
+							h6.post-box-title
+								a(href='blog-post.html') How to Make a Perfect Cup of Coffee: an Ultimate Guide for Everyone
+							p I often go to sleep thinking about the cup of coffee I’m going to have the next morning. I adore it! These basic rules will help you learn how to make coffee to prevent unwanted bitterness...
+
+						.post-box-bottom
+							.post-box-bottom-left
+								ul.list-inline.list-inline-23
+									li
+										.unit.align-items-center.flex-row.unit-spacing-xxs
+											.unit-left
+												span.icon.icon-xs.mdi.mdi-calendar-clock
+											.unit-body
+												p Nov 16, 2023 at 2:23pm
+									li
+										.unit.align-items-center.flex-row.unit-spacing-xxs
+											.unit-left
+												.icon.icon-xs.mdi.mdi-account-outline
+											.unit-body
+												a(href="team-member-profile.html") Harry Lucas
+							.post-box-bottom-right
+								a.icon.icon-sm.icon-white.mdi.mdi-arrow-right-bold(href='blog-post.html')
+
+				.col-md-8.col-xl-4.col-lg-7
+					.post-box.post-box-inset-caption-bottom
+						a.post-box-img-wrap(href="blog-post.html")
+							img.img-responsive.center-block(src='images/post-02-570x370.jpg', width='570', height='370', alt='')
+						.post-box-caption
+							h6.post-box-title
+								a(href='blog-post.html') Boutique Cafe in Seoul
+							p All coffee enthusiasts know that the ideal way to explore a new city is through its coffee shops, so naturally my week in Seoul, South Korea, was spent sipping my way through its small but swiftly...
+
+						.post-box-bottom
+							.post-box-bottom-left
+								ul.list-inline.list-inline-23
+									li
+										.unit.align-items-center.flex-row.unit-spacing-xxs
+											.unit-left
+												span.icon.icon-xs.mdi.mdi-calendar-clock
+											.unit-body
+												p Nov 16, 2023 at 2:23pm
+									li
+										.unit.align-items-center.flex-row.unit-spacing-xxs
+											.unit-left
+												.icon.icon-xs.mdi.mdi-account-outline
+											.unit-body
+												a(href="team-member-profile.html") Harry Lucas
+							.post-box-bottom-right
+								a.icon.icon-sm.icon-white.mdi.mdi-arrow-right-bold(href='blog-post.html')
+
+				.col-md-8.col-xl-4.col-lg-7
+					.post-box.post-box-inset-caption-bottom
+						a.post-box-img-wrap(href="blog-post.html")
+							img.img-responsive.center-block(src='images/post-03-570x370.jpg', width='570', height='370', alt='')
+						.post-box-caption
+							h6.post-box-title
+								a(href='blog-post.html') 10 Best Coffee Types in the World
+							p The world’s finest arabica coffees are listed by country in no particular order since the biggest factor is personal preference. For example, some people might prefer the winey and fruity acidity of a Kenyan...
+
+						.post-box-bottom
+							.post-box-bottom-left
+								ul.list-inline.list-inline-23
+									li
+										.unit.align-items-center.flex-row.unit-spacing-xxs
+											.unit-left
+												span.icon.icon-xs.mdi.mdi-calendar-clock
+											.unit-body
+												p Nov 16, 2023 at 2:23pm
+									li
+										.unit.align-items-center.flex-row.unit-spacing-xxs
+											.unit-left
+												.icon.icon-xs.mdi.mdi-account-outline
+											.unit-body
+												a(href="team-member-profile.html") Harry Lucas
+							.post-box-bottom-right
+								a.icon.icon-sm.icon-white.mdi.mdi-arrow-right-bold(href='blog-post.html')
+
+				.col-12.text-center.text-center
+					a.button.button-primary-outline(href="blog.html") View All Blog Posts
+	section.section-lg.text-start(style="background: #302f2f url(images/background-21-1920x791.jpg) center/cover no-repeat;")
+		.container-wide.container-fluid
+			.row.justify-content-sm-center.justify-content-lg-end
+				.col-md-10.col-xl-8.col-xxl-6
+					h3 Testimonials
+					.divider.divider-lg.divider-left-0.divider-primary
+
+					//- Owl Carousel
+					.owl-carousel.owl-carousel-mod.owl-carousel-testimonials.owl-style-2(data-items='1', data-md-items='2', data-stage-padding='5', data-loop='false', data-nav='false' , data-margin='30', data-mouse-drag="false", data-dots="true", data-animation-in="fadeIn" data-animation-out="fadeOut")
+						.quote.quote-box-comment
+							.unit.align-items-center.flex-row.quote-box-comment-author
+								.unit-left
+									img.rounded-circle(src="images/user-01-80x80.jpg" width="80" height="80" alt="")
+								.unit-body
+									h6.quote-box-comment-author-title
+										a(href="team-member-profile.html") Angela Gonzales
+									p Manager
+
+							.quote-box-comment-body
+								span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+								p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing  close to Beans French Roast aroma, taste and smoothness. Luckily I can buy 5 pounds of beans through your website.
+
+						.quote.quote-box-comment
+							.unit.align-items-center.flex-row.quote-box-comment-author
+								.unit-left
+									img.rounded-circle(src="images/user-02-80x80.jpg" width="80" height="80" alt="")
+								.unit-body
+									h6.quote-box-comment-author-title
+										a(href="team-member-profile.html") Olivia Myers
+									p Designer
+
+							.quote-box-comment-body
+								span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+								p I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service. Your beans give way to the best cups of coffee.
+
+						.quote.quote-box-comment
+							.unit.align-items-center.flex-row.quote-box-comment-author
+								.unit-left
+									img.rounded-circle(src="images/user-01-80x80.jpg" width="80" height="80" alt="")
+								.unit-body
+									h6.quote-box-comment-author-title
+										a(href="team-member-profile.html") Angela Gonzales
+									p Manager
+
+							.quote-box-comment-body
+								span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+								p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing  close to Beans French Roast aroma, taste and smoothness. Luckily I can buy 5 pounds of beans through your website.
+
+						.quote.quote-box-comment
+							.unit.align-items-center.flex-row.quote-box-comment-author
+								.unit-left
+									img.rounded-circle(src="images/user-02-80x80.jpg" width="80" height="80" alt="")
+								.unit-body
+									h6.quote-box-comment-author-title
+										a(href="team-member-profile.html") Olivia Myers
+									p Designer
+
+							.quote-box-comment-body
+								span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+								p I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service. Your beans give way to the best cups of coffee.
+
+						.quote.quote-box-comment
+							.unit.align-items-center.flex-row.quote-box-comment-author
+								.unit-left
+									img.rounded-circle(src="images/user-01-80x80.jpg" width="80" height="80" alt="")
+								.unit-body
+									h6.quote-box-comment-author-title
+										a(href="team-member-profile.html") Angela Gonzales
+									p Manager
+
+							.quote-box-comment-body
+								span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+								p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing  close to Beans French Roast aroma, taste and smoothness. Luckily I can buy 5 pounds of beans through your website.
+
+						.quote.quote-box-comment
+							.unit.align-items-center.flex-row.quote-box-comment-author
+								.unit-left
+									img.rounded-circle(src="images/user-02-80x80.jpg" width="80" height="80" alt="")
+								.unit-body
+									h6.quote-box-comment-author-title
+										a(href="team-member-profile.html") Olivia Myers
+									p Designer
+
+							.quote-box-comment-body
+								span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+								p I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service. Your beans give way to the best cups of coffee.
+
+
+	section.bg-gray-dark.section-custom-1
+		.row.justify-content-sm-center.g-0.row-20(data-lightgallery="group")
+			.col-sm-6.col-md-4.col-lg-2.col-xxl-2
+				//- Thumbnail Rayen
+				a.thumbnail-rayen.mode-fullwidth.thumbnail-rayen-mod.thumbnail-rayen-primary(data-lightgallery='item', href='images/gallery-11-711x800_original.jpg')
+					figure
+						img(width='320', height='320', src='images/gallery-11-320x320.jpg', alt='')
+						figcaption
+							span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+			.col-sm-6.col-md-4.col-lg-2.col-xxl-2
+				//- Thumbnail Rayen
+				a.thumbnail-rayen.mode-fullwidth.thumbnail-rayen-mod.thumbnail-rayen-primary(data-lightgallery='item' , href='images/gallery-23-1170x780_original.jpg')
+					figure
+						img(width='320', height='320', src='images/gallery-13-320x320.jpg', alt='')
+						figcaption
+							span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+			.col-sm-6.col-md-4.col-lg-2.col-xxl-2
+				//- Thumbnail Rayen
+				a.thumbnail-rayen.mode-fullwidth.thumbnail-rayen-mod.thumbnail-rayen-primary(data-lightgallery='item', href='images/gallery-01-1170x780_original.jpg')
+					figure
+						img(width='320', height='320', src='images/gallery-1-320x320.jpg', alt='')
+						figcaption
+							span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+			.col-sm-6.col-md-4.col-lg-2.col-xxl-2
+				//- Thumbnail Rayen
+				a.thumbnail-rayen.mode-fullwidth.thumbnail-rayen-mod.thumbnail-rayen-primary(data-lightgallery='item', href='images/gallery-24-1170x780_original.jpg')
+					figure
+						img(width='320', height='320', src='images/gallery-28-320x320.jpg', alt='')
+						figcaption
+							span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+			.col-sm-6.col-md-4.col-lg-2.col-xxl-2
+				//- Thumbnail Rayen
+				a.thumbnail-rayen.mode-fullwidth.thumbnail-rayen-mod.thumbnail-rayen-primary(data-lightgallery='item', href='images/gallery-29-711x800_original.jpg')
+					figure
+						img(width='320', height='320', src='images/gallery-29-320x320.jpg', alt='')
+						figcaption
+							span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+			.col-sm-6.col-md-4.col-lg-2.col-xxl-2
+				//- Thumbnail Rayen
+				a.thumbnail-rayen.mode-fullwidth.thumbnail-rayen-mod.thumbnail-rayen-primary(data-lightgallery='item', href='images/gallery-06-1170x781_original.jpg')
+					figure
+						img(width='320', height='320', src='images/gallery-30-320x320.jpg', alt='')
+						figcaption
+							span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+	//- Page Footer
+	include ../sections/_footer-divided-widgets
+
+

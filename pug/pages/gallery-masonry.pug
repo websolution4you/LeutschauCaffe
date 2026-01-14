@@ -1,0 +1,100 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Gallery Masonry'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							class: 'no-bg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner-small.section-fullwidth-body-offset-top.section-lg.inset-xl-0
+							.row.row-20.justify-content-sm-center.section-gallery-column-insets.row-xl-custom(data-lightgallery="group")
+								.col-sm-10.col-md-6.d-flex.flex-wrap
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-16-1170x780_original.jpg')
+										figure
+											img(width='460', height='710', src='images/gallery-07-460x710.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Ristretto
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-20-1170x779_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-08-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Interior
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-22-1170x779_original.jpg')
+										figure
+											img(width='460', height='710', src='images/gallery-09-460x710.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Professional Equipment
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-26-1170x780_original.jpg')
+										figure
+											img(width='460', height='710', src='images/gallery-10-460x710.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Comfortable Service
+
+								.col-sm-10.col-md-6.d-flex.flex-wrap
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-17-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-11-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Cortadito
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-21-1170x779_original.jpg')
+										figure
+											img(width='460', height='710', src='images/gallery-12-460x710.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Coffee Grinding
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-23-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-13-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Friendly Atmosphere
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-25-1170x780_original.jpg')
+										figure
+											img(width='460', height='710', src='images/gallery-14-460x710.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Satisfied Customers
+
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.thumbnail-custom(data-lightgallery="item", href='images/gallery-27-1170x780_original.jpg')
+										figure
+											img(width='460', height='345', src='images/gallery-15-460x345.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+												h6.thumbnail-rayen-title Customized Drinks
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

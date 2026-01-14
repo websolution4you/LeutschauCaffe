@@ -1,0 +1,225 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-table-custom
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Pricing'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-01-960x1080.jpg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							h3 Table Pricing
+							.divider.divider-lg.divider-left-0.divider-primary
+							+table-custom([
+								['#', 'Service', 'Price'],
+								['1', 'Pre-Roasting Processing', '$12.00'],
+								['2', 'Roasting', '$16.00'],
+								['3', 'Packing', '$20.00'],
+								['4', 'Delivery', '$24.00']],
+							"table-fixed table-pricing table-hover-rows", true)
+
+							h3 Extended Pricing
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.row.justify-content-sm-center.row-xl-20.box-pricing-wrap
+								.col-sm-6.col-md-12
+									.box-pricing.box-pricing-secondary
+										.unit.unit-sm.flex-md-row.flex-column.unit-xl-30.justify-content-md-between
+											.box-pricing-left.unit-left.unit-item-sm-wide
+												ul.list-inline.list-inline-1
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+												h6 Basic
+											.box-pricing-center.unit-body.unit-item-sm-wide
+												ul.list
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Pre-Roasting Processing
+													li
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-close
+																span.unit-body
+																	span Roasting
+													li
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-close
+																span.unit-body
+																	span Packing
+													li
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-close
+																span.unit-body
+																	span Delivery
+
+											.box-pricing-right.unit-right.unit-item-sm-wide
+												p Price
+												h6 $239.00
+
+								.col-sm-6.col-md-12
+									.box-pricing.box-pricing-secondary
+										.unit.unit-sm.flex-md-row.flex-column.unit-xl-30.justify-content-md-between
+											.box-pricing-left.unit-left.unit-item-sm-wide
+												ul.list-inline.list-inline-1
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+												h6 Standard
+											.box-pricing-center.unit-body.unit-item-sm-wide
+												ul.list
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Pre-Roasting Processing
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Roasting
+													li
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-close
+																span.unit-body
+																	span Packing
+													li
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-close
+																span.unit-body
+																	span Delivery
+
+											.box-pricing-right.unit-right.unit-item-sm-wide
+												p Price
+												h6 $379.00
+
+								.col-sm-6.col-md-12
+									.box-pricing.box-pricing-secondary
+										.unit.unit-sm.flex-md-row.flex-column.unit-xl-30.justify-content-md-between
+											.box-pricing-left.unit-left.unit-item-sm-wide
+												ul.list-inline.list-inline-1
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+												h6 Gold
+											.box-pricing-center.unit-body.unit-item-sm-wide
+												ul.list
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Pre-Roasting Processing
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Roasting
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Packing
+													li
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-close
+																span.unit-body
+																	span Delivery
+
+											.box-pricing-right.unit-right.unit-item-sm-wide
+												p Price
+												h6 $439.00
+
+								.col-sm-6.col-md-12
+									.box-pricing.box-pricing-secondary
+										.unit.unit-sm.flex-md-row.flex-column.unit-xl-30.justify-content-md-between
+											.box-pricing-left.unit-left.unit-item-sm-wide
+												ul.list-inline.list-inline-1
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+													li
+														span.icon.icon-xs.fa.fa-star.icon-gray-lighter
+												h6 Platinum
+											.box-pricing-center.unit-body.unit-item-sm-wide
+												ul.list
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Pre-Roasting Processing
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Roasting
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Packing
+													li.active
+														a(href="#")
+															span.unit.flex-row.unit-spacing-xxs
+																span.unit-left
+																	span.icon.icon-sm.mdi.mdi-check
+																span.unit-body
+																	span Delivery
+
+											.box-pricing-right.unit-right.unit-item-sm-wide
+												p Price
+												h6 $579.00
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

@@ -1,0 +1,222 @@
+//
+// RD Navbar fixed layout (GENERAL STYLES)
+// --------------------------------------------------
+
+.rd-navbar-fixed {
+  .rd-search {
+    .form-label, .form-input {
+      color: $gray-dark;
+    }
+  }
+  .rd-navbar-megamenu{
+    margin-top: 5px;
+  }
+  // only before 1199, because on navbar-sidebar we need restyle
+  @media (max-width: 1199px) {
+    // Navbar brand
+    .rd-navbar-brand {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  // Panel
+  .rd-navbar-panel {
+    background: $rd-navbar-fixed-bg;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 56px;
+    padding: 5px;
+    z-index: 16;
+    color: #000;
+    box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
+  }
+
+  &, .rd-navbar-panel {
+
+  }
+
+  // navbar-toggle
+  .rd-navbar-toggle {
+    display: inline-block;
+  }
+
+  //rd-navbar-wrap
+  .rd-navbar-nav-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $rd-navbar-fixed-bg;
+    box-shadow: 0 0 11px 2px rgba(0, 0, 0, 0.17);
+    z-index: -1;
+    transform: translateX(-120%);
+    width: 270px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: .3s ease-in-out;
+  }
+
+  .rd-navbar-nav-scroll-holder {
+    padding: 65px 0;
+    .brand{
+      width: 100%;
+      display: block;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  //rd-navbar-wrap-active state
+  .rd-navbar-nav-wrap.active {
+    transform: translateX(0);
+  }
+
+  // Mobile menu
+  .rd-navbar-nav {
+    display: block;
+    height: 100%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 16;
+    padding: 10px 0;
+    text-align: left;
+
+    > li:last-child {
+      margin-bottom: 10px;
+    }
+
+    li {
+      float: none;
+      + li {
+        margin-top: 1px;
+      }
+      a {
+        @extend %rd-navbar-default-link-font;
+        display: block;
+        padding: 11px 40px 11px 15px;
+        transition: .3s ease-in-out;
+        color: $gray-dark;
+      }
+
+      ul > li > a {
+        padding: 9px 40px 9px 27px;
+      }
+
+      .rd-navbar-submenu-toggle {
+        color: $gray-dark;
+      }
+
+      &.opened {
+        > .rd-navbar-submenu-toggle:before {
+          content: '\f106';
+        }
+      }
+    }
+
+    // Open and hover state
+    li.active,
+    li.opened,
+    li:hover {
+      > a {
+        background: $primary;
+        color: $white;
+      }
+      > .rd-navbar-submenu-toggle {
+        color: $white;
+      }
+    }
+  }
+
+  // Mobile submenu toggle
+  .rd-navbar-submenu {
+    position: relative;
+  }
+
+  .rd-navbar-submenu-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 35px;
+    height: 44px;
+    font-size: 20px;
+    line-height: 43px;
+    font-family: 'FontAwesome';
+    transition: .3s all ease;
+
+    &:before {
+      content: '\f107';
+      display: block;
+      vertical-align: middle;
+    }
+  }
+
+  // mobile dropdowns
+  .rd-navbar-megamenu,
+  .rd-navbar-dropdown {
+    display: none;
+    padding: 5px 0;
+
+    > li {
+      > a {
+        padding-left: 27px;
+      }
+      .rd-navbar-dropdown > li {
+        > a {
+          padding-left: 42px;
+        }
+        .rd-navbar-dropdown > li > a {
+          padding-left: 50px;
+        }
+      }
+    }
+  }
+
+  .rd-navbar-megamenu li a {
+    padding-left: 27px;
+  }
+
+  // megamenu
+  .rd-navbar-megamenu > li a {
+    padding-left: 27px;
+  }
+
+  // Open dropdowns
+  .rd-navbar-submenu.opened {
+    > .rd-navbar-megamenu,
+    > .rd-navbar-dropdown {
+      display: block;
+    }
+  }
+
+  //megamenu
+  .rd-navbar-megamenu {
+    [class^='cell-'],
+    [class^='col-'] {
+      width: 100%;
+    }
+    [class^='cell-'] {
+      flex-basis: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .rd-navbar-nav li ul li + li {
+      margin-top: 8px;
+    }
+  }
+}
+
+// Body padding-top when navbar is fixed
+@include media-breakpoint-down(lg) {
+  html.rd-navbar-fixed-linked .page {
+    padding-top: 56px;
+  }
+}

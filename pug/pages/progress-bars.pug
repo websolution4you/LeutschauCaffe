@@ -1,0 +1,97 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-progress-bar-linear
+include ../components/counter
+include ../components/progress-circle
+
+block variables
+	- pageName = 'Progress Bars'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-light
+
+	+breadcrumbs({
+		class: 'no-bg breadcrumbs-classic',
+		subpage: true
+	})
+
+	//- Skill Bars
+	section.section-lg.section-lg--inset-top-60.bg-default
+		.container
+			h3.text-center Skill Bars
+
+			.row.justify-content-sm-center.progress-linear-wrap
+				.col-sm-10.col-md-8.col-xl-6
+
+					+progress-bar-linear({
+						title: "Coffee Production",
+						value: "80"
+					})
+
+					+progress-bar-linear({
+						title: "Management",
+						value: "55"
+					})
+
+					+progress-bar-linear({
+						title: "Sales",
+						value: "95"
+					})
+
+	//- Counters
+	section.section-sm.bg-gray-lighter-2
+		.container
+			.row.justify-content-sm-center
+				.col-sm-10.col-md-8.col-lg-12
+					.row.justify-content-sm-center.row-30
+						.col-sm-5.col-lg-3
+							+counter({
+								title: 'Years of Experience',
+								value: 10
+							})
+						.col-sm-5.col-lg-3
+							+counter({
+								title: 'Partners',
+								value: 7
+							})
+						.col-sm-5.col-lg-3
+							+counter({
+								title: 'Qualified Experts',
+								value: 26
+							})
+						.col-sm-5.col-lg-3
+							+counter({
+								title: 'New Drinks',
+								value: 12
+							})
+
+	//- Section Circle Progress Bars
+	section.section-lg.bg-default
+		.container
+			h3.text-center Progress Bars
+			.row.justify-content-center.time_circles-wrap.row-30
+				.col-sm-5.col-lg-3
+					+progress-circle({
+						title: 'Coffee Production',
+						value: 40
+					})
+				.col-sm-5.col-lg-3
+					+progress-circle({
+						title: 'Management',
+						value: 50
+					})
+				.col-sm-5.col-lg-3
+					+progress-circle({
+						title: 'Innovation and creativity',
+						value: 60
+					})
+				.col-sm-5.col-lg-3
+					+progress-circle({
+						title: 'Resilience',
+						value: 90
+					})
+
+	//- Page Footer
+	include ../sections/_footer-minimal-dark

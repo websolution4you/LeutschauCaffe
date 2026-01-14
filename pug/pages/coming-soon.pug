@@ -1,0 +1,29 @@
+extends  ../_skeleton
+include ../components/countdown
+
+block title
+	title Coming Soon
+
+block page
+
+	.page-content(style='background: #191919 url(images/background-07-1920x1080.jpg) center/cover no-repeat')
+		.one-page.bg-overlay-black.text-center.one-screen-content
+
+			.one-page-header
+				+logo
+
+			//- Under Construction
+			.container
+				.row.justify-content-sm-center.align-items-sm-center.justify-content-center
+					.col-sm-12
+						h2 We're Getting Ready to Launch in
+						.row.justify-content-sm-center.time_circles-wrap
+							.col-md-10.col-xl-8
+								+countdown({ to: '2024-05-20' })
+						.group-lg.unit-20
+							a.button.button-primary(href="index.html") Back to Home Page
+							a.button.button-white-outline(href="contacts.html") Contact Us
+
+			.one-page-footer
+				+rights
+

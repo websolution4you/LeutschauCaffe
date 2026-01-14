@@ -1,0 +1,112 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Checkout'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					+breadcrumbs({
+						bg: 'background-01-960x1080.jpg'
+					})
+				.col-sm-10.col-md-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner
+						.row.justify-content-sm-center.section-lg
+							.col-sm-12.section-mailform-wrap-25
+								h3 Execution of Orders
+								.divider.divider-lg.divider-left-0.divider-primary
+								.row.justify-content-sm-center.tabs-custom-wrap.tabs-custom-checkout-wrap
+									.col-xl-12
+										//- Bootstrap tabs
+										#tabs-1.tabs-custom.tabs-custom-checkout.tabs-horizontal
+											//- Nav tabs
+											ul.nav-custom.nav-custom-tabs.nav-custom-tabs-left.nav.unit-nav-10
+												li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-1-1' data-bs-toggle='tab') 1. Shipping Info
+												li.nav-item(role='presentation'): a.nav-link(href='#tabs-1-2' data-bs-toggle='tab') 2. Payment Method
+
+								.row.justify-content-sm-center
+									.col-xl-12
+										//- Tab panes
+										.tab-content.text-start
+											div#tabs-1-1.tab-pane.fade.show.active
+												//- RD Mailform
+												form.rd-mailform.text-start(data-form-output="form-output-global", data-form-type='order', method='post', action='bat/rd-mailform.php')
+													.row.justify-content-sm-center.row-md-30
+														.col-md-6
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-name") First name
+																input#checkout-name.form-input(type="text" name="name" data-constraints='@Required')
+														.col-md-6
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-last-name") Last name
+																input#checkout-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+														.col-md-6
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-company") Company
+																input#checkout-company.form-input(type="text" name="company" data-constraints='@Required')
+														.col-md-6
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-last-city") City/Town
+																input#checkout-last-city.form-input(type="text" name="city" data-constraints="@Required")
+														.col-md-6
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-email") E-mail
+																input#checkout-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+														.col-md-6
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-phone") Phone
+																input#checkout-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+														.col-md-12
+															.form-wrap.form-wrap-validation
+																label.form-label.form-label-outside(for="checkout-address") Address
+																input#checkout-address.form-input(type="text" name="address" data-constraints='@Required')
+
+
+													p.text-center.text-md-end #[span Shipping:] Free Delivery
+
+													.button-wrap.text-md-end
+														button(type="submit").button.button-sm.button-primary Checkout
+
+											div#tabs-1-2.tab-pane.fade.rd-mailform-payment-wrap
+												form.rd-mailform.rd-mailform-payment.text-start
+													.row.g-0.rd-mailform-payment-top.rd-mailform-payment-inset
+														.col-sm-6
+															ul.list.rd-mailform-payment-titles
+																li Cart Subtotal
+																li Shipping
+																li Total
+														.col-sm-6
+															ul.list
+																li $84.00
+																li Free
+																li $84.00
+
+													.hr-custom
+
+													.form-wrap-radio.form-radio-custom
+														.form-wrap
+															label.radio-inline
+																input(name='input-group-radio', value='radio-1', type='radio' class="radio-custom")
+																| Direct Bank Transfer
+														.form-wrap
+															label.radio-inline
+																input(name='input-group-radio', value='radio-2', type='radio' class="radio-custom")
+																| Cheque Payment
+														.form-wrap
+															label.radio-inline
+																input(name='input-group-radio', value='radio-3', type='radio' class="radio-custom")
+																| Paypal
+														.rd-mailform-payment-inset.button-wrap
+															button(type="submit").button.button-sm.button-primary Place Order
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+
+	//- Page Footer
+	include ../sections/_footer-divided

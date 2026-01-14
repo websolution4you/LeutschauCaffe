@@ -1,0 +1,44 @@
+footer.page-footer-dark.section-lg.bg-gray-dark.context-dark
+	.container
+		.row.row-30.align-items-center.align-items-md-start
+			.col-sm-6.col-md-3
+				a.brand(href="index.html")
+					img(src="images/logo-light-150x150.png", width="150", height="150", alt="")
+			.col-sm-6.col-md-4
+				.contact-info
+					.unit.flex-row.unit-12
+						.unit-left
+							.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-map-marker
+						.unit-body
+							p
+								a(href="contacts.html") Fulton Street, San Diego, #[br] CA 94117-1080 USA
+
+					.unit.flex-row.unit-12
+						.unit-left
+							.icon.icon-sm.icon-sm-mod-20.icon-circle.icon-bordered.icon-white.mdi.mdi-map-marker
+						.unit-body
+							p
+								| Monday–Sunday:
+								br
+								| 10:00am—02:00am
+			.col-md-5
+				h3.heading-modify Sign up to our newsletter!
+				form.rd-mailform.rd-mailform-boxed.text-start(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+					.form-wrap
+						label.form-label(for="footer-email") Your e-mail
+						input#footer-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+						button(type="submit").button.rd-mailform-icon.mdi.mdi-email-outline
+				ul.list-inline.list-inline-12.list-inline-gray-lighter
+					li
+						a.icon.icon-sm-mod-20.fa.fa-facebook-f(href="#")
+					li
+						a.icon.icon-sm-mod-20.fa.fa-twitter(href="#")
+					li
+						a.icon.icon-sm-mod-20.fa.fa-instagram(href="#")
+					li
+						a.icon.icon-sm-mod-20.fa.fa-google(href="#")
+					li
+						a.icon.icon-sm-mod-20.fa.fa-pinterest-p(href="#")
+					li
+						a.icon.icon-sm-mod-20.fa.fa-linkedin(href="#")
+				+rights

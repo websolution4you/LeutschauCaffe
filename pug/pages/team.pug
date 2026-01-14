@@ -1,0 +1,121 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Team'
+
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					+breadcrumbs({
+						bg: 'background-04-960x1080.jpg'
+					})
+				.col-sm-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+
+
+						.row.justify-content-sm-center.row-50.team-member-wrap.block-md
+							.col-12
+								h3 A Team of Experienced Specialists
+								.divider.divider-lg.divider-left-0.divider-primary
+							.col-md-6
+								.team-member
+									img(src="images/user-03-290x290.jpg" width="290" height="290" alt="")
+									h6.team-member-title
+										a(href="team-member-profile.html") Benjamin Cole
+									p.team-member-desc Co-Founder
+									p Benjamin enjoys being a “flame keeper”, coaching the best flavors and aromas from these organic and mystical seeds from faraway places.
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+							.col-md-6
+								.team-member
+									img(src="images/user-04-290x290.jpg" width="290" height="290" alt="")
+									h6.team-member-title
+										a(href="team-member-profile.html") Phillip Gardner
+									p.team-member-desc Co-Founder, Manager
+									p Phillip had the opportunity to learn the intricacies of the retail side of coffee while working in a busy drive-thru and managing the adjoining sit-down café.
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+							.col-md-6
+								.team-member
+									img(src="images/user-05-290x290.jpg" width="290" height="290" alt="")
+									h6.team-member-title
+										a(href="team-member-profile.html") Cynthia Johnson
+									p.team-member-desc Head Barista, Manager
+									p Cynthia is the head barista at our coffee shop and she is responsible for making good coffee. She also observes other members of our team.
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+							.col-md-6
+								.team-member
+									img(src="images/user-06-290x290.jpg" width="290" height="290" alt="")
+									h6.team-member-title
+										a(href="team-member-profile.html") Eric Jordan
+									p.team-member-desc Barista
+									p Eric works with us since 2010, and he already has a reputation of a professional barista who loves to experiment with various types of coffee drinks.
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+							.col-md-6
+								.team-member
+									img(src="images/user-07-290x290.jpg" width="290" height="290" alt="")
+									h6.team-member-title
+										a(href="team-member-profile.html") Louis Sims
+									p.team-member-desc Barista
+									p Louis is one of our youngest team members who joined us in 2011. He is a certified barista and he knows how to satisfy any coffee drinker.
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+							.col-md-6
+								.team-member
+									img(src="images/user-08-290x290.jpg" width="290" height="290" alt="")
+									h6.team-member-title
+										a(href="team-member-profile.html") Lori Butler
+									p.team-member-desc Barista
+									p Lori works with us since 2023, and though she is young, she is also very talented when it comes to making good coffee. She has previously worked as our delivery manager.
+									ul.list-inline.list-inline-12
+										li
+											a.icon.icon-sm.fa.fa-facebook-f(href="#")
+										li
+											a.icon.icon-sm.fa.fa-twitter(href="#")
+										li
+											a.icon.icon-sm.fa.fa-instagram(href="#")
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+
+	//- Page Footer
+	include ../sections/_footer-divided

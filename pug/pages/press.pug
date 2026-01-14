@@ -1,0 +1,138 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Press'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.container-fluid
+			.row.justify-content-sm-center.g-0-xl
+				.col-xl-6
+					+breadcrumbs({
+						bg: 'background-06-960x1080.jpg'
+					})
+				.col-sm-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+					.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+						.row.align-items-sm-center.justify-content-sm-center
+							.col-sm-12
+									h3 Recent Articles About Beans
+									.divider.divider-lg.divider-left-0.divider-primary
+
+									.row.justify-content-sm-center.row-30.post-recent-wrap
+										.col-md-6
+											article.post-recent
+												h6.post-recent-title
+													a(href="blog-post.html") Top 5 Coffee Shops to Visit This Year
+												.post-recent-body
+													.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-newspaper.icon-gray-lighter
+														.unit-body
+															p The New York Times
+
+													.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+														.unit-body
+															p Nov 23, 2023
+												.hr-custom
+
+										.col-md-6
+											article.post-recent
+												h6.post-recent-title
+													a(href="blog-post.html") Beans is Recognized as the #1 Coffee Shop
+												.post-recent-body
+													.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-newspaper.icon-gray-lighter
+														.unit-body
+															p CNN
+
+													.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+														.unit-body
+															p Nov 24, 2023
+												.hr-custom
+
+										.col-md-6
+											article.post-recent
+												h6.post-recent-title
+													a(href="blog-post.html") How to Make a Proper Macchiato at Home
+												.post-recent-body
+													.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-newspaper.icon-gray-lighter
+														.unit-body
+															p Coffee & Tea
+
+													.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+														.unit-body
+															p Nov 25, 2023
+												.hr-custom
+
+										.col-md-6
+											article.post-recent
+												h6.post-recent-title
+													a(href="blog-post.html") Where to Buy & Roast Coffee Beans
+												.post-recent-body
+													.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-newspaper.icon-gray-lighter
+														.unit-body
+															p Times
+
+													.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+														.unit-body
+															p Nov 26, 2023
+												.hr-custom
+
+										.col-md-6
+											article.post-recent
+												h6.post-recent-title
+													a(href="blog-post.html") Why do Coffee Shops Get More Popular?
+												.post-recent-body
+													.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-newspaper.icon-gray-lighter
+														.unit-body
+															p Daily Telegraph
+
+													.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+														.unit-body
+															p Nov 27, 2023
+												.hr-custom
+
+										.col-md-6
+											article.post-recent
+												h6.post-recent-title
+													a(href="blog-post.html") 10 Coffee Drinks You Must Try in 2023
+												.post-recent-body
+													.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-newspaper.icon-gray-lighter
+														.unit-body
+															p Coffee Guide
+
+													.post-meta.unit.align-items-center.flex-row.unit-spacing-xxs
+														.unit-left
+															span.icon.icon-sm.mdi.mdi-calendar.icon-gray-lighter
+														.unit-body
+															p Nov 28, 2023
+												.hr-custom
+
+
+		a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

@@ -1,0 +1,485 @@
+/** @section Breadcrumbs */
+
+// Local variables
+$breadcrumb-padding-vertical: 8px;
+$breadcrumb-padding-horizontal: 15px;
+$breadcrumb-bg: $gray-300;
+$breadcrumb-color: $primary;
+$breadcrumb-active-color: $white;
+$breadcrumb-separator: "\f105";
+
+// Base styles
+.breadcrumbs-custom {
+  position: relative;
+  padding: 35px 0 40px;
+  text-align: center;
+  background-color: $breadcrumb-bg;
+  background-position: center;
+}
+
+.breadcrumbs-custom-path {
+  @include spacingX(30px);
+
+  a {
+    display: inline;
+    vertical-align: middle;
+    &,
+    &:active,
+    &:focus {
+      color: $breadcrumb-color;
+    }
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1.7;
+
+    &::after {
+      content: $breadcrumb-separator;
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 52%;
+      right: -5px;
+      display: inline-block;
+      font-size: inherit;
+      font-style: normal;
+      color: rgba($white, .5);
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  li:last-child {
+    &:after {
+      display: none;
+    }
+  }
+
+  a:hover,
+  li.active {
+    color: $breadcrumb-active-color;
+  }
+
+  li.active {
+    top: 2px;
+  }
+}
+
+* + .breadcrumbs-custom-path {
+  margin-top: 14px;
+}
+
+@include media-breakpoint-down(md) {
+  .breadcrumbs-custom-title {
+    font-size: 26px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .breadcrumbs-custom {
+    @include spacingX(60px);
+  }
+
+  * + .breadcrumbs-custom-path {
+    margin-top: 18px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .breadcrumbs-custom {
+    padding: 70px 0 80px;
+  }
+
+  .breadcrumbs-custom-path {
+    li {
+      font-size: 16px;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .breadcrumbs-custom {
+    padding: 80px 0 100px;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .breadcrumbs-custom {
+    padding: 80px 0 100px;
+  }
+}
+
+.breadcrumb-custom {
+  background: $white;
+
+  .brand {
+    display: none;
+  }
+
+  .list-inline {
+    > li {
+      &:after {
+        font: 400 18px/24px "Material Design Icons";
+        color: $gray-lighter;
+        content: '\f238';
+      }
+
+      &:last-child {
+        color: $gray-lighter;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .brand {
+      display: inline-block;
+    }
+  }
+  @media (max-width: $screen-lg-min - 1) {
+    &.section-lg {
+      padding-top: 22px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.tablet .breadcrumb-custom {
+  @include media-breakpoint-up(lg) {
+    padding-top: 100px;
+  }
+}
+
+// Breadcrumb Modern
+// --------------------------------------------------
+
+.breadcrumb-modern {
+  &-top {
+
+    @include media-breakpoint-up(md) {
+      padding-top: 20px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-top: 0;
+    }
+  }
+  a, p {
+    color: $white;
+  }
+
+  a:hover,
+  a:focus {
+    color: $primary;
+  }
+
+  .brand, &-bottom, &-title {
+    display: none;
+  }
+
+  &-bottom {
+    p {
+      margin-bottom: 0;
+    }
+
+    p + p {
+      margin-top: 0;
+    }
+  }
+
+  .list-inline {
+    > li {
+      &:after {
+        font: 400 14px/24px "Material Design Icons";
+        color: $white;
+        content: '\f14f';
+      }
+
+      &:last-child {
+        color: $gray-lighter;
+      }
+    }
+  }
+
+  h1 {
+    color: $white;
+  }
+
+  * + .brand {
+    margin-top: 50px;
+  }
+  * + .breadcrumb-modern-bottom {
+    margin-top: 40px;
+  }
+
+  @include media-breakpoint-up(md) {
+    &-bottom, &-title {
+      display: block;
+    }
+    .brand {
+      display: inline-block;
+    }
+    &-body {
+      padding-top: 60px;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .breadcrumb-modern-top, .breadcrumb-modern-bottom {
+      padding: 15px 15px 15px 15px;
+    }
+    .breadcrumb-modern-body {
+      padding-top: 0;
+    }
+
+    .breadcrumb-modern-bottom {
+      bottom: 50px;
+    }
+  }
+  @media (min-width: $screen-lg-min) and (max-height: 800px) {
+    .breadcrumb-modern-title {
+      font-size: 36px;
+    }
+
+    .brand + h1 {
+      margin-top: 15px;
+    }
+
+    .breadcrumb-modern-bottom {
+      bottom: 30px;
+    }
+  }
+  @media (min-width: $screen-lg-min) and (max-height: 900px) {
+    .product-single .product-image {
+      .product-image-area {
+        max-width: 170px;
+      }
+      .product-thumbnails {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg-min) and (max-height: 700px) {
+    .product-single .product-image {
+      .product-image-area {
+        max-width: 120px;
+      }
+      .product-thumbnails {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.cutom-col {
+  text-align: center;
+  @include media-breakpoint-up(md) {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 75px;
+  }
+}
+
+.breadcrumb-modern-light {
+  h1 {
+    color: $gray-dark;
+  }
+
+  p {
+    color: inherit;
+  }
+
+  .list-inline > li:after {
+    color: $gray-lighter;
+  }
+
+  .breadcrumb-modern-top a {
+    color: $primary;
+
+    &:hover,
+    &:focus {
+      color: $gray-dark;
+    }
+  }
+  .breadcrumb-modern-bottom a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+    }
+  }
+}
+
+.breadcrumbs {
+  .breadcrumb-modern-body {
+    .brand-logo-dark {
+      display: none;
+    }
+    .brand-logo-light {
+      display: none;
+    }
+  }
+  &.no-bg {
+    &:before {
+      display: none;
+    }
+    .list-inline {
+      li {
+        &:after {
+          color: #c1c1c1;
+        }
+      }
+      a:not(.active) {
+        @include link($primary, $gray-dark)
+      }
+    }
+    .breadcrumb-modern-body{
+      h1 {
+        color: $gray-dark;
+      }
+      .brand-logo-dark {display: block;}
+      .brand-logo-light {display: none;}
+      .brand-logo-white{display: none;}
+      .brand{
+        img{
+          max-width: 150px;
+          width: 100%;
+        }
+      }
+    }
+    .breadcrumb-modern-bottom{
+      a{
+        @include link($gray-light,$primary);
+      }
+      .icon-bordered{
+        border-color: #e6e6e6;
+        color: $primary;
+      }
+    }
+  }
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 10;
+  display: block;
+  @include media-breakpoint-up(xl) {
+    height: 100vh;
+  }
+  top: 0;
+}
+
+.product-mode {
+  &:before {
+    display: none;
+  }
+  .breadcrumb-modern-body {
+    @include media-breakpoint-up(xl) {
+      padding-top: 74px;
+    }
+  }
+  .breadcrumb-modern-top {
+    padding: 40px 15px 40px;
+    @include media-breakpoint-up(md) {
+      padding: 0px 15px 40px;
+    }
+
+    .list-inline {
+      li {
+        &:after {
+          color: #c1c1c1;
+        }
+      }
+      a:not(.active) {
+        @include link($primary, $gray-dark)
+      }
+    }
+  }
+  .cutom-col {
+    justify-content: center;
+    padding-top: 0;
+    @media(max-width: 1199px) {
+      padding-top: 0;
+    }
+  }
+
+}
+
+
+
+.breadcrumbs-classic{
+  position: static;
+  height: auto;
+  .breadcrumb-modern .brand{
+    display: inline-block;
+  }
+  .row{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cutom-col{
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    @include media-breakpoint-up(xl) {
+      padding-top: 100px;
+      padding-bottom: 22px;
+    }
+    &:before,&:after{
+      content: '';
+      position: absolute;
+      background-color: #d6d5d5;
+      height: 1px;
+      left: 27px;
+      right: 27px;
+      @include media-breakpoint-up(xl) {
+        max-width: 1770px;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+      }
+    }
+    &:before{
+      display: none;
+      @include media-breakpoint-up(lg) {
+        display: block;
+        top: 0;
+      }
+    }
+    &:after{
+      bottom: 0;
+    }
+  }
+  .breadcrumb-modern {
+    &-body{
+      padding-top: 0;
+    }
+    &-top{
+      padding-bottom: 0;
+      padding-top: 20px;
+      @include media-breakpoint-up(md) {
+        padding-top: 50px;
+      }
+      @include media-breakpoint-up(xl) {
+        padding-top: 100px;
+      }
+    }
+  }
+  .brand + h1{
+    margin-top: 25px;
+  }
+  .breadcrumbs-custom-title{
+    font-size: 36px;
+    @include media-breakpoint-up(lg) {
+      font-size: 50px;
+    }
+  }
+}

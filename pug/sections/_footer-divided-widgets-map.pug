@@ -1,0 +1,133 @@
+footer.page-footer.page-footer-corporate.page-footer-map.bg-gray-dark.text-start.footer-widget-map
+	.container-fluid
+		.row.justify-content-sm-center.justify-content-xl-between
+			.col-xl-2
+				//- RD Google Map
+				.google-map-container( data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-zoom='5', data-icon='images/gmap_marker.png', data-icon-active='images/gmap_marker_active.png', data-styles='[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":60}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"lightness":30}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ef8c25"},{"lightness":40}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#b6c54c"},{"lightness":40},{"saturation":-40}]},{}]' )
+					.google-map.footer-map
+					ul.google-map-markers
+						li( data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.', data-description='9870 St Vincent Place, Glasgow' )
+
+			.col-xl-10.section-lg.section-lg--inset-bottom-60.page-footer-map-inset-right
+				.container-wide.container-fluid
+					.row.justify-content-sm-center.justify-content-xl-between.row-40
+						.col-xl-4.col-md-4.col-xxxl-3.inset-xxl
+							h6 Contact Information
+							.hr-custom
+							.contact-info
+								.unit.flex-row.unit-spacing-xxs
+									.unit-left
+										span.icon.icon-sm.mdi.mdi-map-marker.icon-primary
+									.unit-body
+										p
+											a(href="contacts.html") 2130 Fulton Street, San Diego, #[br] CA 94117-1080 USA
+
+								.unit.flex-row.unit-spacing-xxs
+									.unit-left
+										span.icon.icon-sm.mdi.mdi-calendar-clock.icon-primary
+									.unit-body
+										p Monday–Sunday: 10:00 am — 02:00 am
+
+								.unit.flex-row.unit-spacing-xxs
+									.unit-left
+										span.icon.icon-sm.mdi.mdi-phone.icon-primary
+									.unit-body
+										p
+											a(href="tel:#") 1-800-1234-567
+											span ,
+											= ' '
+											a(href="tel:#") 1-800-7653-876
+
+
+								.unit.flex-row.unit-spacing-xxs
+									.unit-left
+										span.icon.icon-sm.mdi.mdi-email-outline.icon-primary
+									.unit-body
+										a(href="mailto:#") mail@demolink.org
+
+								ul.list-inline.list-inline-12.list-inline-gray-lighter
+									li
+										a.icon.icon-sm-mod-20.fa.fa-facebook-f(href="#")
+									li
+										a.icon.icon-sm-mod-20.fa.fa-twitter(href="#")
+									li
+										a.icon.icon-sm-mod-20.fa.fa-instagram(href="#")
+
+									li
+										a.icon.icon-sm-mod-20.fa.fa-google(href="#")
+									li
+										a.icon.icon-sm-mod-20.fa.fa-pinterest-p(href="#")
+									li
+										a.icon.icon-sm-mod-20.fa.fa-linkedin(href="#")
+
+						.col-md-4.col-xxxl-3
+							h6 Testimonials
+							.hr-custom
+
+							//- Owl Carousel
+							.owl-carousel.owl-carousel-small(data-items='1', data-stage-padding='5', data-loop='false', data-margin='30', data-mouse-drag="false" data-nav="true")
+								.item
+									.quote.quote-dark
+										span.icon.icon-rotate-180.mdi.mdi-format-quote
+										p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing close to Beans French Roast aroma, taste and smoothness. Luckily I can buy 5 pounds of beans through your website.
+										a(href="team-member-profile.html") Angela Gonzales
+								.item
+									.quote.quote-dark
+										span.icon.icon-rotate-180.mdi.mdi-format-quote
+										p I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service.
+										a(href="team-member-profile.html") Olivia Myers
+								.item
+									.quote.quote-dark
+										span.icon.icon-rotate-180.mdi.mdi-format-quote
+										p I started getting coffee from Beans long before it was possible to buy freshly roasted fair trade coffee closer to home. I've tried others, but none are as good as the ones made by Beans’ team.
+										a(href="team-member-profile.html") Austin Jensen
+
+						.col-md-4.col-xxxl-3
+							h6 Gallery
+							.hr-custom
+
+							.group-sm.d-flex.flex-wrap(data-lightgallery="group")
+								//- Thumbnail Rayen
+								a.thumbnail-rayen.thumbnail-rayen-small.thumbnail-rayen-primary(data-lightgallery="item", href='images/gallery-31-1170x779_original.jpg')
+									figure
+										img(width='100', height='100', src='images/gallery-31-100x100.jpg', alt='')
+										figcaption
+											span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+								//- Thumbnail Rayen
+								a.thumbnail-rayen.thumbnail-rayen-small.thumbnail-rayen-primary(data-lightgallery="item", href='images/gallery-11-711x800_original.jpg')
+									figure
+										img(width='100', height='100', src='images/gallery-11-100x100.jpg', alt='')
+										figcaption
+											span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+								//- Thumbnail Rayen
+								a.thumbnail-rayen.thumbnail-rayen-small.thumbnail-rayen-primary(data-lightgallery="item", href='images/gallery-02-1170x780_original.jpg')
+									figure
+										img(width='100', height='100', src='images/gallery-02-100x100.jpg', alt='')
+										figcaption
+											span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+								//- Thumbnail Rayen
+								a.thumbnail-rayen.thumbnail-rayen-small.thumbnail-rayen-primary(data-lightgallery="item", href='images/gallery-04-1170x779_original.jpg')
+									figure
+										img(width='100', height='100', src='images/gallery-04-100x100.jpg', alt='')
+										figcaption
+											span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+								//- Thumbnail Rayen
+								a.thumbnail-rayen.thumbnail-rayen-small.thumbnail-rayen-primary(data-lightgallery="item", href='images/gallery-29-711x800_original.jpg')
+									figure
+										img(width='100', height='100', src='images/gallery-29-100x100.jpg', alt='')
+										figcaption
+											span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+								//- Thumbnail Rayen
+								a.thumbnail-rayen.thumbnail-rayen-small.thumbnail-rayen-primary(data-lightgallery="item", href='images/gallery-06-1170x781_original.jpg')
+									figure
+										img(width='100', height='100', src='images/gallery-06-100x100.jpg', alt='')
+										figcaption
+											span.icon.icon-white.mdi.mdi-plus-circle-outline
+
+					.privacy-wrap
+						+rights

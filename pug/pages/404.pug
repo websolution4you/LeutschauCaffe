@@ -1,0 +1,24 @@
+extends  ../_skeleton
+
+block variables
+	- pageName = '404'
+
+block page
+
+	.page-content(style='background: #191919 url(images/background-07-1920x1080.jpg) center/cover no-repeat')
+		.one-page.bg-overlay-black.text-center.one-screen-content
+
+				.one-page-header
+					+logo
+
+				//- 404
+				.container
+					.row.justify-content-sm-center.align-items-sm-center.justify-content-center
+						.col-xl-8.text-white
+							.text-extra-big 404
+							h2 Page Not Found
+							p.block-sm The page requested couldn't be found - this could be due to a spelling error in the URL or a removed page.
+							a.button.button-primary(href="index.html") Back to Home Page
+
+				.one-page-footer
+					+rights

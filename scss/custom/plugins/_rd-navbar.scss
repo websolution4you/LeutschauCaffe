@@ -1,0 +1,149 @@
+/** @section  RD Navbar*/
+
+//
+// RD Navbar
+// --------------------------------------------------
+
+// Variables
+// RD Navbar variables
+$rd-navbar-static-width: map-get($container-max-widths, xl);
+$navbar-static-nav-indent: 38px;
+
+$rd-navbar-min-font-size: 24px;
+$rd-navbar-min-line-height: 48px;
+$rd-navbar-min-height: 56px;
+
+$rd-navbar-color: $gray-700;
+$rd-navbar-background: $white;
+$rd-navbar-shadow: 0 0 22px -4px rgba(0, 0, 0, 0.17);
+$rd-navbar-border: 1px solid $gray-200;
+$rd-navbar-width: 1200px;
+
+// RD Navbar Panel
+$rd-navbar-panel-color: $rd-navbar-color;
+$rd-navbar-panel-background: $rd-navbar-background;
+
+// RD Navbar Nav
+$rd-navbar-nav-min-width: 270px;
+$rd-navbar-nav-color: $rd-navbar-color;
+$rd-navbar-nav-background: transparent;
+$rd-navbar-nav-hover-color: $primary;
+$rd-navbar-nav-hover-background: transparent;
+$rd-navbar-nav-active-color: $rd-navbar-nav-hover-color;
+$rd-navbar-nav-active-background: $rd-navbar-nav-hover-background;
+
+// RD Navbar Dropdown
+$rd-navbar-dropdown-width: 270px;
+$rd-navbar-dropdown-background: $white;
+$rd-navbar-dropdown-item-color: $gray-500;
+$rd-navbar-dropdown-item-background: transparent;
+$rd-navbar-dropdown-item-hover-color: $primary;
+$rd-navbar-dropdown-item-hover-background: transparent;
+$rd-navbar-dropdown-item-active-color: $rd-navbar-dropdown-item-hover-color;
+$rd-navbar-dropdown-item-active-background: $rd-navbar-dropdown-item-hover-background;
+
+// RD Navbar Megamenu
+$rd-navbar-megamenu-gutter: 30px;
+$rd-navbar-megamenu-background: $white;
+$rd-navbar-megamenu-item-color: $black;
+$rd-navbar-megamenu-item-background: transparent;
+$rd-navbar-megamenu-item-hover-color: $primary;
+$rd-navbar-megamenu-item-hover-background: transparent;
+
+
+
+$rd-navbar-default-background:    $white;
+
+// Rd-navbar inner width
+$rd-navbar-width: 1800px;
+
+// Fixed Navbar Colors
+$rd-navbar-fixed-bg:              $white;
+$rd-navbar-fixed-toggle-color:    $gray-dark;
+
+//RD Navbar togles
+$rd-navbar-toggle-preset:         "button-lines-arrow-2";
+$rd-navbar-collapse-toggle-preset: "collapse-preset-1";
+
+
+// import mixins
+@import "rd-navbar_includes/_rd-navbar-mixins.scss";
+
+.rd-navbar {
+  display: none;
+  position: relative;
+  z-index: 30;
+}
+
+
+// Default link font
+%rd-navbar-default-link-font {
+  letter-spacing: .05em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+// RD Navbar Basics
+%rd-navbar-transition {
+  transition: .3s all cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+.rd-navbar a {
+  transition: .3s ease-in-out;
+}
+
+.rd-navbar--no-transition {
+  &, * {
+    transition: none !important;
+  }
+}
+
+.rd-navbar-fixed,
+.rd-navbar-fullwidth,
+.rd-navbar-static {
+  display: block;
+}
+
+.rd-navbar-fullwidth.rd-navbar--is-stuck,
+.rd-navbar-static.rd-navbar--is-stuck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 1080;
+}
+
+.rd-navbar.rd-navbar--is-clone {
+  display: none!important;
+}
+
+.rd-navbar-cart {
+  > span {
+    position: relative;
+    top: -3px;
+    padding-left: 5px;
+    font-size: 14px;
+    font-family: $font-family-base;
+    vertical-align: bottom;
+  }
+}
+
+// Include components and placeholders
+@import "rd-navbar_includes/rd-navbar-components";
+
+// Include general style for all navbar types
+@import "rd-navbar_includes/rd-navbar-fixed";
+
+
+// Include specific navbars
+@import "rd-navbar-default";
+@import "rd-navbar-default-with-top-panel";
+@import "rd-navbar-sidebar";
+@import "rd-navbar_includes/rd-navbar-classic";
+
+
+
+
+

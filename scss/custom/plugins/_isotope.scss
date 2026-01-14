@@ -1,0 +1,215 @@
+/** @section Isotope*/
+
+
+[data-isotope-layout] {
+  transition: .4s all ease;
+  min-height: 160px;
+  z-index: 0;
+
+
+
+  .row {
+    margin-bottom: -30px;
+
+    > [class*="col-"] {
+      margin-top: 30px;
+    }
+  }
+
+  .row-narrow {
+    margin-bottom: -$cell-spacing-narrow;
+
+    > [class*="col-"] {
+      margin-top: $cell-spacing-narrow;
+    }
+  }
+
+  .row-condensed {
+    margin-bottom: 0;
+
+    > [class*="col-"] {
+      margin-top: 0;
+    }
+  }
+
+  [class*="col-"] {
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: .1s opacity ease-in;
+
+    @media (max-width: $screen-xs-min - 1) {
+      max-width: 100%;
+    }
+  }
+
+  &.isotope--loaded {
+    [class*="col-"] {
+      opacity: 1;
+    }
+
+    &:after {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.isotope-sizer {
+  height: 0;
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+// offset for 1800
+
+.isotope-xl {
+  @media (max-width: $screen-sm-min - 1) {
+    .row > [class*="col-"] .row {
+      margin-bottom: -30px;
+
+      > [class*="col-"] {
+        margin-top: 35px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    .row > [class*="col-"] .row {
+      margin-bottom: -30px;
+
+      > [class*="col-"] {
+        margin-top: 66px;
+      }
+    }
+  }
+}
+
+// Isotope filter base styles
+
+.isotope-filters {
+  position: relative;
+  //padding: 0 15px;
+
+  li {
+    display: block;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 5px 18px;
+      font-size: 15px;
+      color: $gray-dark;
+      border: 2px solid $primary;
+    }
+
+    a.active {
+      color: $white;
+      background: $primary;
+
+      &:before {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+    }
+
+    &:hover a,
+    &:focus a {
+      color: $white;
+      background: $primary;
+    }
+
+    a.active { pointer-events: none; }
+
+    &+ li { margin-top: 5px; }
+  }
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: inline-block;
+
+        &:before {
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          margin-bottom: -8px;
+          border-style: solid;
+          border-width: 6px 6px 0 6px;
+          opacity: 0;
+          border-color: #b8784e transparent transparent transparent;
+          transform: translate(-50%, -50%);
+          transition: .3s all ease;
+          content: '';
+        }
+      }
+
+      &+ li {
+        margin-top: 0;
+        margin-left: 5px;
+      }
+    }
+  }
+  @media (min-width: $screen-lg-min) and (max-width: 1499px) {
+    li a {
+      padding: 6px 8px;
+      font-size: 13px;
+    }
+  }
+  @include media-breakpoint-up( xxl ) {
+    &.isotope-filters-lg {
+      li {
+        a {
+          padding: 3px 35px;
+          font-weight: 500;
+          font-size: 24px;
+          color: $primary;
+          border-width: 1px;
+
+          &:before {
+            margin-bottom: -7px;
+          }
+        }
+
+        a.active {
+          color: $white;
+          background: $primary;
+        }
+
+        &:hover a,
+        &:focus a {
+          color: $white;
+          background: $primary;
+        }
+
+        & + li {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.isotope-wrap {
+
+  > .col-xl-12 + .col-xl-12 {
+    margin-top: 20px;
+  }
+}
+
+
+.isotope-offset{
+  margin-top: 30px;
+}
+
+* + .isotope-filters-lg { margin-top: 20px }
+.isotope-filters-lg + .isotope { margin-top: 30px }
+
+@include media-breakpoint-up( xl ) {
+  * + .isotope-filters-lg { margin-top: 30px }
+  .isotope-filters-lg + .isotope { margin-top: 40px }
+}

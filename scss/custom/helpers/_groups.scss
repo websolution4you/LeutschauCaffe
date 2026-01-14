@@ -1,0 +1,51 @@
+// Element groups
+// --------------------------------------------------
+
+html .page {
+  .group {
+    @include group(15px, 20px);
+  }
+
+  .group-xs {
+    @include group(5px, 5px);
+  }
+
+  .group-sm {
+    @include group(10px, 10px);
+  }
+
+  .group-lg {
+    @include group(20px, 20px);
+  }
+
+  .group-xl {
+    @include group(27px, 27px);
+  }
+
+  .group-top {
+    > *, > *:first-child {
+      vertical-align: top;
+    }
+  }
+
+  .group-middle {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .group-bottom {
+    > *, > *:first-child {
+      vertical-align: bottom;
+    }
+  }
+}

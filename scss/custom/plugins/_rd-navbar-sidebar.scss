@@ -1,0 +1,448 @@
+//
+// RD Navbar sidebar, style by fixed layout on all screen sizes
+// --------------------------------------------------
+
+.rd-navbar-sidebar {
+  @extend %rd-navbar-transition;
+  .rd-navbar-megamenu{
+    > [class*="col-"]{
+      width: 100%;
+      max-width: 100%;
+    }
+    margin-top: 0;
+  }
+  // General styles for all type navbar
+  .contact-info {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  // Fixed layout
+  &.rd-navbar-fixed {
+
+    .rd-navbar-brand {
+      margin: 20px 0;
+      position: static;
+      left: 0;
+      transform: none;
+      display: block;
+      text-align: center;
+    }
+
+    // Nav wrap
+    .rd-navbar-nav-scroll-holder {
+      padding-left: 10px;
+      padding-right: 10px;
+      .brand{
+        display: inline-block;
+      }
+    }
+
+    //nav
+    .rd-navbar-nav {
+      margin: 20px 0;
+      height: auto;
+      overflow-y: hidden;
+    }
+
+    .rd-navbar-visible-body {
+      .rd-navbar-brand {
+        display: none;
+      }
+    }
+
+    .rd-navbar-nav-wrap {
+      overflow-x: hidden;
+    }
+
+    .icon-cart {
+      > span {
+        position: relative;
+        top: -3px;
+        padding-left: 5px;
+        font-size: 14px;
+        font-family: $font-family-base;
+        vertical-align: bottom;
+      }
+    }
+
+    .rd-search {
+      align-items: flex-start;
+      .form-input, .form-label {
+        font-size: 14px;
+        color: $gray-light;
+      }
+
+      .rd-mailform-inline-button-wrap .icon {
+        height: 55px;
+        min-width: 54px;
+        border: none;
+        outline: none;
+        transition: .3s all ease;
+
+        &:focus,
+        &:hover {
+          background: darken(saturate(adjust_hue($primary, 0), 14.866760168302946%), 15.294117647058819%);
+        }
+      }
+    }
+
+    * + .contact-info { margin-top: 35px; }
+
+    * + .icon-wrap { margin-top: 30px; }
+
+    * + .rd-navbar-search { margin-top: 15px; }
+
+    .contact-info {
+      text-align: center;
+
+      p { margin-bottom: 0; }
+      p + p { margin-top: 0; }
+      .icon + p { margin-top: 14px; }
+
+      .icon-circle-box + .icon-circle-box { margin-top: 25px; }
+    }
+
+    @media (max-width: $screen-xs-min - 1) {
+      .rd-mailform-inline-button-wrap {
+        display: none;
+      }
+    }
+    @media (max-width: $screen-lg-min - 1) {
+      .contact-info .icon-white {
+        color: $gray-dark;
+      }
+
+      .contact-info {
+        .list-inline-12 {
+          margin-left: -10px;
+          margin-right: -10px;
+
+          > li {
+            padding-left: 10px;
+            padding-right: 10px;
+
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+
+      // rd-navbar-panel, disable mobile style
+      .rd-navbar-panel {
+        position: static;
+        text-align: left;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      // Navbar toggle style
+      .rd-navbar-toggle {
+        transition: .3s ease-in-out;
+        position: fixed;
+        top: 4px;
+        left: 4px;
+        // make toggle for sidebar
+        @include toggle-icons-via-rotation(48px, 48px, 26px, $rd-navbar-fixed-toggle-color, '\f039', '\f00d', 'FontAwesome', 'FontAwesome');
+
+        //avtive state
+        &.active {
+          left: 350px;
+        }
+      }
+
+      .rd-navbar-toggle {
+        display: none;
+      }
+
+      .icon-cart {
+        color: $white;
+
+        &:hover,
+        &:focus {
+          color: $primary;
+        }
+      }
+
+      .rd-navbar-toggle-custom {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        z-index: 2;
+        transform: translateX(-50%);
+
+        > .icon {
+          color: $primary;
+        }
+
+        .open-toggle,
+        .close-toggle {
+          position: absolute;
+          top: 50%;
+          right: -10px;
+          margin-top: 1px;
+          transform: translateY(-50%);
+          transition: .3s all ease;
+          text-transform: uppercase;
+        }
+
+        .close-toggle {
+          opacity: 0;
+        }
+
+        &.active {
+          .close-toggle { opacity: 1; }
+          .open-toggle { opacity: 0; }
+
+          .icon {
+            &:before {
+              content: '\f24c';
+            }
+          }
+
+          //.close-toggle { color: $primary; }
+
+          //&:focus {
+          //  .close-toggle { color: $primary; }
+          //}
+          //&:hover {
+          //  .close-toggle { color: $white; }
+          //}
+        }
+
+        span {
+          vertical-align: middle;
+        }
+
+        .icon { padding-right: 50px;  cursor: pointer;}
+        .open-toggle, .close-toggle{
+          cursor: pointer;
+        }
+        //&:focus {
+        //  .open-toggle { color: $primary; }
+        //}
+        //&:hover {
+        //  .icon { color: $primary; }
+        //  .open-toggle, .close-toggle { color: $white; }
+        //}
+      }
+
+      .contact-info {
+        text-align: center;
+
+        p, a {
+          color: $white;
+        }
+
+        a {
+          &:hover,
+          &:focus {
+            color: $primary;
+          }
+        }
+
+        .link-primary a {
+          color: $primary;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+
+        .icon-circle-box + .icon-circle-box { margin-top: 40px; }
+
+        * + .list-inline { margin-top: 80px; }
+      }
+
+      // Hidden Wrap
+      .rd-navbar-hidden-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &.active {
+          .rd-navbar-hidden-body {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          .rd-navbar-visible-body {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+
+      // Hidden Body
+      .rd-navbar-hidden-body {
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s all ease;
+      }
+
+      .rd-navbar-hidden-body {
+        padding-top: 23%;
+        width: 100%;
+
+        .rd-navbar-brand { display: none; }
+
+        .rd-navbar-search { padding-bottom: 50px; }
+      }
+
+      // Visible Body
+      .rd-navbar-visible-body {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .rd-navbar-visible-body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%,-50%);
+
+        .rd-navbar-brand {
+          display: block;
+          .brand{
+            display: inline-block;
+            text-align: center;
+          }
+        }
+      }
+
+      //navbar nav wrap
+      .rd-navbar-nav-wrap {
+        position: absolute;
+        bottom: auto;
+        transform: translateX(0);
+        z-index: 1;
+        width: 25.1%;
+        height: 100vh;
+        margin-top: 1px;
+        margin-left: -2px;
+        background: $gray-dark;
+
+        .rd-navbar-nav-scroll-holder {
+          background: $gray-dark;
+          height: 100vh;
+        }
+
+        .rd-navbar-nav li {
+          a {
+            display: inline-block;
+            padding: 0;
+            color: $white;
+          }
+
+          &.active a,
+          &.opened a,
+          &:hover a,
+          &:focus a {
+            color: $primary;
+            background: transparent;
+          }
+
+          .rd-navbar-dropdown,
+          .rd-navbar-megamenu {
+            padding-top: 4%;
+            padding-left: 8%;
+
+            a {
+              position: relative;
+              color: $white;
+              text-transform: none;
+
+              &:before {
+                content: '\f14f';
+                position: absolute;
+                top: 6px;
+                left: -2px;
+                font: 15px/24px "Material Design Icons";
+                margin-top: -6px;
+                transform: translateX(-200%);
+                color: #fff;
+                opacity: 0;
+                pointer-events: none;
+                transition: .3s all ease;
+              }
+
+              &:hover,
+              &:focus {
+                padding-left: 20px;
+                color: $primary;
+
+                &:before {
+                  opacity: 1;
+                  color: $primary;
+                  transform: translateX(0);
+                }
+              }
+            }
+          }
+        }
+
+        .rd-navbar-nav > li {
+          padding-left: 52px;
+          padding-bottom: 13px;
+
+          &+ li {
+            padding-top: 17px;
+            border-top: 1px solid rgba($white, .1);
+
+            > .rd-navbar-submenu-toggle{
+              top: 7px;
+            }
+          }
+
+          > .rd-navbar-submenu-toggle{
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            text-align: center;
+            font-family: "Material Design Icons";
+            color: $white;
+
+            &:before {
+              content: '\f504';
+            }
+          }
+        }
+      }
+
+      * + .icon-wrap {
+        margin-top: 60px;
+      }
+
+      * + .rd-navbar-search {
+        margin-top: 35px;
+      }
+
+      .rd-navbar-nav-scroll-holder{
+        padding: 60px 30px 0;
+      }
+    }
+    @include media-breakpoint-up(xxl) {
+      .rd-navbar-visible-body { padding-bottom: 30px; }
+
+      * + .rd-navbar-visible-body { margin-top: 40px; }
+
+      * + .contact-info { margin-top: 55px; }
+    }
+    @media (min-width: $screen-lg-min) and (max-height: 849px) {
+      .rd-navbar-visible-body {
+        padding-top: 80%;
+        padding-bottom: 20%;
+      }
+    }
+    @media (min-width: $screen-lg-min) and (max-height: 700px) {
+      .rd-navbar-visible-body {
+        padding-top: 110%;
+      }
+    }
+  }
+}

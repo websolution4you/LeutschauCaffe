@@ -1,0 +1,415 @@
+extends  ../_skeleton
+
+block variables
+	-
+		var activeIndex = 1
+		var footerBackSection = "section-4"
+
+block title
+	title Home Variant 4
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-0.section-animate.animate-content
+		.section-animate-wrapper
+			//- Swiper
+			.swiper-container.swiper-slider(data-autoplay="4000" data-slide-effect="fade" data-swiper!={simulateTouch: false})
+				.swiper-wrapper
+					.swiper-slide(data-slide-bg='images/background-07-1920x1080.jpg')
+						.swiper-slide-caption
+							.container-fluid
+								.row
+									.col-12.text-center
+										a.brand.brand-mod-sm-inverse.d-none.d-md-inline-block(href="index.html")
+											img(src="images/logo-light-150x150.png" width="150" height="150" alt="")
+										h1 Bring Home The Coffee
+										h5.swiper-desc We sell coffee that has amazing taste and flavor!
+										.group-lg.unit-20
+											a.button.button-width-194.button-primary(href="catalog.html") Shop Now
+											a.button.button-width-194.button-white-outline(href="menu.html") View Menu
+
+					.swiper-slide(data-slide-bg='images/background-15-1920x1080.jpg')
+						.swiper-slide-caption
+							.container-fluid
+								.row
+									.col-12.text-center
+										a.brand.brand-mod-sm-inverse.d-none.d-md-inline-block(href="index.html")
+											img(src="images/logo-light-150x150.png" width="150" height="150" alt="")
+										h1 Good Coffee Is Like Friendship
+										h5.swiper-desc Enjoy rich, warm and strong coffee at our coffee shop
+										.group-lg.unit-20
+											a.button.button-width-194.button-primary(href="catalog.html") Shop Now
+											a.button.button-width-194.button-white-outline(href="menu.html") View Menu
+
+					.swiper-slide(data-slide-bg='images/background-16-1920x1080.jpg')
+						.swiper-slide-caption
+							.container-fluid
+								.row
+									.col-12.text-center
+										a.brand.brand-mod-sm-inverse.d-none.d-md-inline-block(href="index.html")
+											img(src="images/logo-light-150x150.png" width="150" height="150" alt="")
+										h1 Get the Most Out of Your Favorite Coffee
+										h5.swiper-desc Take your time to enjoy any coffee at our shop or have it delivered right to your door
+										.group-lg.unit-20
+											a.button.button-width-194.button-primary(href="catalog.html") Shop Now
+											a.button.button-width-194.button-white-outline(href="menu.html") View Menu
+
+				//- Swiper Pagination
+				.swiper-pagination
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-0")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky.sticky-top
+							.section-cover.section-overlay-darken.d-none.d-xl-block(style="background: #302f2f url(images/background-04-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-lg
+							h3 A Few Words About Us
+							.divider.divider-lg.divider-left-0.divider-primary
+							.quote-mod-wrap
+								p We are excited to introduce Beans Coffee Production and invite you to enjoy the unique friendly atmosphere in our coffee shop. If you crave great coffee, you’ll love knowing that we provide a real alternative to chains with handcrafted coffee and espresso drinks.
+								.quote.quote-mod
+									.quote-body
+										span.icon.icon-lg.icon-rotate-180.mdi.mdi-format-quote.icon-primary
+										h4 Beans was established in 2002 as a powerful alternative to local coffee houses and stores allowing to buy, roast, and grind any type of coffee.
+										p.quote-autor
+											a(href="#") Dennis Williams
+								p Beans delivers way beyond the traditional coffee shop favorites. We have traditional breakfast choices, and plenty of healthy options (including gluten free, vegetarian, and vegan). Our lunch offerings include a wide variety of salads,  sandwiches and flatbreads.
+							h3 Timeline
+							.divider.divider-lg.divider-left-0.divider-primary
+							.blog-timeline
+								.blog-timeline-posts
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2023
+										.blog-timeline-post-body
+											p This year we are planning to open our new coffee shop in Chicago for everyone living there to enjoy the true taste of coffee, warm snacks, and mouthwatering desserts, which are affordably priced.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2015
+										.blog-timeline-post-body
+											p Our website was hugely updated in 2015 with new information, links from media resources, photos, videos, and more.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2013
+										.blog-timeline-post-body
+											p In 2013, we took part in the charity event devoted to children from poor families. It was an invaluable experience for every member of our team.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2010
+										.blog-timeline-post-body
+											p Our team was extended in 2010. We hired more baristas and sales managers, who later became our leading employees in coffee house and warehouse departments.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2008
+										.blog-timeline-post-body
+											p We developed and launched the first version of our website, which included basic information about us and coffee menu.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2006
+										.blog-timeline-post-body
+											p We extended our menu to include not only tasty and flavorful coffee drinks, but also other dishes, snacks, and desserts.
+									.blog-timeline-post
+										.blog-timeline-post-media
+											p 2002
+										.blog-timeline-post-body
+											p We opened our doors to local customers in 2002.
+
+
+							h3.text-center.text-sm-start Gallery
+							.divider.divider-lg.divider-primary.divider-sm-left
+
+							.row.justify-content-sm-center.row-20.thumbnail-rayen-wrap(data-lightgallery="group")
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.sm(data-lightgallery="item", href='images/gallery-01-1170x780_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-01-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.sm(data-lightgallery="item", href='images/gallery-02-1170x780_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-02-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.sm(data-lightgallery="item", href='images/gallery-03-1170x779_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-03-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.sm(data-lightgallery="item", href='images/gallery-04-1170x779_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-04-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.sm(data-lightgallery="item", href='images/gallery-05-1170x779_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-05-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+								.col-sm-6
+									//- Thumbnail Rayen
+									a.thumbnail-rayen.sm(data-lightgallery="item", href='images/gallery-06-1170x781_original.jpg')
+										figure
+											img(width='300', height='200', src='images/gallery-06-300x200.jpg', alt='')
+											figcaption
+												span.icon.icon-white.mdi.mdi-magnify-plus
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-2")
+
+	section#section-2.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-1")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky.sticky-top
+							.section-cover.section-overlay-darken(style="background: #302f2f url(images/background-08-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-lg-gray-lighter-2.text-start
+						.section-fullwidth-body-inner.section-lg
+							h3 A Few Words About Our Services
+							.divider.divider-lg.divider-left-0.divider-primary
+							p Beans Coffee Production provides coffee connoisseurs with a wide array of choices that satisfy discriminating palates, while providing prompt and courteous service.
+							p From growing to harvesting coffee, from roasting to brewing, from serving to keeping customers coming back for more – you need to strive for excellence. you can learn more about our services by reading the information below or contacting our administrators.
+							//- RD Video
+							// Video
+							article.video-play.ratio.ratio-16x9
+								video.video(src='video/video-for-player-1.mp4', controls='', poster='video/video-for-player-1.jpg', data-video-play='.video-btn-1')
+								button.video-btn.video-btn-1.play
+							h3.text-center.text-sm-start Our Services
+							.divider.divider-lg.divider-primary.divider-sm-left
+
+							.box-service.unit.unit-sm.flex-md-row.flex-xl-column.flex-xxl-row
+								.unit-left
+									img(src="images/services-01-290x210.jpg" width="290" height="210" alt="")
+								.unit-body
+									h6
+										a(href="single-service.html") Pre-Roasting Processing
+									p Before roasting coffee beans, they must be cleaned & prepared, and it involves a great amount of expert work. Our team knows how to prepare the beans for roasting.
+
+							.box-service.unit.unit-sm.flex-md-row.flex-xl-column.flex-xxl-row
+								.unit-left
+									img(src="images/services-02-290x210.jpg" width="290" height="210" alt="")
+								.unit-body
+									h6
+										a(href="single-service.html") Roasting
+									p What’s your favorite coffee roast? Dark? Light? Somewhere in between? Whatever your answer is, our coffee experts can roast any coffee the way you like it.
+
+							.box-service.unit.unit-sm.flex-md-row.flex-xl-column.flex-xxl-row
+								.unit-left
+									img(src="images/services-03-290x210.jpg" width="290" height="210" alt="")
+								.unit-body
+									h6
+										a(href="single-service.html") Packing
+									p We developed exclusive coffee packing technology, which allows to hold the aroma of coffee beans for longer so that you can enjoy you favorite coffee almost anytime.
+
+							.box-service.unit.unit-sm.flex-md-row.flex-xl-column.flex-xxl-row
+								.unit-left
+									img(src="images/services-04-290x210.jpg" width="290" height="210" alt="")
+								.unit-body
+									h6
+										a(href="single-service.html") Delivery
+									p Our delivery department works hard everyday to quickly deliver the desired coffee right to your door without any delays. It is absolutely free for our regular customers.
+
+							h3 Our Advantages
+							.divider.divider-lg.divider-left-0.divider-primary
+							.row.justify-content-sm-center.row-40
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-headset.icon-primary
+										h6 Free Consultations
+										.divider.divider-lg
+										p Have a question about our products or services? Call us to get a free consultation.
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-account-check.icon-primary
+										h6 Qualified Specialists
+										.divider.divider-lg
+										p Beans is a team of seasoned coffee experts that know how to make coffee properly.
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-text.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.icon-primary
+											span.heading-3 12
+										h6 Supplying Сountries
+										.divider.divider-lg
+										p We order coffee beans from 12 countries that specialize in coffee production.
+
+								.col-sm-6.col-xl-12.col-xxl-6
+									.box-offer.box-offer-white
+										span.icon.icon-md.icon-circle.icon-circle-xl.icon-outline.icon-bordered.mdi.mdi-seal.icon-primary
+										h6 Quality Guarantee
+										.divider.divider-lg
+										p Every coffee drink you buy or order at our shop has 100% quality guarantee
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-3")
+
+	section#section-3.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-2")
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						.sticky.sticky-top
+							.section-cover.section-overlay-darken(style="background: #302f2f url(images/background-10-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+					.col-sm-10.col-md-8.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-lg
+							.blog-classic-wrap
+								ul.list.list-inline.list-inline-23
+									li
+										a(href="#") News (46)
+									li
+										a(href="#") Reviews (12)
+									li
+										a(href="#") Cafes (53)
+									li
+										a(href="#") New York (65)
+								.hr-custom
+
+								article.post-classic
+									a.thumbnail-classic(href='blog-post.html')
+										figure
+											img(width='640', height='430', src='images/post-01-640x430.jpg', alt='')
+
+									h5.post-classic-title
+										a(href="blog-post.html") How to Make a Perfect Cup of Coffee: an Ultimate Guide for Everyone
+									p I often go to sleep thinking about the cup of coffee I’m going to have the next morning. I adore it! These basic rules will help you learn how to make coffee to prevent unwanted bitterness and virtually guarantee a satisfying cup of coffee every time.
+									ul.list-inline.list-inline-vertical-line
+										li Nov 16, 2023 at 2:23pm
+										li
+											span by #[a(href="team-member-profile.html") Harry Lucas]
+										li 225 Views
+										li
+											a(href="#") 2 Comments
+
+								article.post-classic
+									a.thumbnail-classic(href='blog-post.html')
+										figure
+											img(width='640', height='430', src='images/post-02-640x430.jpg', alt='')
+
+									h5.post-classic-title
+										a(href="blog-post.html") Boutique Cafe in Seoul
+									p All coffee enthusiasts know that the ideal way to explore a new city is through its coffee shops, so naturally my week in Seoul, South Korea, was spent sipping my way through its small but swiftly expanding specialty coffee community.
+									ul.list-inline.list-inline-vertical-line
+										li Nov 16, 2023 at 2:23pm
+										li
+											span by #[a(href="team-member-profile.html") Harry Lucas]
+										li 225 Views
+										li
+											a(href="#") 12 Comments
+
+								article.post-classic
+									a.thumbnail-classic(href='blog-post.html')
+										figure
+											img(width='640', height='430', src='images/post-03-640x430.jpg', alt='')
+
+									h5.post-classic-title
+										a(href="blog-post.html") 10 Best Coffee Types in the World
+									p The world’s finest arabica coffees are listed by country in no particular order since the biggest factor is personal preference. For example, some people might prefer the winey and fruity acidity of a Kenyan coffee over the classic balance of a Colombian coffee.
+									ul.list-inline.list-inline-vertical-line
+										li Nov 16, 2023 at 2:23pm
+										li
+											span by #[a(href="team-member-profile.html") Harry Lucas]
+										li 225 Views
+										li
+											a(href="#") 12 Comments
+
+								article.post-classic
+									a.thumbnail-classic(href='blog-post.html')
+										figure
+											img(width='640', height='430', src='images/post-04-640x430.jpg', alt='')
+
+									h5.post-classic-title
+										a(href="blog-post.html") The Guide for Coffee Drinkers in Boston, MA
+									p A complete 180 turn from the sunny skies, sprawled out cityscape, and spiderwebs of freeways in my home base of Los Angeles, Boston wooed me with its cobblestone streets and mix of personalities. I took a couple of days to survey some of the best cups in town.
+									ul.list-inline.list-inline-vertical-line
+										li Nov 16, 2023 at 2:23pm
+										li
+											span by #[a(href="team-member-profile.html") Harry Lucas]
+										li 225 Views
+										li
+											a(href="#") 12 Comments
+
+								a.button.button-block.button-primary-outline.button-icon.button-icon-left(href="blog.html")
+									span.icon.mdi.mdi-sync
+									| View More
+
+								nav.pagination-classic
+									ul.list-inline
+										li.active
+											a(href='#') 1
+										li
+											a(href='#') 2
+										li
+											a(href='#') 3
+										li
+											a(href='#') 4
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="section-4")
+
+	section#section-4.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			a.section-button-forward.section-button-forward-top.mdi.mdi-chevron-up(href="#" data-custom-scroll-to="section-3")
+			.container-fluid
+				.row.justify-content-sm-center.g-0
+					.col-xl-6.section-cover.section-overlay-darken(style="background: #302f2f url(images/background-02-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;")
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.bg-lg-gray-lighter-2.text-start
+						.section-fullwidth-body-inner
+							.row.justify-content-sm-center.align-items-sm-center.section-xs
+								.col-sm-12
+									h3 Get in Touch
+									.divider.divider-lg.divider-left-0.divider-primary
+									//- RD Mailform
+									form.rd-mailform.text-start(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+										.row.justify-content-sm-center.row-15
+											.col-md-12
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-name") First name
+													input#services-name.form-input(type="text" name="name" data-constraints='@Required')
+											.col-md-12
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-last-name") Last name
+													input#services-last-name.form-input(type="text" name="last-name" data-constraints="@Required")
+											.col-md-6
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-email") E-mail
+													input#services-email.form-input(type="email" name="email" data-constraints="@Email @Required")
+											.col-md-6
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-phone") Phone
+													input#services-phone.form-input(type="text" name="phone" data-constraints="@Numeric @Required")
+											.col-md-12
+												.form-wrap.form-wrap-validation
+													label.form-label.form-label-outside(for="services-message") Message
+													textarea#services-message.form-input(name="message" data-constraints="@Required" style="min-height: 200px;")
+
+										.button-wrap
+											button(type="submit").button.button-primary Send
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided
+
+

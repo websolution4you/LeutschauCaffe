@@ -1,0 +1,122 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Testimonials'
+
+block page
+	//- Page Header
+	include ../sections/_header-minimal-dark
+
+	section#section-1.section-fullwidth.section-animate.animate-content
+		.section-animate-wrapper
+			.container-fluid
+				.row.justify-content-sm-center.g-0-xl
+					.col-xl-6
+						+breadcrumbs({
+							bg: 'background-09-960x1080.jpg'
+						})
+					.col-sm-10.col-lg-8.col-xl-6.section-fullwidth-body.section-fullwidth-body-scroll.scroll-wrap.bg-default.text-start
+						.section-fullwidth-body-inner.section-fullwidth-body-offset-top.section-lg
+							h3 Classic Testimonials
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.row.justify-content-sm-center.quote-classic-wrap.row-50
+								.col-sm-12
+									.unit.unit-sm.flex-md-row.quote-classic
+										.unit-left
+											img.rounded-circle(src="images/user-09-120x120.jpg" width="120" height="120" alt="")
+										.unit-body
+											.quote-classic-body
+												span.icon.icon-rotate-180.mdi.mdi-format-quote
+												p I started getting coffee from Beans long before it was possible to buy freshly roasted fair trade coffee closer to home. I've tried others, but none are as good as the ones made by Beans’ team.
+												a(href="team-member-profile.html") Austin Jensen
+
+								.col-sm-12
+									.unit.unit-sm.flex-md-row.quote-classic
+										.unit-left
+											img.rounded-circle(src="images/user-01-120x120.jpg" width="120" height="120" alt="")
+										.unit-body
+											.quote-classic-body
+												span.icon.icon-rotate-180.mdi.mdi-format-quote
+												p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing  close to Beans French Roast aroma, taste and smoothness. Luckily I can buy 5 pounds of beans through your website. It’s a real pleasure to have my favorite coffee delivered home.
+												a(href="team-member-profile.html") Angela Gonzales
+
+								.col-sm-12
+									.unit.unit-sm.flex-md-row.quote-classic
+										.unit-left
+											img.rounded-circle(src="images/user-02-120x120.jpg" width="120" height="120" alt="")
+										.unit-body
+											.quote-classic-body
+												span.icon.icon-rotate-180.mdi.mdi-format-quote
+												p I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service. Your beans give way to one of the best cups of coffee I’ve ever tasted.
+												a(href="team-member-profile.html") Olivia Myers
+
+							h3 Alternative Testimonials Layout
+							.divider.divider-lg.divider-left-0.divider-primary
+
+
+							//- Owl Carousel
+							.owl-carousel.owl-carousel-testimonials(data-items='1', data-stage-padding='5', data-loop='false', data-margin='30', data-mouse-drag="false" data-dots="true" data-animation-in="fadeIn" data-animation-out="fadeOut")
+								.quote.quote-box-comment
+									.unit.align-items-center.flex-row.quote-box-comment-author
+										.unit-left
+											img.rounded-circle(src="images/user-01-80x80.jpg" width="80" height="80" alt="")
+										.unit-body
+											h6.quote-box-comment-author-title
+												a(href="team-member-profile.html") Angela Gonzales
+											p Manager
+
+									.quote-box-comment-body
+										span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+										p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing  close to Beans French Roast aroma, taste and smoothness. Luckily I can buy 5 pounds of beans through your website. It’s a real pleasure to have my favorite coffee delivered home.
+
+								.quote.quote-box-comment
+									.unit.align-items-center.flex-row.quote-box-comment-author
+										.unit-left
+											img.rounded-circle(src="images/user-02-80x80.jpg" width="80" height="80" alt="")
+										.unit-body
+											h6.quote-box-comment-author-title
+												a(href="team-member-profile.html") Olivia Myers
+											p Designer
+
+									.quote-box-comment-body
+										span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+										p I’ve been ordering beans from you for ten years. The quality of the product is consistently high! I’m grateful for the care that is apparently put into the roasts and the excellent customer service. Your beans give way to one of the best cups of coffee I’ve ever tasted.
+
+								.quote.quote-box-comment
+									.unit.align-items-center.flex-row.quote-box-comment-author
+										.unit-left
+											img.rounded-circle(src="images/user-09-80x80.jpg" width="80" height="80" alt="")
+										.unit-body
+											h6.quote-box-comment-author-title
+												a(href="team-member-profile.html") Austin Jensen
+											p Writer
+
+									.quote-box-comment-body
+										span.icon.icon-rotate-180.icon-md.mdi.mdi-format-quote
+										p I started getting coffee from Beans long before it was possible to buy freshly roasted fair trade coffee closer to home. I've tried others, but none are as good as the ones made by Beans’ team. This coffee shop is my No. 1 place to visit from now on, and I will definitely recommend it to my friends!
+
+							h3 Condensed Testimonials Layout
+							.divider.divider-lg.divider-left-0.divider-primary
+
+							.row.justify-content-sm-center.row-30.quote-classic-wrap-mod
+								.col-md-6.col-xl-12.col-xxl-6
+									.quote.quote-classic
+										span.icon.icon-rotate-180.mdi.mdi-format-quote
+										p I started getting coffee from Beans long before it was possible to buy freshly roasted fair trade coffee closer to home. I've tried others, but none are as good as the ones made by Beans’ team. This coffee shop is my favorite place now.
+										a(href="team-member-profile.html") Austin Jensen
+
+								.col-md-6.col-xl-12.col-xxl-6
+									.quote.quote-classic
+										span.icon.icon-rotate-180.mdi.mdi-format-quote
+										p When I moved to LA last year, I tried all organic French roast coffee sold here, finding nothing close to Beans French Roast aroma, taste and smoothness. I  also like their online store.
+
+										a(href="team-member-profile.html") Angela Gonzales
+
+
+
+			a.section-button-forward.section-button-forward-bottom.mdi.mdi-chevron-down(href="#" data-custom-scroll-to="footer")
+
+	//- Page Footer
+	include ../sections/_footer-divided

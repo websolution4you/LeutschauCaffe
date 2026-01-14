@@ -1,0 +1,75 @@
+extends  ../_skeleton
+
+block variables
+	-footerBackSection = "section-1"
+	- pageName = 'Gallery Creative'
+
+block page
+	//- Page Header
+	include ../sections/_header-classic
+
+	section.section.section-lg
+			.container
+				.row
+					.col-lg-10.col-xl-7.offset-lg-1.text-block-1.text-center.text-md-start
+						h1 Our gallery
+						h5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eros scelerisque id viverra ipsum, posuere congue est, cras duism ullamcorper.
+
+				.row.row-40.row-offset-1( data-lightgallery='group' )
+					.col-md-6
+						+thumbnail-creative({
+							img: 'gallery-creative-01-570x350',
+							imgOriginal: 'gallery-creative-01-1200x800',
+							title: 'Coffee variety',
+							text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+						})
+					.col-md-6.d-none.d-md-block
+					.col-md-7
+						+thumbnail-creative({
+							img: 'gallery-creative-02-670x400',
+							imgOriginal: 'gallery-creative-02-1200x800',
+							title: 'Comfortable service',
+							text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+						})
+					.col-md-5
+						+thumbnail-creative({
+							img: 'gallery-creative-03-470x400',
+							imgOriginal: 'gallery-creative-03-1200x800',
+							title: 'Customized drinks',
+							text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+						})
+					.col-md-6
+						.row.row-40.justify-content-md-end
+							.col-md-8
+								+thumbnail-creative({
+									img: 'gallery-creative-04-370x590',
+									imgOriginal: 'gallery-creative-04-800x1200',
+									title: 'Satisfied customers',
+									text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+								})
+							.col-md-12
+								+thumbnail-creative({
+									img: 'gallery-creative-07-570x350',
+									imgOriginal: 'gallery-creative-07-1200x800',
+									title: 'Interior',
+									text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+								})
+					.col-md-6
+						.row.row-40
+							.col-md-12
+								+thumbnail-creative({
+									img: 'gallery-creative-05-570x350',
+									imgOriginal: 'gallery-creative-05-1200x800',
+									title: 'Friendly atmosphere',
+									text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+								})
+							.col-md-8
+								+thumbnail-creative({
+									img: 'gallery-creative-06-370x440',
+									imgOriginal: 'gallery-creative-06-800x1200',
+									title: 'Coffee grinding',
+									text: 'Sit cras ut auctor non sed in enim. Sed sollicitudin mauris quis vitae vitae sed.'
+								})
+
+	//- Page Footer
+	include ../sections/_footer-dark

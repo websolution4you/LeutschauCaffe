@@ -1,0 +1,29 @@
+header.page-header
+  //- RD Navbar
+  .rd-navbar-wrap
+    nav.rd-navbar.rd-navbar-default(data-layout='rd-navbar-fixed', data-sm-layout='rd-navbar-fixed', data-md-layout='rd-navbar-fullwidth', data-md-device-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-static', data-lg-device-layout="rd-navbar-static",  data-md-stick-up-offset="90px", data-lg-stick-up-offset="150px")
+      .rd-navbar-inner
+        //- RD Navbar Panel
+        .rd-navbar-panel
+          //- RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+            span
+          //- RD Navbar Brand
+          .rd-navbar-brand
+            a.brand-name(href='index.html')
+              img(src="images/brand.png", width="180", height="33", alt="")
+
+        .rd-navbar-aside-right
+          .rd-navbar-nav-wrap
+            .rd-navbar-nav-scroll-holder
+              include ../_navigation
+
+          //RD Navbar Search
+          .rd-navbar-search
+            a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-panel" href="#")
+              span
+            form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+              div.form-wrap
+                label.form-label(for="rd-navbar-search-form-input" class="form-label") Type and hit enter...
+                input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+                #rd-search-results-live.rd-search-results-live

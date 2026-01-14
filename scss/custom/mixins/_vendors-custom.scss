@@ -1,0 +1,41 @@
+// Custom CSS Vendors
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Disable padding - top on two similar backgrounds
+//@mixin bg-behaviour() {
+//  & + & {
+//    padding-top: 0;
+//  }
+//}
+
+// Text variant
+@mixin text-variant($parent, $color, $hover-color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover,
+  a#{$parent}:focus {
+    color: $hover-color;
+  }
+}
