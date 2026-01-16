@@ -100,56 +100,30 @@
           </div>
         </div>
       </section>
-      <footer class="page-footer-dark section-lg bg-gray-dark context-dark">
-        <div class="container">
-          <div class="row row-30 align-items-center align-items-md-start">
-            <div class="col-sm-6 col-md-3"><a class="brand" href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a></div>
-            <div class="col-sm-6 col-md-4">
-              <div class="contact-info">
-                <div class="unit flex-row unit-12">
-                  <div class="unit-left">
-                    <div class="icon icon-sm icon-sm-mod-20 icon-circle icon-bordered icon-white mdi mdi-map-marker"></div>
-                  </div>
-                  <div class="unit-body">
-                    <p><a href="contacts.html">Fulton Street, San Diego, <br> CA 94117-1080 USA</a></p>
-                  </div>
-                </div>
-                <div class="unit flex-row unit-12">
-                  <div class="unit-left">
-                    <div class="icon icon-sm icon-sm-mod-20 icon-circle icon-bordered icon-white mdi mdi-map-marker"></div>
-                  </div>
-                  <div class="unit-body">
-                    <p>Mondayâ€“Sunday:<br>10:00amâ€”02:00am</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <h3 class="heading-modify">Sign up to our newsletter!</h3>
-              <form class="rd-mailform rd-mailform-boxed text-start" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                <div class="form-wrap">
-                  <label class="form-label" for="footer-email">Your e-mail</label>
-                  <input class="form-input" id="footer-email" type="email" name="email" data-constraints="@Email @Required">
-                  <button class="button rd-mailform-icon mdi mdi-email-outline" type="submit"></button>
-                </div>
-              </form>
-              <ul class="list-inline list-inline-12 list-inline-gray-lighter">
-                <li><a class="icon icon-sm-mod-20 fa fa-facebook-f" href="#"></a></li>
-                <li><a class="icon icon-sm-mod-20 fa fa-twitter" href="#"></a></li>
-                <li><a class="icon icon-sm-mod-20 fa fa-instagram" href="#"></a></li>
-                <li><a class="icon icon-sm-mod-20 fa fa-google" href="#"></a></li>
-                <li><a class="icon icon-sm-mod-20 fa fa-pinterest-p" href="#"></a></li>
-                <li><a class="icon icon-sm-mod-20 fa fa-linkedin" href="#"></a></li>
-              </ul>
-              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Beans</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <div id="site-footer"></div>
+<script>
+(function () {
+  // Synchronous on purpose: ensures footer is present immediately
+  // (safe for templates that might measure layout or bind events early).
+  try {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'partials/footer.html', false);
+    xhr.send(null);
+    if (xhr.status >= 200 && xhr.status < 300) {
+      document.getElementById('site-footer').innerHTML = xhr.responseText;
+    } else {
+      console.error('Footer load failed:', xhr.status);
+    }
+  } catch (e) {
+    console.error('Footer load exception:', e);
+  }
+})();
+</script>
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
+
 

@@ -194,37 +194,25 @@
           </div><a class="section-button-forward section-button-forward-bottom mdi mdi-chevron-down" href="#" data-custom-scroll-to="footer"></a>
         </div>
       </section>
-      <footer class="page-footer page-footer-divided section-fullwidth bg-gray-dark" id="footer"><a class="section-button-forward section-button-forward-top mdi mdi-chevron-up" href="#" data-custom-scroll-to="section-1"></a>
-        <div class="container-fluid">
-          <div class="row justify-content-sm-center g-0">
-            <div class="col-sm-10 col-lg-8 col-xl-6">
-              <div class="sticky sticky-top">
-                <div class="google-map-container" data-center="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-zoom="5" data-icon="images/gmap_marker.png" data-icon-active="images/gmap_marker_active.png" data-styles="[{&quot;featureType&quot;:&quot;landscape&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:60}]},{&quot;featureType&quot;:&quot;road.local&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:40},{&quot;visibility&quot;:&quot;on&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;administrative.province&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;on&quot;},{&quot;lightness&quot;:30}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#ef8c25&quot;},{&quot;lightness&quot;:40}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;geometry.stroke&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;poi.park&quot;,&quot;elementType&quot;:&quot;geometry.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#b6c54c&quot;},{&quot;lightness&quot;:40},{&quot;saturation&quot;:-40}]},{}]">
-                  <div class="google-map"></div>
-                  <ul class="google-map-markers">
-                    <li data-location="9870 St Vincent Place, Glasgow, DC 45 Fr 45." data-description="9870 St Vincent Place, Glasgow"></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 text-center">
-              <div class="row justify-content-sm-center align-items-sm-center section-xl section-xl--inset-bottom-50 g-0-xl">
-                <div class="col-sm-8 col-md-6 col-lg-4 col-xl-6 col-xxl-4"><a class="brand" href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
-                  <p>Hello! We are Beans Coffee Production, a company that is passionate about making and selling coffee with a great flavor.</p>
-                  <div class="contact-info"><span class="icon icon-sm mdi mdi-map-marker"></span>
-                    <p><a href="contacts.html">2130 Fulton Street, San Diego, <br> CA 94117-1080 USA</a></p><span class="icon icon-sm mdi mdi-calendar-clock"></span>
-                    <p>10:00amâ€”02:00am</p><span class="icon icon-sm mdi mdi-phone"></span>
-                    <p><a href="tel:#">1-800-1234-567</a></p><a class="button button-sm button-primary" href="#">Book a Table</a>
-                  </div>
-                </div>
-                <div class="col-sm-12 privacy-wrap">
-                  <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Beans</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <div id="site-footer"></div>
+<script>
+(function () {
+  // Synchronous on purpose: ensures footer is present immediately
+  // (safe for templates that might measure layout or bind events early).
+  try {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'partials/footer.html', false);
+    xhr.send(null);
+    if (xhr.status >= 200 && xhr.status < 300) {
+      document.getElementById('site-footer').innerHTML = xhr.responseText;
+    } else {
+      console.error('Footer load failed:', xhr.status);
+    }
+  } catch (e) {
+    console.error('Footer load exception:', e);
+  }
+})();
+</script>
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
@@ -232,4 +220,5 @@
     <!--coded by Drel-->
   </body>
 </html>
+
 

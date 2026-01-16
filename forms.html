@@ -277,15 +277,30 @@
           </div>
         </div>
       </section>
-      <footer class="page-footer section-lg bg-gray-dark">
-        <div class="container text-center"><a class="brand" href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
-          <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Beans</span><span>.&nbsp;</span><span>All Rights Reserved.</span><span>&nbsp;</span><a href="privacy-policy.html">Privacy Policy</a></p>
-        </div>
-      </footer>
+      <div id="site-footer"></div>
+<script>
+(function () {
+  // Synchronous on purpose: ensures footer is present immediately
+  // (safe for templates that might measure layout or bind events early).
+  try {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'partials/footer.html', false);
+    xhr.send(null);
+    if (xhr.status >= 200 && xhr.status < 300) {
+      document.getElementById('site-footer').innerHTML = xhr.responseText;
+    } else {
+      console.error('Footer load failed:', xhr.status);
+    }
+  } catch (e) {
+    console.error('Footer load exception:', e);
+  }
+})();
+</script>
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
+
 
