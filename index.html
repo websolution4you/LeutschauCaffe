@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="sk">
 
 <head>
-  <title>Home</title>
+  <title>Leutschau Cafe | Levoča</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,106 +27,105 @@
   </div>
   <div class="page">
     <div id="site-header"></div>
-<script>
-(function () {
-  // Compute site root for GitHub Pages / subfolders:
-  // We assume `partials/header.html` is located at project root.
-  // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
-  var path = window.location.pathname;
-  // Remove trailing filename, keep directory path
-  var dir = path.substring(0, path.lastIndexOf('/') + 1);
-  // If you deploy under GitHub Pages project site, the first folder is the repo name.
-  // We will treat that first folder as the site root prefix.
-  var parts = dir.split('/').filter(Boolean);
+    <script>
+      (function () {
+        // Compute site root for GitHub Pages / subfolders:
+        // We assume `partials/header.html` is located at project root.
+        // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
+        var path = window.location.pathname;
+        // Remove trailing filename, keep directory path
+        var dir = path.substring(0, path.lastIndexOf('/') + 1);
+        // If you deploy under GitHub Pages project site, the first folder is the repo name.
+        // We will treat that first folder as the site root prefix.
+        var parts = dir.split('/').filter(Boolean);
 
-  // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
-  // Depth beyond that determines how many ../ are needed.
-  var depthBeyondRoot = Math.max(0, parts.length - 1);
+        // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
+        // Depth beyond that determines how many ../ are needed.
+        var depthBeyondRoot = Math.max(0, parts.length - 1);
 
-  var prefix = '';
-  for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
+        var prefix = '';
+        for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
 
-  var url = prefix + 'partials/header.html';
+        var url = prefix + 'partials/header.html';
 
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false); // synchronous on purpose
-    xhr.send(null);
-    if (xhr.status >= 200 && xhr.status < 300) {
-      document.getElementById('site-header').innerHTML = xhr.responseText;
-      
-      // Option B: Set active state
-      var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      // Handle cases where the path might be just a slash
-      if (currentPath === '') currentPath = 'index.html';
-      
-      var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
-      navLinks.forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href === currentPath) {
-          var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
-          if (parentLi) parentLi.classList.add('active');
-          var topParent = link.closest('.rd-nav-item');
-          if (topParent) topParent.classList.add('active');
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url, false); // synchronous on purpose
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-header').innerHTML = xhr.responseText;
+
+            // Option B: Set active state
+            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            // Handle cases where the path might be just a slash
+            if (currentPath === '') currentPath = 'index.html';
+
+            var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
+            navLinks.forEach(function (link) {
+              var href = link.getAttribute('href');
+              if (href === currentPath) {
+                var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
+                if (parentLi) parentLi.classList.add('active');
+                var topParent = link.closest('.rd-nav-item');
+                if (topParent) topParent.classList.add('active');
+              }
+            });
+          } else {
+            console.error('Header load failed:', xhr.status, url);
+          }
+        } catch (e) {
+          console.error('Header load exception:', e);
         }
-      });
-    } else {
-      console.error('Header load failed:', xhr.status, url);
-    }
-  } catch (e) {
-    console.error('Header load exception:', e);
-  }
-})();
-</script>
+      })();
+    </script>
     <section class="section-animate animate-content" id="section-0">
       <div class="section-animate-wrapper">
         <div class="swiper-container swiper-slider" data-autoplay="4000" data-slide-effect="fade"
           data-swiper='{"simulateTouch":false}'>
           <div class="swiper-wrapper">
-            <div class="swiper-slide" data-slide-bg="images/background-07-1920x1080.jpg">
+            <div class="swiper-slide" data-slide-bg="images/background-07-1920x1080.jpg"
+              style="background-position: bottom !important;">
               <div class="swiper-slide-caption">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12 text-center"><a class="brand brand-mod-sm-inverse d-none d-md-inline-block"
-                        href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
-                      <h1>Bring Home The Coffee</h1>
-                      <h5 class="swiper-desc">We sell coffee that has amazing taste and flavor!</h5>
+                    <div class="col-12 text-center">
+                      <h1>Vychutnajte si kávu v srdci Levoče</h1>
+                      <h5 class="swiper-desc">Ponúkame kávu s úžasnou chuťou a arómou v historickom prostredí!</h5>
                       <div class="group-lg unit-20"><a class="button button-width-194 button-primary"
-                          href="catalog.html">Shop Now</a><a class="button button-width-194 button-white-outline"
-                          href="menu.html">View Menu</a></div>
+                          href="catalog.html">Eventy</a><a class="button button-width-194 button-white-outline"
+                          href="menu.html">Menu</a></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" data-slide-bg="images/background-15-1920x1080.jpg">
+            <div class="swiper-slide" data-slide-bg="images/background-15-1920x1080.jpg"
+              style="background-position: bottom !important;">
               <div class="swiper-slide-caption">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12 text-center"><a class="brand brand-mod-sm-inverse d-none d-md-inline-block"
-                        href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
-                      <h1>Good Coffee Is Like Friendship</h1>
-                      <h5 class="swiper-desc">Enjoy rich, warm and strong coffee at our coffee shop</h5>
+                    <div class="col-12 text-center">
+                      <h1>Pravá atmosféra historického námestia</h1>
+                      <h5 class="swiper-desc">Užite si bohatú a silnú kávu v našej útulnej kaviarni</h5>
                       <div class="group-lg unit-20"><a class="button button-width-194 button-primary"
-                          href="catalog.html">Shop Now</a><a class="button button-width-194 button-white-outline"
-                          href="menu.html">View Menu</a></div>
+                          href="catalog.html">Eventy</a><a class="button button-width-194 button-white-outline"
+                          href="menu.html">Menu</a></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" data-slide-bg="images/background-16-1920x1080.jpg">
+            <div class="swiper-slide" data-slide-bg="images/background-16-1920x1080.jpg"
+              style="background-position: bottom !important;">
               <div class="swiper-slide-caption">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-12 text-center"><a class="brand brand-mod-sm-inverse d-none d-md-inline-block"
-                        href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
-                      <h1>Get the Most Out of Your Favorite Coffee</h1>
-                      <h5 class="swiper-desc">Take your time to enjoy any coffee at our shop or have it delivered right
-                        to your door</h5>
+                    <div class="col-12 text-center">
+                      <h1>Výberová káva, domáce limonády a dezerty</h1>
+                      <h5 class="swiper-desc">Urobte si čas na relax v historickom centre mesta</h5>
                       <div class="group-lg unit-20"><a class="button button-width-194 button-primary"
-                          href="catalog.html">Shop Now</a><a class="button button-width-194 button-white-outline"
-                          href="menu.html">View Menu</a></div>
+                          href="catalog.html">Eventy</a><a class="button button-width-194 button-white-outline"
+                          href="menu.html">Menu</a></div>
                     </div>
                   </div>
                 </div>
@@ -146,43 +145,62 @@
             <div class="col-xl-6">
               <div class="sticky sticky-top">
                 <div class="section-cover section-overlay-darken d-none d-xl-block"
-                  style="background: #302f2f url(images/background-04-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;">
+                  style="background: #302f2f url(images/background-04-960x1080.jpg) bottom/cover no-repeat; padding-bottom: 26%;">
                 </div>
               </div>
             </div>
             <div
               class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
               <div class="section-fullwidth-body-inner section-lg">
-                <h3>A Few Words About Us</h3>
+                <h3>Pár slov o nás</h3>
                 <div class="divider divider-lg divider-left-0 divider-primary"></div>
                 <div class="quote-mod-wrap">
-                  <p>We are excited to introduce Beans Coffee Production and invite you to enjoy the unique friendly
-                    atmosphere in our coffee shop. If you crave great coffee, youâ€™ll love knowing that we provide a real
-                    alternative to chains with handcrafted coffee and espresso drinks.</p>
+                  <p>Vitajte v našej kaviarni <strong>LEUTSCHAU CAFÉ</strong>! Jej pomenovanie je vytvorené z
+                    historického názvu Levoče - Leutschau z roku 1786. Nachádza sa v meštianskom dome z druhej polovice
+                    15. storočia, ktorý v priebehu rokov prešiel niekoľkými rekonštrukciami.</p>
                   <div class="quote quote-mod">
                     <div class="quote-body"><span
                         class="icon icon-lg icon-rotate-180 mdi mdi-format-quote icon-primary"></span>
-                      <h4>Beans was established in 2002 as a powerful alternative to local coffee houses and stores
-                        allowing to buy, roast, and grind any type of coffee.</h4>
-                      <p class="quote-autor"><a href="#">Dennis Williams</a></p>
+                      <h4>V roku 2012 tu vznikla kaviareň, ktorú doposiaľ miestni obyvatelia volajú Pivovarka.</h4>
                     </div>
                   </div>
-                  <p>Beans delivers way beyond the traditional coffee shop favorites. We have traditional breakfast
-                    choices, and plenty of healthy options (including gluten free, vegetarian, and vegan). Our lunch
-                    offerings include a wide variety of salads, sandwiches and flatbreads.</p>
+                  <p>Posledným historickým majiteľom budovy bola rodina Gustava LÁNYIHO ml. (1905-1945), ktorý svojím
+                    významom a rozsahom majetku patril medzi strednú uhorskú šľachtu. Rodinný erb Lányiovcov môžete
+                    nájsť priamo v kaviarni.</p>
+                  <p>Kaviareň má stále okrem výberovej kávy v ponuke aj rozsiahly výber kvalitných remeselných pív
+                    varených v okolí a v neposlednom rade aj chutné koláče a dezerty, či v letnom období remeselné
+                    gelato. Veríme, že sa u nás budete cítiť ako doma.</p>
+                  <p><strong>Budete tu vždy vítaní!</strong></p>
+                  <p class="quote-autor">Ondrej a Veronika Dunčkovci</p>
                 </div>
-                <h3>Timeline</h3>
+                <h3>Naša História</h3>
                 <div class="divider divider-lg divider-left-0 divider-primary"></div>
                 <div class="blog-timeline">
                   <div class="blog-timeline-posts">
                     <div class="blog-timeline-post">
                       <div class="blog-timeline-post-media">
-                        <p>2023</p>
+                        <p>2026</p>
                       </div>
                       <div class="blog-timeline-post-body">
-                        <p>This year we are planning to open our new coffee shop in Chicago for everyone living there to
-                          enjoy the true taste of coffee, warm snacks, and mouthwatering desserts, which are affordably
-                          priced.</p>
+                        <p>Pokračujeme v tradícii podávania špičkovej kávy a domáceho pečiva pre našich verných
+                          zákazníkov aj návštevníkov Levoče.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2022</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>Oslávili sme 10. výročie nášho pôsobenia na námestí, ktoré je pod ochranou UNESCO.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2018</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>Rozšírili sme našu ponuku o výberové remeselné pivá a zamerali sme sa na lokálnych
+                          dodávateľov.</p>
                       </div>
                     </div>
                     <div class="blog-timeline-post">
@@ -190,57 +208,20 @@
                         <p>2015</p>
                       </div>
                       <div class="blog-timeline-post-body">
-                        <p>Our website was hugely updated in 2015 with new information, links from media resources,
-                          photos, videos, and more.</p>
+                        <p>Zmodernizovali sme vnútorné priestory pri zachovaní historického charakteru budovy.</p>
                       </div>
                     </div>
                     <div class="blog-timeline-post">
                       <div class="blog-timeline-post-media">
-                        <p>2013</p>
+                        <p>2012</p>
                       </div>
                       <div class="blog-timeline-post-body">
-                        <p>In 2013, we took part in the charity event devoted to children from poor families. It was an
-                          invaluable experience for every member of our team.</p>
-                      </div>
-                    </div>
-                    <div class="blog-timeline-post">
-                      <div class="blog-timeline-post-media">
-                        <p>2010</p>
-                      </div>
-                      <div class="blog-timeline-post-body">
-                        <p>Our team was extended in 2010. We hired more baristas and sales managers, who later became
-                          our leading employees in coffee house and warehouse departments.</p>
-                      </div>
-                    </div>
-                    <div class="blog-timeline-post">
-                      <div class="blog-timeline-post-media">
-                        <p>2008</p>
-                      </div>
-                      <div class="blog-timeline-post-body">
-                        <p>We developed and launched the first version of our website, which included basic information
-                          about us and coffee menu.</p>
-                      </div>
-                    </div>
-                    <div class="blog-timeline-post">
-                      <div class="blog-timeline-post-media">
-                        <p>2006</p>
-                      </div>
-                      <div class="blog-timeline-post-body">
-                        <p>We extended our menu to include not only tasty and flavorful coffee drinks, but also other
-                          dishes, snacks, and desserts.</p>
-                      </div>
-                    </div>
-                    <div class="blog-timeline-post">
-                      <div class="blog-timeline-post-media">
-                        <p>2002</p>
-                      </div>
-                      <div class="blog-timeline-post-body">
-                        <p>We opened our doors to local customers in 2002.</p>
+                        <p>Leutschau Caffe otvorila svoje brány na Námestí Majstra Pavla 18.</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <h3 class="text-center text-sm-start">Gallery</h3>
+                <h3 class="text-center text-sm-start">Galéria</h3>
                 <div class="divider divider-lg divider-primary divider-sm-left"></div>
                 <div class="row justify-content-sm-center row-20 thumbnail-rayen-wrap" data-lightgallery="group">
                   <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
@@ -296,98 +277,99 @@
             <div class="col-xl-6">
               <div class="sticky sticky-top">
                 <div class="section-cover section-overlay-darken"
-                  style="background: #302f2f url(images/background-08-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;">
+                  style="background: #302f2f url(images/background-08-960x1080.jpg) bottom/cover no-repeat; padding-bottom: 26%;">
                 </div>
               </div>
             </div>
             <div
               class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-lg-gray-lighter-2 text-start">
               <div class="section-fullwidth-body-inner section-lg">
-                <h3>A Few Words About Our Services</h3>
+                <h3>O Našej Ponuke</h3>
                 <div class="divider divider-lg divider-left-0 divider-primary"></div>
-                <p>Beans Coffee Production provides coffee connoisseurs with a wide array of choices that satisfy
-                  discriminating palates, while providing prompt and courteous service.</p>
-                <p>From growing to harvesting coffee, from roasting to brewing, from serving to keeping customers coming
-                  back for more â€“ you need to strive for excellence. you can learn more about our services by reading
-                  the information below or contacting our administrators.</p>
+                <p>Leutschau Caffe prináša milovníkom kávy široký výber, ktorý uspokojí aj tie najnáročnejšie chute, a
+                  to všetko s ústretovou obsluhou v príjemnom prostredí.</p>
+                <p>Od starostlivého výberu zŕn až po výslednú šálku na vašom stole – snažíme sa o dokonalosť v každom
+                  kroku. Viac o našej ponuke sa dozviete nižšie alebo nás neváhajte kontaktovať.</p>
                 <!-- Video-->
                 <article class="video-play ratio ratio-16x9">
                   <video class="video" src="video/video-for-player-1.mp4" controls=""
                     poster="video/video-for-player-1.jpg" data-video-play=".video-btn-1"></video>
                   <button class="video-btn video-btn-1 play"></button>
                 </article>
-                <h3 class="text-center text-sm-start">Our Services</h3>
+                <h3 class="text-center text-sm-start">Naše Služby</h3>
                 <div class="divider divider-lg divider-primary divider-sm-left"></div>
                 <div class="box-service unit unit-sm flex-md-row flex-xl-column flex-xxl-row">
                   <div class="unit-left"><img src="images/services-01-290x210.jpg" width="290" height="210" alt="">
                   </div>
                   <div class="unit-body">
-                    <h6><a href="single-service.html">Pre-Roasting Processing</a></h6>
-                    <p>Before roasting coffee beans, they must be cleaned & prepared, and it involves a great amount of
-                      expert work. Our team knows how to prepare the beans for roasting.</p>
+                    <h6><a href="single-service.html">Príprava výberovej kávy</a></h6>
+                    <p>Naši baristi sú vyškolení odborníci, ktorí ovládajú správne techniky prípravy kávy tak, aby
+                      vynikla jej prirodzená chuť a aróma.</p>
                   </div>
                 </div>
                 <div class="box-service unit unit-sm flex-md-row flex-xl-column flex-xxl-row">
                   <div class="unit-left"><img src="images/services-02-290x210.jpg" width="290" height="210" alt="">
                   </div>
                   <div class="unit-body">
-                    <h6><a href="single-service.html">Roasting</a></h6>
-                    <p>Whatâ€™s your favorite coffee roast? Dark? Light? Somewhere in between? Whatever your answer is,
-                      our coffee experts can roast any coffee the way you like it.</p>
+                    <h6><a href="single-service.html">Domáce Dezerty</a></h6>
+                    <p>Každý deň pre vás pripravujeme čerstvé domáce koláče a dezerty, ktoré sa dokonale hodia k vašej
+                      šálke kávy.</p>
                   </div>
                 </div>
                 <div class="box-service unit unit-sm flex-md-row flex-xl-column flex-xxl-row">
                   <div class="unit-left"><img src="images/services-03-290x210.jpg" width="290" height="210" alt="">
                   </div>
                   <div class="unit-body">
-                    <h6><a href="single-service.html">Packing</a></h6>
-                    <p>We developed exclusive coffee packing technology, which allows to hold the aroma of coffee beans
-                      for longer so that you can enjoy you favorite coffee almost anytime.</p>
+                    <h6><a href="single-service.html">Remeselné Pivo</a></h6>
+                    <p>Okrem kávy u nás nájdete aj starostlivo vybrané portfólio lokálnych a medzinárodných remeselných
+                      pív pre ozajstných hľadačov chutí.</p>
                   </div>
                 </div>
                 <div class="box-service unit unit-sm flex-md-row flex-xl-column flex-xxl-row">
                   <div class="unit-left"><img src="images/services-04-290x210.jpg" width="290" height="210" alt="">
                   </div>
                   <div class="unit-body">
-                    <h6><a href="single-service.html">Delivery</a></h6>
-                    <p>Our delivery department works hard everyday to quickly deliver the desired coffee right to your
-                      door without any delays. It is absolutely free for our regular customers.</p>
+                    <h6><a href="single-service.html">Domáce Limonády</a></h6>
+                    <p>Osviežte sa našimi originálnymi limonádami z čerstvého ovocia a byliniek, pripravovanými podľa
+                      našich vlastných receptúr.</p>
                   </div>
                 </div>
-                <h3>Our Advantages</h3>
+                <h3>Prečo nás navštíviť</h3>
                 <div class="divider divider-lg divider-left-0 divider-primary"></div>
                 <div class="row justify-content-sm-center row-40">
                   <div class="col-sm-6 col-xl-12 col-xxl-6">
                     <div class="box-offer box-offer-white"><span
                         class="icon icon-md icon-circle icon-circle-xl icon-outline icon-bordered mdi mdi-headset icon-primary"></span>
-                      <h6>Free Consultations</h6>
+                      <h6>Príjemná Atmosféra</h6>
                       <div class="divider divider-lg"></div>
-                      <p>Have a question about our products or services? Call us to get a free consultation.</p>
+                      <p>Či už hľadáte pokoj na prácu alebo miesto na stretnutie s priateľmi, u nás nájdete to pravé.
+                      </p>
                     </div>
                   </div>
                   <div class="col-sm-6 col-xl-12 col-xxl-6">
                     <div class="box-offer box-offer-white"><span
                         class="icon icon-md icon-circle icon-circle-xl icon-outline icon-bordered mdi mdi-account-check icon-primary"></span>
-                      <h6>Qualified Specialists</h6>
+                      <h6>Skúsení Baristi</h6>
                       <div class="divider divider-lg"></div>
-                      <p>Beans is a team of seasoned coffee experts that know how to make coffee properly.</p>
+                      <p>Náš tím tvoria nadšenci, ktorí kávou žijú a radi vám poradia s výberom tej správnej šálky.</p>
                     </div>
                   </div>
                   <div class="col-sm-6 col-xl-12 col-xxl-6">
                     <div class="box-offer box-offer-white"><span
                         class="icon icon-text icon-md icon-circle icon-circle-xl icon-outline icon-bordered icon-primary"><span
                           class="heading-3">12</span></span>
-                      <h6>Supplying Ð¡ountries</h6>
+                      <h6>Historická Poloha</h6>
                       <div class="divider divider-lg"></div>
-                      <p>We order coffee beans from 12 countries that specialize in coffee production.</p>
+                      <p>Nachádzame sa priamo v historickej budove na námestí, ktoré je zapísané v zozname UNESCO.</p>
                     </div>
                   </div>
                   <div class="col-sm-6 col-xl-12 col-xxl-6">
                     <div class="box-offer box-offer-white"><span
                         class="icon icon-md icon-circle icon-circle-xl icon-outline icon-bordered mdi mdi-seal icon-primary"></span>
-                      <h6>Quality Guarantee</h6>
+                      <h6>Garancia Kvality</h6>
                       <div class="divider divider-lg"></div>
-                      <p>Every coffee drink you buy or order at our shop has 100% quality guarantee</p>
+                      <p>Zakladáme si na čerstvosti a vysokej kvalite všetkých surovín, ktoré v našej kaviarni
+                        používame.</p>
                     </div>
                   </div>
                 </div>
@@ -407,7 +389,7 @@
             <div class="col-xl-6">
               <div class="sticky sticky-top">
                 <div class="section-cover section-overlay-darken"
-                  style="background: #302f2f url(images/background-10-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;">
+                  style="background: #302f2f url(images/background-10-960x1080.jpg) bottom/cover no-repeat; padding-bottom: 26%;">
                 </div>
               </div>
             </div>
@@ -427,7 +409,8 @@
                     </a>
                     <h5 class="post-classic-title"><a href="blog-post.html">How to Make a Perfect Cup of Coffee: an
                         Ultimate Guide for Everyone</a></h5>
-                    <p>I often go to sleep thinking about the cup of coffee Iâ€™m going to have the next morning. I adore
+                    <p>I often go to sleep thinking about the cup of coffee Iâ€™m going to have the next morning. I
+                      adore
                       it! These basic rules will help you learn how to make coffee to prevent unwanted bitterness and
                       virtually guarantee a satisfying cup of coffee every time.</p>
                     <ul class="list-inline list-inline-vertical-line">
@@ -455,7 +438,8 @@
                       <figure><img width="640" height="430" src="images/post-03-640x430.jpg" alt=""></figure>
                     </a>
                     <h5 class="post-classic-title"><a href="blog-post.html">10 Best Coffee Types in the World</a></h5>
-                    <p>The worldâ€™s finest arabica coffees are listed by country in no particular order since the biggest
+                    <p>The worldâ€™s finest arabica coffees are listed by country in no particular order since the
+                      biggest
                       factor is personal preference. For example, some people might prefer the winey and fruity acidity
                       of a Kenyan coffee over the classic balance of a Colombian coffee.</p>
                     <ul class="list-inline list-inline-vertical-line">
@@ -504,27 +488,27 @@
         <div class="container-fluid">
           <div class="row justify-content-sm-center g-0">
             <div class="col-xl-6 section-cover section-overlay-darken"
-              style="background: #302f2f url(images/background-02-960x1080.jpg) center/cover no-repeat; padding-bottom: 26%;">
+              style="background: #302f2f url(images/background-02-960x1080.jpg) bottom/cover no-repeat; padding-bottom: 26%;">
             </div>
             <div class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body bg-lg-gray-lighter-2 text-start">
               <div class="section-fullwidth-body-inner">
                 <div class="row justify-content-sm-center align-items-sm-center section-xs">
                   <div class="col-sm-12">
-                    <h3>Get in Touch</h3>
+                    <h3>Kontaktujte Nás</h3>
                     <div class="divider divider-lg divider-left-0 divider-primary"></div>
                     <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact"
                       method="post" action="bat/rd-mailform.php">
                       <div class="row justify-content-sm-center row-15">
                         <div class="col-md-12">
                           <div class="form-wrap form-wrap-validation">
-                            <label class="form-label form-label-outside" for="services-name">First name</label>
+                            <label class="form-label form-label-outside" for="services-name">Meno</label>
                             <input class="form-input" id="services-name" type="text" name="name"
                               data-constraints="@Required">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-wrap form-wrap-validation">
-                            <label class="form-label form-label-outside" for="services-last-name">Last name</label>
+                            <label class="form-label form-label-outside" for="services-last-name">Priezvisko</label>
                             <input class="form-input" id="services-last-name" type="text" name="last-name"
                               data-constraints="@Required">
                           </div>
@@ -538,21 +522,21 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-wrap form-wrap-validation">
-                            <label class="form-label form-label-outside" for="services-phone">Phone</label>
+                            <label class="form-label form-label-outside" for="services-phone">Telefón</label>
                             <input class="form-input" id="services-phone" type="text" name="phone"
                               data-constraints="@Numeric @Required">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-wrap form-wrap-validation">
-                            <label class="form-label form-label-outside" for="services-message">Message</label>
+                            <label class="form-label form-label-outside" for="services-message">Správa</label>
                             <textarea class="form-input" id="services-message" name="message"
                               data-constraints="@Required" style="min-height: 200px;"></textarea>
                           </div>
                         </div>
                       </div>
                       <div class="button-wrap">
-                        <button class="button button-primary" type="submit">Send</button>
+                        <button class="button button-primary" type="submit">Odoslať</button>
                       </div>
                     </form>
                   </div>
@@ -565,24 +549,24 @@
       </div>
     </section>
     <div id="site-footer"></div>
-<script>
-(function () {
-  // Synchronous on purpose: ensures footer is present immediately
-  // (safe for templates that might measure layout or bind events early).
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'partials/footer.html', false);
-    xhr.send(null);
-    if (xhr.status >= 200 && xhr.status < 300) {
-      document.getElementById('site-footer').innerHTML = xhr.responseText;
-    } else {
-      console.error('Footer load failed:', xhr.status);
-    }
-  } catch (e) {
-    console.error('Footer load exception:', e);
-  }
-})();
-</script>
+    <script>
+      (function () {
+        // Synchronous on purpose: ensures footer is present immediately
+        // (safe for templates that might measure layout or bind events early).
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'partials/footer.html', false);
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-footer').innerHTML = xhr.responseText;
+          } else {
+            console.error('Footer load failed:', xhr.status);
+          }
+        } catch (e) {
+          console.error('Footer load exception:', e);
+        }
+      })();
+    </script>
   </div>
   <div class="snackbars" id="form-output-global"></div>
   <script src="js/core.min.js"></script>
@@ -590,5 +574,3 @@
 </body>
 
 </html>
-
-
