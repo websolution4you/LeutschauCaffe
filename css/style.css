@@ -3414,6 +3414,10 @@ div.blurb-side-icon {
 	display: none;
 }
 
+img[src*="logo-light-150x150.png"] {
+	opacity: 0.5;
+}
+
 .brand .brand-logo-dark {
 	display: block;
 }
