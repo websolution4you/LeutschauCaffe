@@ -1,108 +1,114 @@
 ﻿<!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
-  <head>
-    <title>About</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="page-loader preloader">
-      <div class="page-loader-body">
-        <div class="cssload-thecube">
-          <div class="cssload-cube cssload-c1"></div>
-          <div class="cssload-cube cssload-c2"></div>
-          <div class="cssload-cube cssload-c4"></div>
-          <div class="cssload-cube cssload-c3"></div>
-        </div>
+
+<head>
+  <title>About</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-loader preloader">
+    <div class="page-loader-body">
+      <div class="cssload-thecube">
+        <div class="cssload-cube cssload-c1"></div>
+        <div class="cssload-cube cssload-c2"></div>
+        <div class="cssload-cube cssload-c4"></div>
+        <div class="cssload-cube cssload-c3"></div>
       </div>
     </div>
-    <div class="page">
-      <div id="site-header"></div>
-<script>
-(function () {
-  // Compute site root for GitHub Pages / subfolders:
-  // We assume `partials/header.html` is located at project root.
-  // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
-  var path = window.location.pathname;
-  // Remove trailing filename, keep directory path
-  var dir = path.substring(0, path.lastIndexOf('/') + 1);
-  // If you deploy under GitHub Pages project site, the first folder is the repo name.
-  // We will treat that first folder as the site root prefix.
-  var parts = dir.split('/').filter(Boolean);
+  </div>
+  <div class="page">
+    <div id="site-header"></div>
+    <script>
+      (function () {
+        // Compute site root for GitHub Pages / subfolders:
+        // We assume `partials/header.html` is located at project root.
+        // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
+        var path = window.location.pathname;
+        // Remove trailing filename, keep directory path
+        var dir = path.substring(0, path.lastIndexOf('/') + 1);
+        // If you deploy under GitHub Pages project site, the first folder is the repo name.
+        // We will treat that first folder as the site root prefix.
+        var parts = dir.split('/').filter(Boolean);
 
-  // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
-  // Depth beyond that determines how many ../ are needed.
-  var depthBeyondRoot = Math.max(0, parts.length - 1);
+        // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
+        // Depth beyond that determines how many ../ are needed.
+        var depthBeyondRoot = Math.max(0, parts.length - 1);
 
-  var prefix = '';
-  for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
+        var prefix = '';
+        for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
 
-  var url = prefix + 'partials/header.html';
+        var url = prefix + 'partials/header.html';
 
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false); // synchronous on purpose
-    xhr.send(null);
-    if (xhr.status >= 200 && xhr.status < 300) {
-      document.getElementById('site-header').innerHTML = xhr.responseText;
-      
-      // Option B: Set active state
-      var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      // Handle cases where the path might be just a slash
-      if (currentPath === '') currentPath = 'index.html';
-      
-      var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
-      navLinks.forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href === currentPath) {
-          var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
-          if (parentLi) parentLi.classList.add('active');
-          var topParent = link.closest('.rd-nav-item');
-          if (topParent) topParent.classList.add('active');
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url, false); // synchronous on purpose
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-header').innerHTML = xhr.responseText;
+
+            // Option B: Set active state
+            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            // Handle cases where the path might be just a slash
+            if (currentPath === '') currentPath = 'index.html';
+
+            var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
+            navLinks.forEach(function (link) {
+              var href = link.getAttribute('href');
+              if (href === currentPath) {
+                var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
+                if (parentLi) parentLi.classList.add('active');
+                var topParent = link.closest('.rd-nav-item');
+                if (topParent) topParent.classList.add('active');
+              }
+            });
+          } else {
+            console.error('Header load failed:', xhr.status, url);
+          }
+        } catch (e) {
+          console.error('Header load exception:', e);
         }
-      });
-    } else {
-      console.error('Header load failed:', xhr.status, url);
-    }
-  } catch (e) {
-    console.error('Header load exception:', e);
-  }
-})();
-</script>
-      <section class="section-fullwidth section-animate animate-content" id="section-1">
-        <div class="section-animate-wrapper">
-          <div class="container-fluid">
-            <div class="row justify-content-sm-center g-0-xl">
-              <div class="col-xl-6">
-                <div class="section-fullwidth-left sticky-top-0 sticky" style="background: #302f2f url(images/background-04-960x1080.jpg) center/cover no-repeat;">
-                  <div class="row row-sm-cente align-items-sm-center breadcrumb-modern section-cover">
-                    <div class="col-sm-12 cutom-col section-sm">
-                      <div class="breadcrumb-modern-top">
-                        <ul class="list-inline list-inline-dashed">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="#">About</a></li>
-                          <li>Our Story</li>
-                        </ul>
-                      </div>
-                      <div class="breadcrumb-modern-body"><a class="brand" href="index.html"><img src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
-                        <h1 class="breadcrumb-modern-title">Our Story</h1>
-                      </div>
-                      <div class="breadcrumb-modern-bottom">
-                        <div class="contact-info">
-                          <div class="row justify-content-sm-center">
-                            <div class="col-md-4 contact-info-left-link"><span class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-map-marker"></span>
-                              <p><a href="contacts.html">2130 Fulton Street, <br> San Diego, CA 94117-1080 USA</a></p>
-                            </div>
-                            <div class="col-md-4"><span class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-phone"></span>
-                              <p><a href="tel:#">1-800-1234-567</a></p>
-                              <p><a href="tel:#">1-800-8765-654</a></p>
-                            </div>
+      })();
+    </script>
+    <section class="section-fullwidth section-animate animate-content" id="section-1">
+      <div class="section-animate-wrapper">
+        <div class="container-fluid">
+          <div class="row justify-content-sm-center g-0-xl">
+            <div class="col-xl-6">
+              <div class="section-fullwidth-left sticky-top-0 sticky"
+                style="background: #302f2f url(images/background-04-960x1080.jpg) center/cover no-repeat;">
+                <div class="row row-sm-cente align-items-sm-center breadcrumb-modern section-cover">
+                  <div class="col-sm-12 cutom-col section-sm">
+                    <div class="breadcrumb-modern-top">
+                      <ul class="list-inline list-inline-dashed">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li>Our Story</li>
+                      </ul>
+                    </div>
+                    <div class="breadcrumb-modern-body"><a class="brand" href="index.html"><img
+                          src="images/logo-light-150x150.png" width="150" height="150" alt=""></a>
+                      <h1 class="breadcrumb-modern-title">Our Story</h1>
+                    </div>
+                    <div class="breadcrumb-modern-bottom">
+                      <div class="contact-info">
+                        <div class="row justify-content-sm-center">
+                          <div class="col-md-4 contact-info-left-link"><span
+                              class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-map-marker"></span>
+                            <p><a href="contacts.html">2130 Fulton Street, <br> San Diego, CA 94117-1080 USA</a></p>
+                          </div>
+                          <div class="col-md-4"><span
+                              class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-phone"></span>
+                            <p><a href="tel:#">1-800-1234-567</a></p>
+                            <p><a href="tel:#">1-800-8765-654</a></p>
                           </div>
                         </div>
                       </div>
@@ -110,140 +116,167 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
-                <div class="section-fullwidth-body-inner section-fullwidth-body-offset-top section-lg">
-                  <h3>A Few Words About Us</h3>
-                  <div class="divider divider-lg divider-left-0 divider-primary"></div>
-                  <div class="quote-mod-wrap">
-                    <p>We are excited to introduce Beans Coffee Production and invite you to enjoy the unique friendly atmosphere in our coffee shop. If you crave great coffee, youâ€™ll love knowing that we provide a real alternative to chains with handcrafted coffee and espresso drinks.</p>
-                    <div class="quote quote-mod">
-                      <div class="quote-body"><span class="icon icon-lg icon-rotate-180 mdi mdi-format-quote icon-primary"></span>
-                        <h4>Beans was established in 2002 as a powerful alternative to local coffee houses and stores allowing to buy, roast, and grind any type of coffee.</h4>
-                        <p class="quote-autor"><a href="#">Dennis Williams</a></p>
-                      </div>
-                    </div>
-                    <p>Beans delivers way beyond the traditional coffee shop favorites. We have traditional breakfast choices, and plenty of healthy options (including gluten free, vegetarian, and vegan). Our lunch offerings include a wide variety of salads,  sandwiches and flatbreads.</p>
-                  </div>
-                  <h3>Timeline</h3>
-                  <div class="divider divider-lg divider-left-0 divider-primary"></div>
-                  <div class="blog-timeline">
-                    <div class="blog-timeline-posts">
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2023</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>This year we are planning to open our new coffee shop in Chicago for everyone living there to enjoy the true taste of coffee, warm snacks, and mouthwatering desserts, which are affordably priced.</p>
-                        </div>
-                      </div>
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2015</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>Our website was hugely updated in 2015 with new information, links from media resources, photos, videos, and more.</p>
-                        </div>
-                      </div>
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2013</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>In 2013, we took part in the charity event devoted to children from poor families. It was an invaluable experience for every member of our team.</p>
-                        </div>
-                      </div>
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2010</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>Our team was extended in 2010. We hired more baristas and sales managers, who later became our leading employees in coffee house and warehouse departments.</p>
-                        </div>
-                      </div>
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2008</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>We developed and launched the first version of our website, which included basic information about us and coffee menu.</p>
-                        </div>
-                      </div>
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2006</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>We extended our menu to include not only tasty and flavorful coffee drinks, but also other dishes, snacks, and desserts.</p>
-                        </div>
-                      </div>
-                      <div class="blog-timeline-post">
-                        <div class="blog-timeline-post-media">
-                          <p>2002</p>
-                        </div>
-                        <div class="blog-timeline-post-body">
-                          <p>We opened our doors to local customers in 2002.</p>
-                        </div>
-                      </div>
+            </div>
+            <div
+              class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
+              <div class="section-fullwidth-body-inner section-fullwidth-body-offset-top section-lg">
+                <h3>A Few Words About Us</h3>
+                <div class="divider divider-lg divider-left-0 divider-primary"></div>
+                <div class="quote-mod-wrap">
+                  <p>We are excited to introduce Beans Coffee Production and invite you to enjoy the unique friendly
+                    atmosphere in our coffee shop. If you crave great coffee, youâ€™ll love knowing that we provide a
+                    real alternative to chains with handcrafted coffee and espresso drinks.</p>
+                  <div class="quote quote-mod">
+                    <div class="quote-body"><span
+                        class="icon icon-lg icon-rotate-180 mdi mdi-format-quote icon-primary"></span>
+                      <h4>Beans was established in 2002 as a powerful alternative to local coffee houses and stores
+                        allowing to buy, roast, and grind any type of coffee.</h4>
+                      <p class="quote-autor"><a href="#">Dennis Williams</a></p>
                     </div>
                   </div>
-                  <h3>Gallery</h3>
-                  <div class="divider divider-lg divider-left-0 divider-primary"></div>
-                  <div class="row justify-content-sm-center row-20 thumbnail-rayen-wrap" data-lightgallery="group">
-                    <div class="col-sm-6"><a class="thumbnail-rayen" data-lightgallery="item" href="images/gallery-01-1170x780_original.jpg">
-                        <figure><img width="300" height="200" src="images/gallery-01-300x200.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-6"><a class="thumbnail-rayen" data-lightgallery="item" href="images/gallery-02-1170x780_original.jpg">
-                        <figure><img width="300" height="200" src="images/gallery-02-300x200.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-6"><a class="thumbnail-rayen" data-lightgallery="item" href="images/gallery-03-1170x779_original.jpg">
-                        <figure><img width="300" height="200" src="images/gallery-03-300x200.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-6"><a class="thumbnail-rayen" data-lightgallery="item" href="images/gallery-04-1170x779_original.jpg">
-                        <figure><img width="300" height="200" src="images/gallery-04-300x200.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-6"><a class="thumbnail-rayen" data-lightgallery="item" href="images/gallery-05-1170x779_original.jpg">
-                        <figure><img width="300" height="200" src="images/gallery-05-300x200.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-6"><a class="thumbnail-rayen" data-lightgallery="item" href="images/gallery-06-1170x781_original.jpg">
-                        <figure><img width="300" height="200" src="images/gallery-06-300x200.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
-                        </figure></a></div>
+                  <p>Beans delivers way beyond the traditional coffee shop favorites. We have traditional breakfast
+                    choices, and plenty of healthy options (including gluten free, vegetarian, and vegan). Our lunch
+                    offerings include a wide variety of salads, sandwiches and flatbreads.</p>
+                </div>
+                <h3>Timeline</h3>
+                <div class="divider divider-lg divider-left-0 divider-primary"></div>
+                <div class="blog-timeline">
+                  <div class="blog-timeline-posts">
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2023</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>This year we are planning to open our new coffee shop in Chicago for everyone living there to
+                          enjoy the true taste of coffee, warm snacks, and mouthwatering desserts, which are affordably
+                          priced.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2015</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>Our website was hugely updated in 2015 with new information, links from media resources,
+                          photos, videos, and more.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2013</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>In 2013, we took part in the charity event devoted to children from poor families. It was an
+                          invaluable experience for every member of our team.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2010</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>Our team was extended in 2010. We hired more baristas and sales managers, who later became
+                          our leading employees in coffee house and warehouse departments.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2008</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>We developed and launched the first version of our website, which included basic information
+                          about us and coffee menu.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2006</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>We extended our menu to include not only tasty and flavorful coffee drinks, but also other
+                          dishes, snacks, and desserts.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2002</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>We opened our doors to local customers in 2002.</p>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <h3>Gallery</h3>
+                <div class="divider divider-lg divider-left-0 divider-primary"></div>
+                <div class="row justify-content-sm-center row-20 thumbnail-rayen-wrap" data-lightgallery="group">
+                  <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
+                      href="images/gallery-01-1170x780_original.jpg">
+                      <figure><img width="300" height="200" src="images/gallery-01-300x200.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
+                      href="images/gallery-02-1170x780_original.jpg">
+                      <figure><img width="300" height="200" src="images/gallery-02-300x200.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
+                      href="images/gallery-03-1170x779_original.jpg">
+                      <figure><img width="300" height="200" src="images/gallery-03-300x200.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
+                      href="images/gallery-04-1170x779_original.jpg">
+                      <figure><img width="300" height="200" src="images/gallery-04-300x200.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
+                      href="images/gallery-05-1170x779_original.jpg">
+                      <figure><img width="300" height="200" src="images/gallery-05-300x200.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-6"><a class="thumbnail-rayen sm" data-lightgallery="item"
+                      href="images/gallery-06-1170x781_original.jpg">
+                      <figure><img width="300" height="200" src="images/gallery-06-300x200.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span></figcaption>
+                      </figure>
+                    </a></div>
                 </div>
               </div>
             </div>
-          </div><a class="section-button-forward section-button-forward-bottom mdi mdi-chevron-down" href="#" data-custom-scroll-to="footer"></a>
-        </div>
-      </section>
-      <div id="site-footer"></div>
-<script>
-(function () {
-  // Synchronous on purpose: ensures footer is present immediately
-  // (safe for templates that might measure layout or bind events early).
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'partials/footer.html', false);
-    xhr.send(null);
-    if (xhr.status >= 200 && xhr.status < 300) {
-      document.getElementById('site-footer').innerHTML = xhr.responseText;
-    } else {
-      console.error('Footer load failed:', xhr.status);
-    }
-  } catch (e) {
-    console.error('Footer load exception:', e);
-  }
-})();
-</script>
-    </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+          </div>
+        </div><a class="section-button-forward section-button-forward-bottom mdi mdi-chevron-down" href="#"
+          data-custom-scroll-to="footer"></a>
+      </div>
+    </section>
+    <div id="site-footer"></div>
+    <script>
+      (function () {
+        // Synchronous on purpose: ensures footer is present immediately
+        // (safe for templates that might measure layout or bind events early).
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'partials/footer.html', false);
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-footer').innerHTML = xhr.responseText;
+          } else {
+            console.error('Footer load failed:', xhr.status);
+          }
+        } catch (e) {
+          console.error('Footer load exception:', e);
+        }
+      })();
+    </script>
+  </div>
+  <div class="snackbars" id="form-output-global"></div>
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
-
-
