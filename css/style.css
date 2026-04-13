@@ -246,7 +246,7 @@ body {
 }
 
 .page-header-dark {
-	background: #302f2f;
+	background: rgba(48, 47, 47, 0.5);
 }
 
 @media (min-width: 1200px) {
@@ -11410,7 +11410,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .rd-navbar-minimal-dark.rd-navbar-default.rd-navbar-static {
-	background: #302f2f;
+	background: rgba(48, 47, 47, 0.5);
 }
 
 .rd-navbar-minimal-dark.rd-navbar-default.rd-navbar-static .rd-search .form-label:before {
@@ -11440,7 +11440,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .rd-navbar-minimal-dark.rd-navbar-default.rd-navbar-static .rd-search .form-input {
-	background: #302f2f;
+	background: rgba(48, 47, 47, 0.85);
 }
 
 .rd-navbar-minimal-dark.rd-navbar-default.rd-navbar-static .rd-search .form-label, .rd-navbar-minimal-dark.rd-navbar-default.rd-navbar-static .rd-search .form-input {
