@@ -13530,21 +13530,6 @@ button.swiper-pagination-bullet {
 	margin-top: 30px;
 }
 
-.swiper-container .hero-brand-script {
-	display: none;
-	font-family: "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
-	font-size: 54px;
-	font-weight: 300;
-	line-height: 1;
-	color: #fff;
-	opacity: 0.95;
-	position: absolute;
-	right: 20px;
-	bottom: 20px;
-	pointer-events: none;
-	white-space: nowrap;
-	z-index: 3;
-}
 
 @media (min-width: 768px) {
 	.swiper-container {
@@ -13564,19 +13549,6 @@ button.swiper-pagination-bullet {
 	}
 }
 
-@media (min-width: 992px) {
-	.swiper-container .swiper-slide {
-		position: relative;
-	}
-	.swiper-container .hero-brand-script {
-		display: block;
-		right: 8px;
-		bottom: 8px;
-		font-size: 34px;
-		font-style: italic;
-		opacity: 0.9;
-	}
-}
 
 @media (min-width: 1200px) and (max-height: 800px) {
 	.swiper-container .brand + h1 {
