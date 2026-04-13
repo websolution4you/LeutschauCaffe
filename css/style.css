@@ -13530,6 +13530,15 @@ button.swiper-pagination-bullet {
 	margin-top: 30px;
 }
 
+.swiper-container .hero-brand-script {
+	font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+	font-size: 42px;
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: 16px;
+	color: #fff;
+}
+
 @media (min-width: 768px) {
 	.swiper-container {
 		height: 650px;
@@ -13545,6 +13554,10 @@ button.swiper-pagination-bullet {
 	}
 	.swiper-container h5 + .group-lg {
 		margin-top: 60px;
+	}
+	.swiper-container .hero-brand-script {
+		font-size: 58px;
+		margin-bottom: 20px;
 	}
 }
 
