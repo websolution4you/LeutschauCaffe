@@ -1,110 +1,137 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
-  <head>
-    <title>Gallery Grid</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="page-loader preloader">
-      <div class="page-loader-body">
-        <div class="cssload-thecube">
-          <div class="cssload-cube cssload-c1"></div>
-          <div class="cssload-cube cssload-c2"></div>
-          <div class="cssload-cube cssload-c4"></div>
-          <div class="cssload-cube cssload-c3"></div>
-        </div>
+
+<head>
+  <title>Gallery Grid</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .thumbnail-rayen figure {
+      height: 350px;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .thumbnail-rayen img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+    }
+
+    @media (min-width: 1200px) {
+      .thumbnail-rayen figure {
+        height: 450px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-loader preloader">
+    <div class="page-loader-body">
+      <div class="cssload-thecube">
+        <div class="cssload-cube cssload-c1"></div>
+        <div class="cssload-cube cssload-c2"></div>
+        <div class="cssload-cube cssload-c4"></div>
+        <div class="cssload-cube cssload-c3"></div>
       </div>
     </div>
-    <div class="page">
-      <div id="site-header"></div>
-<script>
-(function () {
-  // Compute site root for GitHub Pages / subfolders:
-  // We assume `partials/header.html` is located at project root.
-  // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
-  var path = window.location.pathname;
-  // Remove trailing filename, keep directory path
-  var dir = path.substring(0, path.lastIndexOf('/') + 1);
-  // If you deploy under GitHub Pages project site, the first folder is the repo name.
-  // We will treat that first folder as the site root prefix.
-  var parts = dir.split('/').filter(Boolean);
+  </div>
+  <div class="page">
+    <div id="site-header"></div>
+    <script>
+      (function () {
+        // Compute site root for GitHub Pages / subfolders:
+        // We assume `partials/header.html` is located at project root.
+        // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
+        var path = window.location.pathname;
+        // Remove trailing filename, keep directory path
+        var dir = path.substring(0, path.lastIndexOf('/') + 1);
+        // If you deploy under GitHub Pages project site, the first folder is the repo name.
+        // We will treat that first folder as the site root prefix.
+        var parts = dir.split('/').filter(Boolean);
 
-  // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
-  // Depth beyond that determines how many ../ are needed.
-  var depthBeyondRoot = Math.max(0, parts.length - 1);
+        // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
+        // Depth beyond that determines how many ../ are needed.
+        var depthBeyondRoot = Math.max(0, parts.length - 1);
 
-  var prefix = '';
-  for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
+        var prefix = '';
+        for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
 
-  var url = prefix + 'partials/header.html';
+        var url = prefix + 'partials/header.html';
 
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false); // synchronous on purpose
-    xhr.send(null);
-    if (xhr.status >= 200 && xhr.status < 300) {
-      document.getElementById('site-header').innerHTML = xhr.responseText;
-      
-      // Option B: Set active state
-      var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      // Handle cases where the path might be just a slash
-      if (currentPath === '') currentPath = 'index.html';
-      
-      var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
-      navLinks.forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href === currentPath) {
-          var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
-          if (parentLi) parentLi.classList.add('active');
-          var topParent = link.closest('.rd-nav-item');
-          if (topParent) topParent.classList.add('active');
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url, false); // synchronous on purpose
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-header').innerHTML = xhr.responseText;
+
+            // Option B: Set active state
+            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            // Handle cases where the path might be just a slash
+            if (currentPath === '') currentPath = 'index.html';
+
+            var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
+            navLinks.forEach(function (link) {
+              var href = link.getAttribute('href');
+              if (href === currentPath) {
+                var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
+                if (parentLi) parentLi.classList.add('active');
+                var topParent = link.closest('.rd-nav-item');
+                if (topParent) topParent.classList.add('active');
+              }
+            });
+          } else {
+            console.error('Header load failed:', xhr.status, url);
+          }
+        } catch (e) {
+          console.error('Header load exception:', e);
         }
-      });
-    } else {
-      console.error('Header load failed:', xhr.status, url);
-    }
-  } catch (e) {
-    console.error('Header load exception:', e);
-  }
-})();
-</script>
-      <section class="section-fullwidth section-animate animate-content" id="section-1">
-        <div class="section-animate-wrapper">
-          <div class="container-fluid">
-            <div class="row justify-content-sm-center g-0-xl">
-              <div class="col-xl-6">
-                <!-- Breadcrumbs-->
-                <div class="section-fullwidth-left breadcrumbs bg-image no-bg" style="background: none" data-preset='{"title":"Breadcrumbs","category":"header","reload":false,"id":"breadcrumbs"}'>
-                  <div class="row row-sm-cente align-items-sm-center breadcrumb-modern section-cover">
-                    <div class="col-sm-12 cutom-col section-sm">
-                      <div class="breadcrumb-modern-top">
-                        <ul class="list-inline list-inline-dashed">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a>Pages</a></li>
-                          <li class="active">Gallery Grid</li>
-                        </ul>
-                      </div>
-                      <div class="breadcrumb-modern-body">
-                        <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-dark-150x150.png" alt="" width="75" height="75"/><img class="brand-logo-light" src="images/logo-light-150x150.png" alt="" width="75" height="75"/><img class="brand-logo-white" src="images/logo-light-290x290.png" alt="" width="145" height="145"/></a>
-                        <h1 class="breadcrumbs-custom-title">Gallery Grid</h1>
-                      </div>
-                      <div class="breadcrumb-modern-bottom">
-                        <div class="contact-info">
-                          <div class="row justify-content-sm-center">
-                            <div class="col-md-4"><span class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-map-marker"></span>
-                              <p><a href="contacts.html">2130 Fulton Street, <br/> San Diego, CA 94117-1080 USA</a></p>
-                            </div>
-                            <div class="col-md-4"><span class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-phone"></span>
-                              <p><a href="tel:#">1-800-1234-567</a></p>
-                              <p><a href="tel:#">1-800-8765-654</a></p>
-                            </div>
+      })();
+    </script>
+    <section class="section-fullwidth section-animate animate-content" id="section-1">
+      <div class="section-animate-wrapper">
+        <div class="container-fluid">
+          <div class="row justify-content-sm-center g-0-xl">
+            <div class="col-xl-6">
+              <!-- Breadcrumbs-->
+              <div class="section-fullwidth-left breadcrumbs bg-image no-bg" style="background: none"
+                data-preset='{"title":"Breadcrumbs","category":"header","reload":false,"id":"breadcrumbs"}'>
+                <div class="row row-sm-cente align-items-sm-center breadcrumb-modern section-cover">
+                  <div class="col-sm-12 cutom-col section-sm">
+                    <div class="breadcrumb-modern-top">
+                      <ul class="list-inline list-inline-dashed">
+                        <li><a href="index.html">Domov</a></li>
+                        <li class="active">Galéria</li>
+                      </ul>
+                    </div>
+                    <div class="breadcrumb-modern-body">
+                      <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark"
+                          src="images/logo-dark-150x150.png" alt="" width="75" height="75" /><img
+                          class="brand-logo-light" src="images/logo-light-150x150.png" alt="" width="75"
+                          height="75" /><img class="brand-logo-white" src="images/logo-light-290x290.png" alt=""
+                          width="145" height="145" /></a>
+                      <h1 class="breadcrumbs-custom-title">Galéria Leutschau</h1>
+                    </div>
+                    <div class="breadcrumb-modern-bottom">
+                      <div class="contact-info">
+                        <div class="row justify-content-sm-center">
+                          <div class="col-md-4"><span
+                              class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-map-marker"></span>
+                            <p><a href="contacts.html">Námestie Majstra Pavla 18, <br /> 054 01 Levoča</a></p>
+                          </div>
+                          <div class="col-md-4"><span
+                              class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-phone"></span>
+                            <p><a href="tel:0903970333">0903 970 333</a></p>
                           </div>
                         </div>
                       </div>
@@ -112,112 +139,127 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
-                <div class="section-fullwidth-body-inner-small section-fullwidth-body-offset-top section-lg inset-xl-0">
-                  <div class="row justify-content-sm-center row-20 section-gallery-column-insets row-xl-custom" data-lightgallery="group">
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-16-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-16-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Ristretto</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-17-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-17-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Cortadito</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-18-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-18-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Black Eye</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-19-1170x878_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-19-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Cafe au Lait</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-20-1170x779_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-20-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Interior</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-21-1170x779_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-21-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Coffee Grinding</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-22-1170x779_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-22-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Friendly Atmosphere</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-23-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-23-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Friendly Atmosphere</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-24-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-24-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Coffee Shop Exterior</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-25-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-25-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Satisfied Customers</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-26-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-26-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Comfortable Service</h6>
-                          </figcaption>
-                        </figure></a></div>
-                    <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item" href="images/gallery-27-1170x780_original.jpg">
-                        <figure><img width="460" height="345" src="images/gallery-27-460x345.jpg" alt="">
-                          <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
-                            <h6 class="thumbnail-rayen-title">Customized Drinks</h6>
-                          </figcaption>
-                        </figure></a></div>
-                  </div>
+            </div>
+            <div
+              class="col-sm-10 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
+              <div class="section-fullwidth-body-inner-small section-fullwidth-body-offset-top section-lg inset-xl-0">
+                <div class="row justify-content-sm-center row-20 section-gallery-column-insets row-xl-custom"
+                  data-lightgallery="group">
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g01.jpg">
+                      <figure><img width="460" height="345" src="images/g01.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g02.jpg">
+                      <figure><img width="460" height="345" src="images/g02.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g03.jpg">
+                      <figure><img width="460" height="345" src="images/g03.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g04.jpg">
+                      <figure><img width="460" height="345" src="images/g04.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g05.jpg">
+                      <figure><img width="460" height="345" src="images/g05.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g06.jpg">
+                      <figure><img width="460" height="345" src="images/g06.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g07.jpg">
+                      <figure><img width="460" height="345" src="images/g07.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g08.jpg">
+                      <figure><img width="460" height="345" src="images/g08.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g09.jpg">
+                      <figure><img width="460" height="345" src="images/g09.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g10.jpg">
+                      <figure><img width="460" height="345" src="images/g10.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g11.jpg">
+                      <figure><img width="460" height="345" src="images/g11.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
+                  <div class="col-sm-10 col-md-6"><a class="thumbnail-rayen thumbnail-md" data-lightgallery="item"
+                      href="images/g12.jpg">
+                      <figure><img width="460" height="345" src="images/g12.jpg" alt="">
+                        <figcaption><span class="icon icon-white mdi mdi-magnify-plus"></span>
+                        </figcaption>
+                      </figure>
+                    </a></div>
                 </div>
               </div>
             </div>
-          </div><a class="section-button-forward section-button-forward-bottom mdi mdi-chevron-down" href="#" data-custom-scroll-to="footer"></a>
-        </div>
-      </section>
-      <div id="site-footer"></div>
-<script>
-(function () {
-  // Synchronous on purpose: ensures footer is present immediately
-  // (safe for templates that might measure layout or bind events early).
-  try {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'partials/footer.html', false);
-    xhr.send(null);
-    if (xhr.status >= 200 && xhr.status < 300) {
-      document.getElementById('site-footer').innerHTML = xhr.responseText;
-    } else {
-      console.error('Footer load failed:', xhr.status);
-    }
-  } catch (e) {
-    console.error('Footer load exception:', e);
-  }
-})();
-</script>
-    </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+          </div>
+        </div><a class="section-button-forward section-button-forward-bottom mdi mdi-chevron-down" href="#"
+          data-custom-scroll-to="footer"></a>
+      </div>
+    </section>
+    <div id="site-footer"></div>
+    <script>
+      (function () {
+        // Synchronous on purpose: ensures footer is present immediately
+        // (safe for templates that might measure layout or bind events early).
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'partials/footer.html', false);
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-footer').innerHTML = xhr.responseText;
+          } else {
+            console.error('Footer load failed:', xhr.status);
+          }
+        } catch (e) {
+          console.error('Footer load exception:', e);
+        }
+      })();
+    </script>
+  </div>
+  <div class="snackbars" id="form-output-global"></div>
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
-
-
