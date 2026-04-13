@@ -13565,13 +13565,16 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 992px) {
-	.swiper-container .swiper-slide-caption {
+	.swiper-container .swiper-slide {
 		position: relative;
 	}
 	.swiper-container .hero-brand-script {
 		display: block;
-		right: 12px;
-		bottom: 12px;
+		right: 8px;
+		bottom: 8px;
+		font-size: 34px;
+		font-style: italic;
+		opacity: 0.9;
 	}
 }
 
