@@ -5153,6 +5153,16 @@ hr {
 	margin-left: 0;
 }
 
+@media (max-width: 575.98px) {
+	.home-mobile-center-title {
+		text-align: center;
+	}
+	.home-mobile-center-divider {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 @media (min-width: 1200px) {
 	.divider-lg-left-0 {
 		margin-left: 0;
