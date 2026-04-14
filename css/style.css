@@ -17730,3 +17730,9 @@ html:not(.ie-11):not(.ie-10) .countdown-circle {
 * + .progress-bar-circle-title {
 	margin-top: 12px;
 }
+
+/* Fix for menu category button overlapping on mobile */
+.isotope-filters-horizontal li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
