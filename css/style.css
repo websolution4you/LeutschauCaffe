@@ -10789,7 +10789,9 @@ html:not(.lt-ie10) .not-animated {
 	top: 100%;
 	left: 0;
 	z-index: 20;
-	width: 212px;
+	min-width: 230px;
+	width: auto;
+	white-space: nowrap;
 	padding: 20px 35px;
 	visibility: hidden;
 	transition: .3s all ease;
