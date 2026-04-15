@@ -17749,3 +17749,14 @@ html:not(.ie-11):not(.ie-10) .countdown-circle {
         line-height: 1.4 !important;
     }
 }
+
+/* Careers - center headings on mobile */
+@media (max-width: 1199px) {
+    .section-fullwidth-body-inner h3 {
+        text-align: center;
+    }
+    .section-fullwidth-body-inner .divider {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
