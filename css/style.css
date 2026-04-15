@@ -17736,3 +17736,16 @@ html:not(.ie-11):not(.ie-10) .countdown-circle {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+/* Custom: Pracuj u nas nav item */
+@media (min-width: 1200px) {
+    .rd-navbar-static .rd-nav-item.rd-nav-item-careers {
+        margin-left: 28px;
+    }
+    .rd-navbar-static .rd-nav-item.rd-nav-item-careers .rd-nav-link {
+        border: 1px solid rgba(255, 255, 255, 0.45) !important;
+        border-radius: 4px !important;
+        padding: 4px 16px !important;
+        line-height: 1.4 !important;
+    }
+}
