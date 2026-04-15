@@ -17731,32 +17731,20 @@ html:not(.ie-11):not(.ie-10) .countdown-circle {
 	margin-top: 12px;
 }
 
-/* Fix for menu category button overlapping on mobile */
-.isotope-filters-horizontal li {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-/* Custom: Pracuj u nas nav item */
+/* Custom: Pracuj u nas nav item - desktop only */
 @media (min-width: 1200px) {
     .rd-navbar-static .rd-nav-item.rd-nav-item-careers {
-        margin-left: 28px;
+        margin-left: 20px;
     }
     .rd-navbar-static .rd-nav-item.rd-nav-item-careers .rd-nav-link {
-        border: 1px solid rgba(255, 255, 255, 0.45) !important;
-        border-radius: 4px !important;
-        padding: 4px 16px !important;
-        line-height: 1.4 !important;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        padding: 5px 16px !important;
+        border-radius: 4px;
+        line-height: 1.3;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
     }
-}
-
-/* Careers - center headings on mobile */
-@media (max-width: 1199px) {
-    .section-fullwidth-body-inner h3 {
-        text-align: center;
-    }
-    .section-fullwidth-body-inner .divider {
-        margin-left: auto;
-        margin-right: auto;
+    .rd-navbar-static .rd-nav-item.rd-nav-item-careers .rd-nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.7);
     }
 }
