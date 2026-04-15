@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<html class="wide wow-animation" lang="sk">
   <head>
-    <title>Press</title>
+    <title>História kaviarne | Leutschau Café</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,37 +26,21 @@
       <div id="site-header"></div>
 <script>
 (function () {
-  // Compute site root for GitHub Pages / subfolders:
-  // We assume `partials/header.html` is located at project root.
-  // Determine how deep the current page is and build a relative prefix like "", "../", "../../", etc.
   var path = window.location.pathname;
-  // Remove trailing filename, keep directory path
   var dir = path.substring(0, path.lastIndexOf('/') + 1);
-  // If you deploy under GitHub Pages project site, the first folder is the repo name.
-  // We will treat that first folder as the site root prefix.
   var parts = dir.split('/').filter(Boolean);
-
-  // If there is at least 1 part, assume the first part is the project root folder on GitHub Pages.
-  // Depth beyond that determines how many ../ are needed.
   var depthBeyondRoot = Math.max(0, parts.length - 1);
-
   var prefix = '';
   for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
-
   var url = prefix + 'partials/header.html';
-
   try {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false); // synchronous on purpose
+    xhr.open('GET', url, false);
     xhr.send(null);
     if (xhr.status >= 200 && xhr.status < 300) {
       document.getElementById('site-header').innerHTML = xhr.responseText;
-      
-      // Option B: Set active state
       var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      // Handle cases where the path might be just a slash
       if (currentPath === '') currentPath = 'index.html';
-      
       var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
       navLinks.forEach(function(link) {
         var href = link.getAttribute('href');
@@ -80,29 +64,28 @@
           <div class="row justify-content-sm-center g-0-xl">
             <div class="col-xl-6">
               <!-- Breadcrumbs-->
-              <div class="section-fullwidth-left breadcrumbs bg-image" style="background-image: url(images/background-06-960x1080.jpg)" data-preset='{"title":"Breadcrumbs","category":"header","reload":false,"id":"breadcrumbs"}'>
+              <div class="section-fullwidth-left breadcrumbs bg-image" style="background-image: url(images/historia-bg.jpg)" data-preset='{"title":"Breadcrumbs","category":"header","reload":false,"id":"breadcrumbs"}'>
                 <div class="row row-sm-cente align-items-sm-center breadcrumb-modern section-cover">
                   <div class="col-sm-12 cutom-col section-sm">
                     <div class="breadcrumb-modern-top">
                       <ul class="list-inline list-inline-dashed">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="active">Press</li>
+                        <li><a href="index.html">Domov</a></li>
+                        <li><a href="about.html">O nás</a></li>
+                        <li class="active">História kaviarne</li>
                       </ul>
                     </div>
                     <div class="breadcrumb-modern-body">
                       <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-dark-150x150.png" alt="" width="75" height="75"/><img class="brand-logo-light" src="images/logo-light-150x150.png" alt="" width="75" height="75"/><img class="brand-logo-white" src="images/logo-light-290x290.png" alt="" width="145" height="145"/></a>
-                      <h1 class="breadcrumbs-custom-title">Press</h1>
+                      <h1 class="breadcrumbs-custom-title">História kaviarne</h1>
                     </div>
                     <div class="breadcrumb-modern-bottom">
                       <div class="contact-info">
                         <div class="row justify-content-sm-center">
                           <div class="col-md-4"><span class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-map-marker"></span>
-                            <p><a href="contacts.html">2130 Fulton Street, <br/> San Diego, CA 94117-1080 USA</a></p>
+                            <p><a href="contacts.html">Námestie Majstra Pavla 18, <br/> 054 01 Levoča</a></p>
                           </div>
                           <div class="col-md-4"><span class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-phone"></span>
-                            <p><a href="tel:#">1-800-1234-567</a></p>
-                            <p><a href="tel:#">1-800-8765-654</a></p>
+                            <p><a href="tel:0903970333">0903 970 333</a></p>
                           </div>
                         </div>
                       </div>
@@ -113,130 +96,50 @@
             </div>
             <div class="col-sm-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
               <div class="section-fullwidth-body-inner section-fullwidth-body-offset-top section-lg">
-                <div class="row align-items-sm-center justify-content-sm-center">
-                  <div class="col-sm-12">
-                    <h3>Recent Articles About Beans</h3>
-                    <div class="divider divider-lg divider-left-0 divider-primary"></div>
-                    <div class="row justify-content-sm-center row-30 post-recent-wrap">
-                      <div class="col-md-6">
-                        <article class="post-recent">
-                          <h6 class="post-recent-title"><a href="blog-post.html">Top 5 Coffee Shops to Visit This Year</a></h6>
-                          <div class="post-recent-body">
-                            <div class="unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-newspaper icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>The New York Times</p>
-                              </div>
-                            </div>
-                            <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Nov 23, 2023</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hr-custom"></div>
-                        </article>
+                <h3>Naša História</h3>
+                <div class="divider divider-lg divider-left-0 divider-primary"></div>
+                <div class="blog-timeline">
+                  <div class="blog-timeline-posts">
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2026</p>
                       </div>
-                      <div class="col-md-6">
-                        <article class="post-recent">
-                          <h6 class="post-recent-title"><a href="blog-post.html">Beans is Recognized as the #1 Coffee Shop</a></h6>
-                          <div class="post-recent-body">
-                            <div class="unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-newspaper icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>CNN</p>
-                              </div>
-                            </div>
-                            <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Nov 24, 2023</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hr-custom"></div>
-                        </article>
+                      <div class="blog-timeline-post-body">
+                        <p>Pokračujeme v tradícii podávania špičkovej kávy a domáceho pečiva pre našich verných
+                          zákazníkov aj návštevníkov Levoče.</p>
                       </div>
-                      <div class="col-md-6">
-                        <article class="post-recent">
-                          <h6 class="post-recent-title"><a href="blog-post.html">How to Make a Proper Macchiato at Home</a></h6>
-                          <div class="post-recent-body">
-                            <div class="unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-newspaper icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Coffee & Tea</p>
-                              </div>
-                            </div>
-                            <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Nov 25, 2023</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hr-custom"></div>
-                        </article>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2022</p>
                       </div>
-                      <div class="col-md-6">
-                        <article class="post-recent">
-                          <h6 class="post-recent-title"><a href="blog-post.html">Where to Buy & Roast Coffee Beans</a></h6>
-                          <div class="post-recent-body">
-                            <div class="unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-newspaper icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Times</p>
-                              </div>
-                            </div>
-                            <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Nov 26, 2023</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hr-custom"></div>
-                        </article>
+                      <div class="blog-timeline-post-body">
+                        <p>Oslávili sme 10. výročie nášho pôsobenia na námestí, ktoré je pod ochranou UNESCO.</p>
                       </div>
-                      <div class="col-md-6">
-                        <article class="post-recent">
-                          <h6 class="post-recent-title"><a href="blog-post.html">Why do Coffee Shops Get More Popular?</a></h6>
-                          <div class="post-recent-body">
-                            <div class="unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-newspaper icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Daily Telegraph</p>
-                              </div>
-                            </div>
-                            <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Nov 27, 2023</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hr-custom"></div>
-                        </article>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2018</p>
                       </div>
-                      <div class="col-md-6">
-                        <article class="post-recent">
-                          <h6 class="post-recent-title"><a href="blog-post.html">10 Coffee Drinks You Must Try in 2023</a></h6>
-                          <div class="post-recent-body">
-                            <div class="unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-newspaper icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Coffee Guide</p>
-                              </div>
-                            </div>
-                            <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
-                              <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
-                              <div class="unit-body">
-                                <p>Nov 28, 2023</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="hr-custom"></div>
-                        </article>
+                      <div class="blog-timeline-post-body">
+                        <p>Rozšírili sme našu ponuku o výberové remeselné pivá a zamerali sme sa na lokálnych
+                          dodávateľov.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2015</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>Zmodernizovali sme vnútorné priestory pri zachovaní historického charakteru budovy.</p>
+                      </div>
+                    </div>
+                    <div class="blog-timeline-post">
+                      <div class="blog-timeline-post-media">
+                        <p>2012</p>
+                      </div>
+                      <div class="blog-timeline-post-body">
+                        <p>Leutschau Café otvorila svoje brány na Námestí Majstra Pavla 18.</p>
                       </div>
                     </div>
                   </div>
