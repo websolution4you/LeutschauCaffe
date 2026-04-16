@@ -1,11 +1,59 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="sk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administrácia – Leutschau Café</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Leutschau Café</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { background: #1a1a1a; color: white; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .login-card { background: #2a2a2a; padding: 2rem; border-radius: 8px; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .form-input { background: #333; border: 1px solid #444; color: white; width: 100%; padding: 10px; margin-bottom: 15px; }
+        .button-primary { width: 100%; }
+        .error-msg { color: #ff6b6b; font-size: 0.9rem; margin-top: 10px; display: none; }
+    </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <div class="login-card">
+        <h3 class="text-center mb-4">Administrácia</h3>
+        <form id="login-form">
+            <input type="email" id="email" class="form-input" placeholder="Email" required>
+            <input type="password" id="password" class="form-input" placeholder="Heslo" required>
+            <button type="submit" class="button button-primary" id="login-btn">Prihlásiť sa</button>
+            <div id="error-msg" class="error-msg text-center"></div>
+        </form>
+        <div class="text-center mt-3">
+            <a href="forgot-password.html" style="color: #aaa; font-size: 0.8rem;">Zabudli ste heslo?</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { supabase } from '../js/supabase-client.js';
+        
+        const form = document.getElementById('login-form');
+        const errorMsg = document.getElementById('error-msg');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('login-btn');
+
+            btn.disabled = true;
+            btn.innerText = 'Prihlasujem...';
+
+            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+            if (error) {
+                errorMsg.innerText = error.message;
+                errorMsg.style.display = 'block';
+                btn.disabled = false;
+                btn.innerText = 'Prihlásiť sa';
+            } else {
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
 </body>
 </html>

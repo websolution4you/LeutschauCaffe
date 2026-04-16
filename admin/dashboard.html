@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Leutschau Café</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { padding: 2rem; background: #f8f9fa; }
+        .dashboard-container { max-width: 1000px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .gallery-item { display: flex; align-items: center; justify-content: space-between; padding: 15px; border-bottom: 1px solid #eee; gap: 15px; }
+        .gallery-item:last-child { border-bottom: none; }
+        .item-info { display: flex; align-items: center; gap: 15px; flex-grow: 1; }
+        .gallery-item img { width: 100px; height: 75px; object-fit: cover; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .upload-section { border: 2px dashed #ddd; padding: 1.5rem; text-align: center; margin-bottom: 2rem; border-radius: 8px; }
+        .badge-inactive { background: #ffc107; color: #000; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-top: 5px; display: inline-block; }
+        .controls { display: flex; gap: 10px; align-items: center; }
+        .input-group-sm { width: auto; }
+        .sort-input { width: 60px !important; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Správa Galérie</h2>
+            <button id="logout-btn" class="button button-sm button-secondary">Odhlásiť sa</button>
+        </div>
+
+        <div class="upload-section">
+            <h4>Pridať novú fotku</h4>
+            <div class="row g-2 justify-content-center">
+                <div class="col-md-4"><input type="file" id="file-input" accept="image/*" class="form-control"></div>
+                <div class="col-md-5"><input type="text" id="alt-input" class="form-control" placeholder="Popis fotky (Alt text)"></div>
+                <div class="col-md-3"><button id="upload-btn" class="button button-primary w-100">Nahrať fotku</button></div>
+            </div>
+            <div id="upload-status" class="mt-2" style="font-size: 0.9rem;"></div>
+        </div>
+
+        <div id="gallery-list">
+            <p class="text-center">Načítavam galériu...</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { supabase } from '../js/supabase-client.js';
+
+        // POZOR: Tu si doplňte svoju reálnu S3 URL
+        const S3_URL = 'https://YOUR_BUCKET.s3.YOUR_REGION.amazonaws.com/';
+
+        async function checkAuth() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) { window.location.href = 'index.html'; return; }
+            loadGallery();
+        }
+
+        async function loadGallery() {
+            // Admin načítava úplne všetko (aj is_active = false)
+            const { data: items, error: fetchErr } = await supabase
+                .from('gallery_items')
+                .select('*')
+                .order('sort_order', { ascending: true });
+            
+            if (fetchErr) { console.error(fetchErr); return; }
+
+            const list = document.getElementById('gallery-list');
+            list.innerHTML = items.length === 0 ? '<p class="text-center text-muted">Galéria je prázdna.</p>' : '';
+
+            items.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.innerHTML = `
+                    <div class="item-info">
+                        <div class="text-center">
+                             <img src="${S3_URL}${item.s3_key}">
+                             ${!item.is_active ? '<br><span class="badge-inactive">V procese mazania</span>' : ''}
+                        </div>
+                        <div class="flex-grow-1">
+                            <label class="small text-muted mb-0">Popis (Alt text)</label>
+                            <input type="text" class="form-control form-control-sm alt-edit" data-id="${item.id}" value="${item.alt_text || ''}">
+                        </div>
+                        <div>
+                            <label class="small text-muted mb-0">Poradie</label>
+                            <input type="number" class="form-control form-control-sm sort-edit sort-input" data-id="${item.id}" value="${item.sort_order || 0}">
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-success btn-sm save-btn" data-id="${item.id}">Uložiť</button>
+                        <button class="btn btn-danger btn-sm delete-btn" data-id="${item.id}" data-key="${item.s3_key}">Zmazať</button>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+
+            // --- SAVE LOGIC ---
+            document.querySelectorAll('.save-btn').forEach(btn => {
+                btn.onclick = async () => {
+                    const id = btn.dataset.id;
+                    const alt = document.querySelector(`.alt-edit[data-id="${id}"]`).value;
+                    const sort = parseInt(document.querySelector(`.sort-edit[data-id="${id}"]`).value);
+                    
+                    btn.disabled = true;
+                    btn.innerText = 'Ukladám...';
+
+                    const { error } = await supabase.from('gallery_items').update({
+                        alt_text: alt,
+                        sort_order: sort
+                    }).eq('id', id);
+
+                    if (error) {
+                        alert('Chyba pri ukladaní: ' + error.message);
+                    } else {
+                        btn.innerText = 'Uložené!';
+                        setTimeout(() => { btn.innerText = 'Uložiť'; btn.disabled = false; }, 1500);
+                    }
+                };
+            });
+
+            // --- DELETE FLOW (Safe Flow) ---
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.onclick = async () => {
+                    if (!confirm('Naozaj chcete zmazať túto fotku?')) return;
+                    const id = btn.dataset.id;
+                    const s3Key = btn.dataset.key;
+
+                    // 1. SOFT DELETE v DB (okamžite zmizne z verejného webu)
+                    const { error: softErr } = await supabase.from('gallery_items').update({ is_active: false }).eq('id', id);
+                    if (softErr) return alert('Chyba pri deaktivácii záznamu: ' + softErr.message);
+                    
+                    // Vizuálna reakcia v adminovi
+                    loadGallery(); 
+
+                    // 2. DELETE v S3 (cez Edge Funkciu)
+                    const { data, error: s3Err } = await supabase.functions.invoke('s3-manager', {
+                        body: { action: 'delete', s3Key }
+                    });
+
+                    if (s3Err) {
+                        alert(`Varovanie: Záznam bol skrytý z webu, ale súbor v S3 sa nepodarilo zmazať (${s3Err.message}). Treba ho dočistiť manuálne.`);
+                        return;
+                    }
+
+                    // 3. HARD DELETE v DB (ak S3 prešlo)
+                    const { error: hardErr } = await supabase.from('gallery_items').delete().eq('id', id);
+                    if (hardErr) console.error('Nepodarilo sa odstrániť metadata po zmazaní S3:', hardErr);
+                    
+                    loadGallery();
+                };
+            });
+        }
+
+        // --- UPLOAD LOGIC ---
+        document.getElementById('upload-btn').onclick = async () => {
+            const file = document.getElementById('file-input').files[0];
+            const alt = document.getElementById('alt-input').value;
+            const status = document.getElementById('upload-status');
+
+            if (!file) return alert('Vyberte súbor');
+
+            status.style.color = 'black'; status.innerText = 'Získavam povolenie...';
+            
+            const { data, error: signErr } = await supabase.functions.invoke('s3-manager', {
+                body: { action: 'sign', fileName: file.name, contentType: file.type }
+            });
+
+            if (signErr) { status.style.color = 'red'; status.innerText = 'Chyba pri autorizácii uploadu.'; return; }
+
+            status.innerText = 'Nahrávam do AWS S3...';
+            const uploadRes = await fetch(data.uploadUrl, { method: 'PUT', body: file, headers: { 'Content-Type': file.type } });
+
+            if (!uploadRes.ok) { status.style.color = 'red'; status.innerText = 'Upload do S3 zlyhal.'; return; }
+
+            status.innerText = 'Ukladám do databázy...';
+            const { error: dbInsertErr } = await supabase.from('gallery_items').insert({
+                s3_key: data.key,
+                alt_text: alt,
+                mime_type: file.type,
+                file_size: file.size,
+                uploaded_by: (await supabase.auth.getUser()).data.user?.id
+            });
+
+            if (dbInsertErr) {
+                 status.style.color = 'red';
+                 status.innerText = `Súbor je v S3, ale v DB vznikla chyba: ${dbInsertErr.message}`;
+                 return;
+            }
+
+            status.style.color = 'green'; status.innerText = 'Fotka úspešne pridaná!';
+            document.getElementById('file-input').value = '';
+            document.getElementById('alt-input').value = '';
+            loadGallery();
+        };
+
+        document.getElementById('logout-btn').onclick = async () => {
+            await supabase.auth.signOut();
+            window.location.href = 'index.html';
+        };
+
+        checkAuth();
+    </script>
+</body>
+</html>
