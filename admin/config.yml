@@ -1,0 +1,22 @@
+media_folder: "images/gallery"
+public_folder: "images/gallery"
+
+backend:
+  name: github
+  repo: websolution4you/LeutschauCaffe
+  branch: administracia_galerie
+
+collections:
+  - name: "gallery"
+    label: "Galéria"
+    files:
+      - name: "gallery"
+        label: "Fotky v galérii"
+        file: "data/gallery.json"
+        fields:
+          - name: items
+            label: Fotky
+            widget: list
+            fields:
+              - { name: src, label: "Cesta k fotke", widget: string }
+              - { name: alt, label: "Popis fotky", widget: string }
