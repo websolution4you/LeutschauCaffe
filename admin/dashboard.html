@@ -45,7 +45,7 @@
         import { supabase } from '../js/supabase-client.js';
 
         // POZOR: Tu si doplňte svoju reálnu S3 URL
-        const S3_URL = 'https://YOUR_BUCKET.s3.YOUR_REGION.amazonaws.com/';
+        const S3_URL = 'https://leutschau-gallery.s3.eu-central-1.amazonaws.com/';
 
         async function checkAuth() {
             const { data: { session } } = await supabase.auth.getSession();
