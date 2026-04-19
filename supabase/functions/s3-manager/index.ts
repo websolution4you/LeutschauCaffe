@@ -60,7 +60,9 @@ serve(async (req) => {
     })
 
     if (action === 'sign') {
-      const key = `gallery/${Date.now()}-${fileName}`
+      // OČISTA NÁZVU: Odstránime diakritiku, medzery a špeciálne znaky
+      const sanitizedFileName = fileName.replace(/[^a-z0-9.-]/gi, '_');
+      const key = `gallery/${Date.now()}-${sanitizedFileName}`
       const uploadUrl = await s3Client.getPresignedUrl("PUT", key, {
         expirySeconds: 60,
         headers: { "Content-Type": contentType }
