@@ -31,11 +31,11 @@ import { supabase } from './supabase-client.js';
     adminContainer.style.display = 'block';
     adminContainer.innerHTML = `
       <div style="text-align: left; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #eee;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
-            <h4 style="margin: 0; color: #a3734a; font-family: 'Roboto Slab', serif; font-weight: 700;">Administrácia Galérie</h4>
-            <div style="display: flex; gap: 12px;">
-                <button id="admin-save-all-btn" style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-weight: bold; transition: .3s; box-shadow: 0 2px 5px rgba(40,167,69,0.3);">Uložiť všetky zmeny</button>
-                <button id="admin-logout-btn" style="background: #f8f9fa; border: 1px solid #ddd; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; color: #666;">Odhlásiť sa</button>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+            <h4 style="margin: 0; color: #a3734a; font-family: 'Roboto Slab', serif; font-weight: 700; min-width: 200px;">Administrácia Galérie</h4>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button id="admin-save-all-btn" style="background: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: bold; transition: .3s; white-space: nowrap;">Uložiť zmeny</button>
+                <button id="admin-logout-btn" style="background: #f8f9fa; border: 1px solid #ddd; padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; color: #666; white-space: nowrap;">Odhlásiť sa</button>
             </div>
         </div>
         
