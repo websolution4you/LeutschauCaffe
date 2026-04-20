@@ -197,7 +197,7 @@ import { supabase } from './supabase-client.js';
             <a class="thumbnail-classic" href="${fullUrl}" data-lightgallery="item">
               <figure><img width="640" height="430" src="${fullUrl}" alt="${item.title || ''}"></figure>
             </a>
-            <h5 class="post-classic-title">${item.title}</h5>
+            <h5 class="post-classic-title"><a href="${fullUrl}" data-lightgallery="item-link">${item.title}</a></h5>
             <p>${item.description}</p>
             <ul class="list-inline list-inline-vertical-line">
               <li>${dateStr}</li>
@@ -218,6 +218,12 @@ import { supabase } from './supabase-client.js';
                 location.reload();
             };
         });
+    }
+
+    if (window.jQuery && jQuery.fn.lightGallery) {
+      const $lg = jQuery(container);
+      if ($lg.data('lightGallery')) $lg.data('lightGallery').destroy(true);
+      $lg.lightGallery({ selector: '[data-lightgallery="item"], [data-lightgallery="item-link"]' });
     }
   }
 
