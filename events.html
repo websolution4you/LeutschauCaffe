@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+  <title>Eventy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;family=Roboto+Slab:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="page-loader preloader">
+    <div class="page-loader-body">
+      <div class="cssload-thecube">
+        <div class="cssload-cube cssload-c1"></div>
+        <div class="cssload-cube cssload-c2"></div>
+        <div class="cssload-cube cssload-c4"></div>
+        <div class="cssload-cube cssload-c3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page">
+    <div id="site-header"></div>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var dir = path.substring(0, path.lastIndexOf('/') + 1);
+        var parts = dir.split('/').filter(Boolean);
+        var depthBeyondRoot = Math.max(0, parts.length - 1);
+        var prefix = '';
+        for (var i = 0; i < depthBeyondRoot; i++) prefix += '../';
+        var url = prefix + 'partials/header.html';
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', url, false);
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-header').innerHTML = xhr.responseText;
+            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            if (currentPath === '') currentPath = 'index.html';
+            var navLinks = document.querySelectorAll('.rd-nav-link, .rd-dropdown-link, .rd-megamenu-list-link');
+            navLinks.forEach(function (link) {
+              var href = link.getAttribute('href');
+              if (href === currentPath) {
+                var parentLi = link.closest('.rd-nav-item, .rd-dropdown-item, .rd-megamenu-list-item');
+                if (parentLi) parentLi.classList.add('active');
+                var topParent = link.closest('.rd-nav-item');
+                if (topParent) topParent.classList.add('active');
+              }
+            });
+          }
+        } catch (e) { console.error(e); }
+      })();
+    </script>
+    <section class="section-fullwidth section-animate animate-content" id="section-1">
+      <div class="section-animate-wrapper">
+        <div class="container-fluid">
+          <div class="row justify-content-sm-center g-0-xl">
+            <div class="col-xl-6">
+              <!-- Breadcrumbs-->
+              <div class="section-fullwidth-left breadcrumbs bg-image"
+                style="background-image: url(images/background-10-960x1080.jpg)"
+                data-preset='{"title":"Breadcrumbs","category":"header","reload":false,"id":"breadcrumbs"}'>
+                <div class="row row-sm-cente align-items-sm-center breadcrumb-modern section-cover">
+                  <div class="col-sm-12 cutom-col section-sm">
+                    <div class="breadcrumb-modern-top">
+                      <ul class="list-inline list-inline-dashed">
+                        <li><a href="index.html">Domov</a></li>
+                        <li class="active">Eventy</li>
+                      </ul>
+                    </div>
+                    <div class="breadcrumb-modern-body">
+                      <!--Brand--><a class="brand" href="index.html"><img class="brand-logo-dark"
+                          src="images/logo-dark-150x150.png" alt="" width="75" height="75" /><img
+                          class="brand-logo-light" src="images/logo-light-150x150.png" alt="" width="75"
+                          height="75" /><img class="brand-logo-white" src="images/logo-light-290x290.png" alt=""
+                          width="145" height="145" /></a>
+                      <h1 class="breadcrumbs-custom-title">Eventy</h1>
+                    </div>
+                    <div class="breadcrumb-modern-bottom">
+                      <div class="contact-info">
+                        <div class="row justify-content-sm-center">
+                          <div class="col-md-4"><span
+                              class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-map-marker"></span>
+                            <p><a href="contacts.html">Námestie Majstra Pavla 18, <br /> 054 01 Levoča</a></p>
+                          </div>
+                          <div class="col-md-4"><span
+                              class="icon icon-sm icon-circle icon-bordered icon-white mdi mdi-phone"></span>
+                            <p><a href="tel:0903970333">0903 970 333</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-sm-10 col-md-8 col-lg-8 col-xl-6 section-fullwidth-body section-fullwidth-body-scroll scroll-wrap bg-default text-start">
+              <div class="section-fullwidth-body-inner section-fullwidth-body-offset-top section-lg">
+                <div class="events-classic-wrap">
+                  <!-- Eventy sa načítajú dynamicky z databázy -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><a class="section-button-forward section-button-forward-bottom mdi mdi-chevron-down" href="#"
+          data-custom-scroll-to="footer"></a>
+      </div>
+    </section>
+    <div id="site-footer"></div>
+    <script>
+      (function () {
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'partials/footer.html', false);
+          xhr.send(null);
+          if (xhr.status >= 200 && xhr.status < 300) {
+            document.getElementById('site-footer').innerHTML = xhr.responseText;
+          }
+        } catch (e) { console.error(e); }
+      })();
+    </script>
+  </div>
+  <div class="snackbars" id="form-output-global"></div>
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/events-loader.js" type="module"></script>
+</body>
+
+</html>
