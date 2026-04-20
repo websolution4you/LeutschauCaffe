@@ -39,14 +39,10 @@ import { supabase } from './supabase-client.js';
         <div style="background: #fcfcfc; padding: 20px; border-radius: 10px; border: 1px solid #eaeaea;">
             <p style="font-size: 0.9rem; margin-bottom: 15px; color: #444; font-weight: bold;">Pridať novú ponuku:</p>
             <div style="display: flex; flex-direction: column; gap: 15px;">
-               <div style="display: flex; align-items: center; gap: 10px;">
-                  <label for="admin-file-input" style="background: #a3734a; color: white; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: bold;">+ Zvoliť obrázok (voliteľné)</label>
-                  <input type="file" id="admin-file-input" accept="image/*" style="display:none;">
-                  <div id="admin-preview-container"></div>
-              </div>
-              <input type="text" id="admin-title-input" placeholder="Názov pozície (napr. Čašník)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;">
-              <input type="text" id="admin-loc-input" placeholder="Lokalita / Typ (napr. Levoča - TPP)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;">
-              <textarea id="admin-desc-input" placeholder="Detaily ponuky (napr. Dátum nástupu: júl 2026)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem; min-height: 80px;"></textarea>
+              <input type="text" id="admin-title-input" placeholder="Názov pozície (napr. Čašník / Čašníčka)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;">
+              <input type="text" id="admin-loc-input" placeholder="Lokalita (napr. Levoča)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;">
+              <input type="text" id="admin-type-input" placeholder="Typ (napr. TPP / Brigáda)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;">
+              <input type="text" id="admin-date-input" placeholder="Dátum nástupu (napr. Júl / 2026)" style="padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.9rem;">
               <button id="admin-upload-btn" style="background: #007bff; color: white; border: none; padding: 11px 30px; border-radius: 6px; cursor: pointer; font-weight: bold;">Pridať ponuku</button>
             </div>
             <div id="admin-upload-status" style="margin-top: 15px; font-size: 0.85rem; font-weight: bold; color: #666;"></div>
@@ -54,22 +50,8 @@ import { supabase } from './supabase-client.js';
       </div>
     `;
 
-    const fileInput = document.getElementById('admin-file-input');
-    const previewContainer = document.getElementById('admin-preview-container');
     const uploadBtn = document.getElementById('admin-upload-btn');
     const status = document.getElementById('admin-upload-status');
-
-    fileInput.onchange = (e) => {
-        const file = e.target.files[0];
-        previewContainer.innerHTML = '';
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (re) => {
-                previewContainer.innerHTML = `<img src="${re.target.result}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 2px solid #ddd;">`;
-            };
-            reader.readAsDataURL(file);
-        }
-    }
 
     document.getElementById('admin-logout-btn').onclick = async () => {
         if(confirm('Naozaj sa chcete odhlásiť?')) {
@@ -101,10 +83,10 @@ import { supabase } from './supabase-client.js';
     };
 
     uploadBtn.onclick = async () => {
-      const file = fileInput.files[0];
       const title = document.getElementById('admin-title-input').value;
       const loc = document.getElementById('admin-loc-input').value;
-      const desc = document.getElementById('admin-desc-input').value;
+      const type = document.getElementById('admin-type-input').value;
+      const date = document.getElementById('admin-date-input').value;
       
       if (!title) { alert('Prosím zadajte názov pozície'); return; }
       
@@ -112,21 +94,10 @@ import { supabase } from './supabase-client.js';
       status.innerText = `Pridávam ponuku...`;
 
       try {
-          let s3Key = '';
-          if (file) {
-              const { data, error: signErr } = await supabase.functions.invoke('s3-manager', {
-                  body: { action: 'sign', fileName: file.name, contentType: file.type, folder: 'jobs' }
-              });
-              if (signErr) throw signErr;
-              const uploadRes = await fetch(data.uploadUrl, { method: 'PUT', body: file, headers: { 'Content-Type': file.type } });
-              if (!uploadRes.ok) throw new Error('S3 upload zlyhal');
-              s3Key = data.key;
-          }
-
           const { error: dbErr } = await supabase.from('job_items').insert({
-              s3_key: s3Key || `jobs/placeholder-${Date.now()}`, 
+              s3_key: `jobs/manual-${Date.now()}`, 
               title: title,
-              description: JSON.stringify({ loc, desc }), // Enkódované dáta pre jednoduchosť
+              description: JSON.stringify({ loc, type, date }),
               sort_order: -Math.floor(Date.now() / 1000)
           });
 
@@ -155,7 +126,7 @@ import { supabase } from './supabase-client.js';
 
     container.innerHTML = '';
     jobs.forEach((item, index) => {
-        let jobData = { loc: 'Levoča', desc: '' };
+        let jobData = { loc: 'Levoča', type: 'TPP', date: '' };
         try { jobData = JSON.parse(item.description); } catch(e) {}
         
         const col = document.createElement('div');
@@ -170,7 +141,7 @@ import { supabase } from './supabase-client.js';
                 <textarea class="admin-desc-edit" style="width: 100%; margin-bottom: 5px; padding: 5px; font-size: 0.8rem;">${item.description}</textarea>
                 <div style="display: flex; justify-content: space-between;">
                     <input type="number" class="admin-sort-edit" value="${index + 1}" style="width: 50px;">
-                    <button class="admin-del-btn" data-id="${item.id}" data-key="${item.s3_key}" style="background: #dc3545; color: white; border: none; padding: 2px 10px; border-radius: 4px; font-size: 0.7rem;">Zmazať</button>
+                    <button class="admin-del-btn" data-id="${item.id}" style="background: #dc3545; color: white; border: none; padding: 2px 10px; border-radius: 4px; font-size: 0.7rem;">Zmazať</button>
                 </div>
             </div>
             `;
@@ -186,7 +157,11 @@ import { supabase } from './supabase-client.js';
               </div>
               <div class="unit align-items-center flex-row unit-spacing-xxs">
                 <div class="unit-left"><span class="icon icon-sm mdi mdi-timelapse icon-gray-lighter"></span></div>
-                <div class="unit-body"><p>${jobData.desc}</p></div>
+                <div class="unit-body"><p>${jobData.type}</p></div>
+              </div>
+              <div class="post-meta unit align-items-center flex-row unit-spacing-xxs">
+                <div class="unit-left"><span class="icon icon-sm mdi mdi-calendar icon-gray-lighter"></span></div>
+                <div class="unit-body"><p>${jobData.date}</p></div>
               </div>
             </div>
           </article>
@@ -200,9 +175,6 @@ import { supabase } from './supabase-client.js';
             btn.onclick = async () => {
                 if (!confirm('Naozaj zmazať túto ponuku?')) return;
                 btn.disabled = true;
-                if (!btn.dataset.key.includes('placeholder')) {
-                    await supabase.functions.invoke('s3-manager', { body: { action: 'delete', s3Key: btn.dataset.key } });
-                }
                 await supabase.from('job_items').delete().eq('id', btn.dataset.id);
                 location.reload();
             };
