@@ -9,6 +9,8 @@
             <div class="rd-navbar-inner">
                 <div class="rd-navbar-panel">
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                    <!-- Admin login for mobile -->
+                    <a href="admin/index.html" class="admin-login-link-mobile d-lg-none" title="Admin prihlásenie" id="mobile-login-link" style="position: absolute; right: 55px; top: 50%; transform: translateY(-50%); color: rgba(255,255,255,0.7); font-size: 28px; z-index: 10;"><span class="icon mdi mdi-account-circle"></span></a>
                 </div>
                 <div class="rd-navbar-minimal-inner">
                     <div class="rd-navbar-minimal-left">
@@ -44,6 +46,9 @@
                                     <li class="rd-nav-item rd-nav-item-careers">
                                         <a class="rd-nav-link" href="careers.html">Pracuj u nás</a>
                                     </li>
+                                    <li class="rd-nav-item d-lg-none">
+                                        <a class="rd-nav-link admin-nav-link" href="admin/index.html">Admin</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -51,7 +56,7 @@
                     <div class="rd-navbar-minimal-right">
                         <!--RD Navbar Search-->
                         <div class="rd-navbar-search">
-                            <a href="admin/index.html" class="admin-login-link" title="Admin prihlásenie" style="margin-right: 15px; vertical-align: middle; color: rgba(255,255,255,0.5); transition: .3s;"><span class="icon icon-xs mdi mdi-account-circle"></span></a>
+                            <a href="admin/index.html" class="admin-login-link desktop-login-link" title="Admin prihlásenie" style="margin-right: 15px; vertical-align: middle; color: rgba(255,255,255,0.5); transition: .3s;"><span class="icon icon-xs mdi mdi-account-circle"></span></a>
                             <a class="rd-navbar-search-toggle"
                                 data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-panel" href="#"><span></span></a>
                             <form class="rd-search" action="search-results.html"
@@ -71,3 +76,15 @@
         </nav>
     </div>
 </header>
+<script>
+    (function() {
+        var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        var loginLinks = document.querySelectorAll('.admin-login-link, .admin-login-link-mobile, .admin-nav-link');
+        loginLinks.forEach(function(link) {
+            var originalHref = link.getAttribute('href');
+            if (originalHref.indexOf('admin/index.html') !== -1) {
+                link.setAttribute('href', originalHref + '?redirect=' + encodeURIComponent(currentFile));
+            }
+        });
+    })();
+</script>

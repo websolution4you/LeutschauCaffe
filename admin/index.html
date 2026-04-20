@@ -51,7 +51,13 @@
                 btn.disabled = false;
                 btn.innerText = 'Prihlásiť sa';
             } else {
-                window.location.href = '../gallery-grid.html';
+                const params = new URLSearchParams(window.location.search);
+                const redirectTo = params.get('redirect');
+                if (redirectTo) {
+                    window.location.href = '../' + redirectTo;
+                } else {
+                    window.location.href = '../gallery-grid.html';
+                }
             }
         });
     </script>
