@@ -49,7 +49,8 @@ serve(async (req) => {
         AWS_ACCESS_KEY_ID: Deno.env.get('AWS_ACCESS_KEY_ID') ? "NASTAVENÉ" : "CHÝBA (undefined)"
     })
 
-    const { action, contentType, fileName, s3Key } = await req.json()
+    const { action, contentType, fileName, s3Key, folder } = await req.json()
+    const targetFolder = folder || 'gallery';
 
     const s3Client = new S3Client({
       region: Deno.env.get('AWS_REGION')!,
@@ -62,7 +63,7 @@ serve(async (req) => {
     if (action === 'sign') {
       // OČISTA NÁZVU: Odstránime diakritiku, medzery a špeciálne znaky
       const sanitizedFileName = fileName.replace(/[^a-z0-9.-]/gi, '_');
-      const key = `gallery/${Date.now()}-${sanitizedFileName}`
+      const key = `${targetFolder}/${Date.now()}-${sanitizedFileName}`
       const uploadUrl = await s3Client.getPresignedUrl("PUT", key, {
         expirySeconds: 60,
         headers: { "Content-Type": contentType }
