@@ -51,7 +51,9 @@ import { supabase } from './supabase-client.js';
 
     } catch (err) {
       console.error('Chyba pri načítaní recenzií:', err);
-      container.innerHTML = '<div class="col-12 text-center"><p style="color: red;">Nepodarilo sa načítať Google recenzie. Skontrolujte nastavenie API kľúča.</p></div>';
+      let errorMsg = 'Nepodarilo sa načítať Google recenzie.';
+      if (err.message) errorMsg += ` (Chyba: ${err.message})`;
+      container.innerHTML = `<div class="col-12 text-center"><p style="color: red;">${errorMsg}<br><small>Skontrolujte, či máte v Google Console aktivovaný Billing a povolenú Places API.</small></p></div>`;
     }
   }
 
