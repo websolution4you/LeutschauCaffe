@@ -52,8 +52,15 @@ import { supabase } from './supabase-client.js';
     } catch (err) {
       console.error('Chyba pri načítaní recenzií:', err);
       let errorMsg = 'Nepodarilo sa načítať Google recenzie.';
-      if (err.message) errorMsg += ` (Chyba: ${err.message})`;
-      container.innerHTML = `<div class="col-12 text-center"><p style="color: red;">${errorMsg}<br><small>Skontrolujte, či máte v Google Console aktivovaný Billing a povolenú Places API.</small></p></div>`;
+      
+      // Pokúsime sa získať presnú správu z error objektu Supabase
+      if (err.context && err.context.message) {
+          errorMsg += ` (Detail: ${err.context.message})`;
+      } else if (err.message) {
+          errorMsg += ` (Chyba: ${err.message})`;
+      }
+
+      container.innerHTML = `<div class="col-12 text-center"><p style="color: red;">${errorMsg}<br><small>Najčastejšie: Neaktívny Billing v Google Console alebo nepovolená Places API.</small></p></div>`;
     }
   }
 
