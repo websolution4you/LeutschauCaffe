@@ -12,6 +12,33 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
       .product-menu-price { display: none !important; }
+      
+      /* Úprava filtrov pre Nápojový lístok */
+      @media (min-width: 992px) {
+        .isotope-filters-horizontal {
+          display: flex !important;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: flex-start;
+          margin-bottom: 30px;
+        }
+        .isotope-filters-horizontal li {
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .isotope-filters-horizontal li a {
+          padding: 12px 25px !important;
+          border: 1px solid #a3734a;
+          display: block;
+          white-space: nowrap;
+          transition: .3s all ease;
+        }
+        .isotope-filters-horizontal li a.active,
+        .isotope-filters-horizontal li a:hover {
+          background-color: #a3734a;
+          color: white !important;
+        }
+      }
     </style>
   </head>
   <body>
