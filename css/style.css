@@ -2328,7 +2328,7 @@ h1 + .text-lg {
 }
 
 .section-button-forward-top {
-	top: 60px;
+	display: none !important;
 }
 
 .section-button-forward-bottom {
